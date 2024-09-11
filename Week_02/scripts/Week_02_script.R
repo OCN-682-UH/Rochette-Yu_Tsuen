@@ -18,4 +18,3 @@ head(weightdata) # shows the top 6 lines
 tail(weightdata) # shows the last 6 lines
 view(weightdata) # shows all the data in a new tab
 
-
