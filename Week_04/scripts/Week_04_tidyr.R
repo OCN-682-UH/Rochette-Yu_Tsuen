@@ -79,4 +79,21 @@ chemdata_wide <- chemdata_long %>%
   pivot_wider(names_from = Variables, # column with the name of the new columns
               values_from = Values) # column with the values of the variables
 
+#### summary statistics to csv ##########
+chemdata_clean <- chemdata %>% 
+  drop_na() %>% 
+  separate(col = Tide_time, 
+           into = c("Tide","Time"), 
+           sep = "_", 
+           remove= F) %>% 
+  pivot_longer(cols = Temp_in:percent_sgd, 
+               names_to = "Variables", 
+               values_to = "Values") %>% 
+  group_by(Variables, Site, Time) %>% 
+  summarize(mean_vals=mean(Values, na.rm = T)) %>% 
+  pivot_wider(names_from = Variables,
+              values_from= mean_vals) %>% 
+  write_csv(here("Week_04", "outputs", "summary.csv"))
+  
+
   
