@@ -39,7 +39,7 @@ joined_df %>% mutate(date = round_date(date, "minute")) %>%
               # Each of the graph has its only y-axis units
   labs(title = "Average Physico-Chemical Values by Minute",
        subtitle = "Taken in Moorea, FP",
-       x = "Date-Time",
+       x = "2021-01-15 Timeseries (hour)",
        y = "Average Values (units are different)")+ #give explicit labels
   theme_bw() +
   theme(plot.title = element_text(size=20,color = "#FD8A8A"), 
