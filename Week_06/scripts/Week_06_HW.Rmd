@@ -47,7 +47,8 @@ library(ghibli) # for the pretty colors
 We need something to work with.  
 We'll use data collected by the Silbiger Lab ( _yas!_ ).
 ```{r}
-chem_data<- read.csv(here("Week_04", "data", "chemicaldata_maunalua.csv"))
+chem_data<- read_csv(here("Week_04", "data", "chemicaldata_maunalua.csv"))
+# gotta use read_csv instead of read.csv, more demure
 ```
 
 ## Making a Summary Table
