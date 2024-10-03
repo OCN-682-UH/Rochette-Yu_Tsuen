@@ -1,0 +1,162 @@
+---
+author: 'Keanu Rochette-Yu Tsuen'
+date: '`r format(Sys.Date())`'
+title: Week 6 - RMarkdown Homework
+output: 
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+    toc: true
+---
+<!-- Changing the header color of the Cayman theme
+Specifically, creating a color gradient for the banner -->
+```{css my-header-colors, echo = FALSE}
+.page-header {
+    background-image: linear-gradient(160deg, #2980B9, #6DD5FA, #FFFFFF);
+}
+```
+
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE,
+                      warning = FALSE)
+```
+
+## Introduction - Taking a shot at using RMarkdown
+_Disclaimer: this assignment will be (a little) chaotic. Enjoy!_  
+
+
+Howdy y'all, today we'll create my first markdown document (_+ output_ ).    
+Not gonna lie this one was a tough one, the table in particular was giving me a hard time.  
+But in the words of Sia:  
+
+> "I'm unstoppable. I'm a Porsche with no breaks."   
+> _Sia, somewhere cool_
+
+## Load the Libraries
+To start and **_slay_** that code, we are loading them libraries. 
+```{r}
+library(tidyverse) #to keep things organized
+library(here) # so our pathways are unbreakable
+library(gt) # tables baby! 
+library(ghibli) # for the pretty colors
+```
+
+## Load the Data
+We need something to work with.  
+We'll use data collected by the Silbiger Lab ( _yas!_ ).
+```{r}
+chem_data<- read.csv(here("Week_04", "data", "chemicaldata_maunalua.csv"))
+```
+
+## Making a Summary Table
+To show off those coding skills, we'll make a "simple" summary table. ( _he thought..._ )
+```{r}
+chem_data %>% 
+    # remove those NA gurl! bad vibes
+  drop_na() %>% 
+    # Swith her up so she's longer
+  pivot_longer (cols = Temp_in:percent_sgd,
+                names_to = "Parameter",
+                values_to = "Values") %>% 
+    # I don't need those either
+  select(-Site, -Season, -Tide_time, -Waypoint) %>% 
+    # cluster the data by zone and by parameter
+  group_by(Zone, Parameter) %>% 
+    # then we can get our little summary
+  summarize(Mean = mean(Values), Median = median(Values),
+            StandDev= sd(Values)) %>% 
+    # we'll round those values #cutesy
+  mutate_if(is.numeric, round,digits = 2) %>% 
+    # Problems start here: we need a wide boi for this task
+    # We also need the columns with names as ZONE_VALUE, 
+    # hence why I used the names_glue function
+  pivot_wider(names_from = "Zone", 
+              values_from = c(Mean:StandDev),
+              names_glue = "{Zone}_{.value}") %>% 
+    # I needed to rearrange my columns so all the summaries are by "Zones". 
+    # But ya boi doesn't know any other way to do it. 
+    # So I just had to type it by hand. Send help please...
+  select(Parameter, 
+         Ambient_Mean, Ambient_Median, Ambient_StandDev,
+         Diffuse_Mean, Diffuse_Median, Diffuse_StandDev,
+         Offshore_Mean, Offshore_Median, Offshore_StandDev,
+         Transition_Mean, Transition_Median, Transition_StandDev) %>% 
+    # Anyway, then we can set the biogeochem parameters as the row names.
+  gt(rowname_col = "Parameter") %>% 
+    # Gotta keep it nice and tidy with a title and subtitle
+  tab_header(title = "Summary Statistics of Biogeochemical Parameters", 
+             subtitle= "Taken in Maunalua Bay")  %>% 
+    # All that hard work for the grand finalé. 
+    # We are creating over arching column categories, 
+    # representing the sampled zones, under which the summary statistics 
+    # will be nicely grouped.
+  tab_spanner_delim(delim = "_") 
+```
+Look at that beautiful table !  
+
+> "Very Mindful! Very Demure!  
+> _Joolie Lebron, Tiktok (I think) _
+
+## Making a Pretty Graph
+K! Now that the table is done, we can try to make a graph with ggplot.  
+There are many options here.  
+
+- time series _(actually no, we don't have any dates. LOL! )_
+- box plots
+- linear regressions
+
+But today, I decide to be wild and make violin plots. 
+
+```{r violinplot, fig.height= 12, fig.width= 10, fig.path ="../outputs/"}
+chem_data %>% 
+    # again, run away from problems, run away from NAs.
+  drop_na() %>% 
+    # Idk, the names weren't my vibe so I changed them
+  rename(Nitrate_Nitrite = NN,  Percent_SGD= percent_sgd,
+         Total_Alkalinity = TA, Temperature_C= Temp_in) %>%
+    # Long boiiiii
+  pivot_longer (cols = Temperature_C:Percent_SGD,
+                names_to = "Parameter",
+                values_to = "Values") %>% 
+    # I didn't need those so ... gurl bye!
+  select(-Site, -Season, -Tide_time, -Waypoint) %>% 
+    # now the fun part, ggplot ! 
+  ggplot(aes(x= Zone, y = Values, fill = Zone)) +
+    # make them violin plots
+  geom_violin() +
+    # we be wild but tidy, everything in 2 columns only.
+    # and also each graph gets their own scale, bcs idk... equity? 
+  facet_wrap(~Parameter, ncol = 2, scales= "free") +
+    # graph needs to be clear, labels, labels, labels
+  labs(title = "Biogeochemical Parameters in Different Zones of a Lagoon",
+       subtitle = "Data Collected from Maunalua Bay",
+       x = "Zone sampled",
+       y = "Measured Values", #give pretty names to the plot and axes
+       fill = "Zones",
+       caption = "Note: Data provided by the Silbiger Lab, for educational purposes only, yasss~ !") + 
+    # we need something basic to balance it out: theme_bw()
+  theme_bw() + 
+    # yas-ifying that graph with some font size change and a background color
+  theme(plot.title = element_text(size=16), 
+        plot.subtitle = element_text(size=14),
+        axis.title = element_text(size = 14),
+        axis.text = element_text(size = 12),
+        strip.text.x = element_text(size = 12),
+        plot.caption = element_text(size = 12),
+        panel.background = element_rect(fill = "#FFFAF1"), 
+        legend.position = "none") + # no need legend, redundant here
+    # yas-ifying her even more with some ghibli theme colors
+  scale_fill_ghibli_d("SpiritedMedium", direction = -1)
+        
+ 
+  
+```
+
+## Closing remarks
+Thanks for reading til here!  
+Hope that was entertaining and not too cringey.  
+_Maybe a bit cringey tho hihi!_
+
+

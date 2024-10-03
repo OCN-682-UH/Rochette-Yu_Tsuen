@@ -1,0 +1,222 @@
+---
+title: "Week 6: RMarkdown"
+author: "Keanu Rochette-Yu Tsuen"
+date: "2024-10-01"
+output: 
+  html_document:
+    toc: TRUE
+    toc_float: TRUE
+---
+
+```{r setup, include=FALSE}
+# setting for the whole Markdown doc when knitted
+#knitr::opts_chunk$set(echo = TRUE, # show outputs all the time
+#                      warning = FALSE) # Don't show warnings all the time 
+
+
+knitr::opts_chunk$set(echo = TRUE, 
+                      message = FALSE,
+                      warning = FALSE)
+```
+
+# Introduction to RMarkdown
+
+Let's give it a shot a *RMarkdown*!\
+We will use the Penguin data to practice.
+
+## Load the Libraries
+```{r}
+library(palmerpenguins)
+library(tidyverse)
+library(here)
+library(kableExtra) # to make tables in RMarkdown
+```
+
+## Comments in RMarkdown 
+Comment structure use <&!-- XXX -->, without the "&".  
+<!-- This becomes a comment and will not be displayed after knitting -->
+This is comment will be shown tho.
+
+## Inspect the data
+```{r}
+glimpse(penguins)
+```
+# Figures in RMarkdown
+
+## Make a simple plot
+```{r}
+ggplot(penguins,
+        aes(x= bill_depth_mm, y = bill_length_mm, group = species)) +
+  geom_point(aes(color = species))+ 
+  geom_smooth(method = "lm")+
+  labs(x= "Bill Depth (mm)",
+       y = "Bill Lenghth (mm)")
+```
+
+## Changing the size
+Specify those within the {r} of the code chunk.  
+Those can also be specified in the knitr::opts_chunk section so it applies to all of the figures produced in the document.   
+- out.width = "70%" (70% of the width)   
+- fig.width = 3 (width 3 in)   
+- fig.height = 4 (height 4 in)   
+- fig.asp = 1.2 (aspect ratio of 1.2)  
+- fig align = "center"   
+
+#### out.width = "70%"
+```{r, out.width="70%"}
+ggplot(penguins,
+        aes(x= bill_depth_mm, y = bill_length_mm, group = species)) +
+  geom_point(aes(color = species))+ 
+  geom_smooth(method = "lm")+
+  labs(x= "Bill Depth (mm)",
+       y = "Bill Lenghth (mm)")
+```
+
+#### fig.width = 4, fig.height= 3
+```{r, fig.width = 4, fig.height= 3}
+
+ggplot(penguins,
+        aes(x= bill_depth_mm, y = bill_length_mm, group = species)) +
+  geom_point(aes(color = species))+ 
+  geom_smooth(method = "lm")+
+  labs(x= "Bill Depth (mm)",
+       y = "Bill Lenghth (mm)")
+```
+
+#### fig.asp= 1.2
+```{r, fig.asp= 1.2}
+
+ggplot(penguins,
+        aes(x= bill_depth_mm, y = bill_length_mm, group = species)) +
+  geom_point(aes(color = species))+ 
+  geom_smooth(method = "lm")+
+  labs(x= "Bill Depth (mm)",
+       y = "Bill Lenghth (mm)")
+```
+
+#### fig.asp= 1.2, fig.align= "center"
+```{r, fig.asp= 1.2, fig.align= "center"}
+
+ggplot(penguins,
+        aes(x= bill_depth_mm, y = bill_length_mm, group = species)) +
+  geom_point(aes(color = species))+ 
+  geom_smooth(method = "lm")+
+  labs(x= "Bill Depth (mm)",
+       y = "Bill Lenghth (mm)")
+```
+
+## Save the figures
+This is an alternative to ggsave, an automated way.  
+It's important that all the code chunks are *NAMED*. {r _label_}, no spaces.
+You can only have *ONE figure* per R chunk.  
+
+Set the figure path within knitr::opts_chunk.  
+We can't use here() in this case unfortunately.    
+--> fig.path = "../outputs/"
+
+#### fig.path = "../outputs/"
+```{r penguinplot, fig.path ="../outputs/", fig.asp= 1.2, fig.align= "center"}
+
+ggplot(penguins,
+        aes(x= bill_depth_mm, y = bill_length_mm, group = species)) +
+  geom_point(aes(color = species))+ 
+  geom_smooth(method = "lm")+
+  labs(x= "Bill Depth (mm)",
+       y = "Bill Lenghth (mm)")
+
+# this figure was indeed saved in the outputs folder
+```
+
+## Giving the figure a caption: fig.cap = "..."
+```{r, fig.asp= 1.2, fig.align= "center", fig.cap= "This is a scatter plot of penguin data"}
+
+ggplot(penguins,
+        aes(x= bill_depth_mm, y = bill_length_mm, group = species)) +
+  geom_point(aes(color = species))+ 
+  geom_smooth(method = "lm")+
+  labs(x= "Bill Depth (mm)",
+       y = "Bill Lenghth (mm)")
+```
+
+## Saving the figure in a specific format: dev = " _specific format type_ "
+```{r penguinpdf, fig.asp= 1.2, fig.align= "center", fig.cap= "This is a scatter plot of penguin data", fig.path ="../outputs/", dev="pdf"}
+
+ggplot(penguins,
+        aes(x= bill_depth_mm, y = bill_length_mm, group = species)) +
+  geom_point(aes(color = species))+ 
+  geom_smooth(method = "lm")+
+  labs(x= "Bill Depth (mm)",
+       y = "Bill Lenghth (mm)")
+
+#Note: this figure was saved as a pdf. In the html output, it shows as a scrolling figure
+```
+
+# Tables in RMarkdown
+## Manual method
+You can do it by hand. It is extremely tedious and takes accuracy to code it right.    
+
+| Time  | Session | Topic    |  
+|:------|:-------:|---------:|  
+| _left_ | _center_| _right_ |  
+| 01:00  | 1       | Anatomy |  
+| 01:50  |         | *Break* |  
+| 02:00  | 2       | Tables  |  
+| 02:45  |         | *Break* |  
+
+<!-- ":" shows how to the justify the column-->
+
+
+## Tables with kable
+Load the kableExtra package in the library section. 
+
+```{r}
+penguins %>%  
+  group_by(species) %>% 
+  summarize(bill_mean = mean(bill_length_mm, na.rm = T)) %>% 
+  kbl() # generates a kable table
+```
+
+
+You can also change the look of the table by adding more details and instructions
+```{r}
+penguins %>%  
+  group_by(species) %>% 
+  summarize(bill_mean = mean(bill_length_mm, na.rm = T)) %>% 
+  kbl() %>% 
+  kable_classic() %>% # table theme
+  row_spec(2, bold = T, color = "white", background = "red")
+# select row 2, bold text, white color and red background
+```
+
+
+Changing the size of the table  
+```{r}
+penguins %>%  
+  group_by(species) %>% 
+  summarize(bill_mean = mean(bill_length_mm, na.rm = T)) %>% 
+  kbl() %>% 
+  kable_classic() %>% # table theme
+  row_spec(2, bold = T, color = "white", background = "red") %>% 
+      # select row 2, bold text, white color and red background
+  kable_styling(full_width = F) # gives a narrower table
+```
+
+There are lot more packages that can make tables even better in RMarkdown. 
+https://rfortherestofus.com/2019/11/how-to-make-beautiful-tables-in-r/
+
+
+# Themes in RMarkdown
+So many to choose from and more to download.
+
+https://www.datadreaming.org/posts/2018-04-11-r-markdown-theme-gallery/2018-04-11-r-markdown-theme-gallery
+
+# Output formats 
+Try Github Document: https://rmarkdown.rstudio.com/github_document_format.html
+
+Each type of outputs has different arguments and are not transferable. 
+Beware of the type chosen.
+
+
+
+
+
