@@ -1,0 +1,175 @@
+---
+author: 'Keanu Rochette '
+date: '`r format(Sys.Date())`'
+title: Week 7 - Maps
+output: html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE,
+                      warning = FALSE)
+```
+
+
+## Load the Libraries
+
+```{r}
+library(tidyverse)
+library(here)
+
+library(maps)
+library(mapproj)
+library(mapdata)
+
+#sf, ggmap, tmap, leaflet are other packages that can be useful for GIS purposes
+```
+
+```{r}
+popdata <- read_csv(here("Week_07", "data", "CApopdata.csv"))
+
+stars <- read_csv(here("Week_07", "data", "stars.csv"))
+```
+
+
+## {maps} package
+comes with some polygons and base maps. 
+Last updated 2022.
+
+```{r}
+world <- map_data("world")
+usa <- map_data("usa")
+italy <- map_data("italy")
+
+#the package is very US centric though
+states <- map_data("state")
+counties <- map_data("county")
+
+```
+
+## Structure of the data
+
+long: longitude things West of the prime meridian is negative
+lat : latitude  
+order: order in which ggplot should connect the dots
+region and subregion: tell what region a set of points surrounds
+group : 
+
+
+## Basic map
+```{r}
+ggplot() +
+  geom_polygon(data = world, aes(x=long, y=lat, group = group,
+                                 fill = region), # colot by regions
+                                 color = "black") + #black outlines on the map
+  guides(fill = FALSE) + # remove the legend because too many
+  theme_minimal()+
+  theme(panel.background = element_rect(fill = "lightblue"))
+  
+```
+
+## Projections
+
+```{r}
+ggplot() +
+  geom_polygon(data = world, aes(x=long, y=lat, group = group,
+                                 fill = region), # colot by regions
+                                 color = "black") + #black outlines on the map
+  guides(fill = FALSE) + # remove the legend because too many
+  theme_minimal()+
+  theme(panel.background = element_rect(fill = "lightblue"))+
+
+#change the projection of the map
+  coord_map(projection = "mercator",
+            xlim = (c(-180,180)))
+  
+```
+
+
+
+```{r}
+ggplot() +
+  geom_polygon(data = world, aes(x=long, y=lat, group = group,
+                                 fill = region), # colot by regions
+                                 color = "black") + #black outlines on the map
+  guides(fill = FALSE) + # remove the legend because too many
+  theme_minimal()+
+  theme(panel.background = element_rect(fill = "lightblue"))+
+  coord_map(projection = "sinusoidal",
+            xlim = (c(-180,180)))
+  
+```
+
+
+## Map just of California
+
+```{r}
+head(states)
+#map data are simple dataframes 
+#don't overthink it
+```
+
+```{r}
+# from the states data, just select the data relevant to CA
+CA_data <- states %>% 
+  filter(region == "california")
+```
+
+```{r}
+ggplot (data = CA_data)+
+  geom_polygon(aes(x= long, y = lat, group=group), 
+               color = "lightblue") +
+  coord_map(projection = "sinusoidal")
+```
+
+
+##Adding layers to the map
+
+### Population density of CA
+Joining data 
+```{r}
+CApop_county <- popdata %>%
+  select("subregion" = County, Population)  %>% # rename the county col
+  inner_join(counties) %>%
+  filter(region == "california") # some counties have same names in other states
+
+head(CApop_county)
+## Joining with by = join_by(subregion)
+# Check out the jannitor package ! Very useful
+
+
+```
+
+Map it with ggplot
+```{r}
+ggplot (data = CApop_county)+
+  geom_polygon(aes(x= long, y = lat, group=group, 
+                   fill = Population), #now we can see the pop density on the map
+               color = "lightblue") +
+  coord_map(projection = "sinusoidal")+
+  scale_fill_gradient(trans = "log10")
+```
+
+
+### Add the seastar data on top of the CA map
+
+```{r}
+ggplot ()+
+  geom_polygon(data = CApop_county,
+               aes(x= long, y = lat, group=group, 
+                   fill = Population), #now we can see the pop density on the map
+               color = "lightblue") +
+  geom_point(data = stars, 
+           aes(x=long, y=lat,
+               size = star_no))+
+  coord_map()+
+  scale_fill_gradient(trans = "log10") +
+  labs(size = "# stars/m2") 
+
+ggsave(here("Week_07","outputs","CApop.pdf"))
+
+```
+
+
+
+## Fun packages ggdogs

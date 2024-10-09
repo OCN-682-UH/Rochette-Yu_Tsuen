@@ -1,0 +1,31 @@
+---
+author: 'Keanu Rochette '
+date: '`r format(Sys.Date())`'
+title: Week 07 Homework
+output: html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE,
+                      warning = FALSE)
+```
+
+
+## Load the Libraries
+
+```{r}
+library(tidyverse)
+library(here)
+library(maps)
+library(mapproj)
+library(mapdata)
+
+```
+
+
+```{r}
+bigfoot <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-09-13/bigfoot.csv')
+
+```
+
