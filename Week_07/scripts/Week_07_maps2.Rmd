@@ -1,0 +1,139 @@
+---
+author: 'Keanu Rochette '
+date: '`r format(Sys.Date())`'
+title: Week 7 - Maps
+output: html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE,
+                      warning = FALSE)
+```
+
+
+## Load the Libraries
+
+```{r}
+library(tidyverse)
+library(here)
+library(ggspatial)
+library(ggmap)
+```
+
+
+## Add API Key to R
+
+Google API: Need to unable Google API on static maps 
+https://www.littlemissdata.com/blog/maps
+```{r}
+#ggmap::register_google(key = "Key")
+```
+
+Also add a Stadia Maps API 
+```{r}
+#register_stadiamaps("Key")
+```
+
+GGmaps Git hub : https://github.com/dkahle/ggmap
+
+## Load the data
+```{r}
+chemdata <- read_csv(here("Week_07", "data", "chemicaldata_maunalua.csv"))
+
+```
+
+## Plotting with ggmap()
+
+### Get base map from ggmap
+
+```{r}
+#get the map data
+oahu <- get_map("Oahu")
+
+#allows to plot data
+ggmap(oahu)
+```
+
+### Focusing on specific coordinates for Wailupe
+
+Centering the map around a coordinate
+```{r}
+WP <- data.frame(lon = -157.7621, lat = 21.27427)
+
+map1 <- get_map(WP)
+
+ggmap(map1)
+```
+
+### Zooming on a location
+
+get_map(..., zoom = X)  
+zoom is between 3 (zoomed out) and 20 (zoomed in)  
+```{r}
+map1 <- get_map(WP, zoom = 16)
+
+ggmap(map1)
+```
+### Change the map type 
+get_map(..., maptype = X)
+
+```{r}
+map1 <- get_map(WP, zoom = 16, maptype= "satellite")
+
+ggmap(map1)
+```
+
+Fun map type : 
+```{r}
+map1 <- get_map(WP, zoom = 16, maptype= "stamen_watercolor", source = "stadia")
+
+ggmap(map1)
+```
+
+
+### Plotting
+
+Behaves like a ggplot 
+```{r}
+map1 <- get_map(WP, zoom = 17, maptype= "satellite")
+
+ggmap(map1)+
+  geom_point(data = chemdata,
+             aes(x= Long, y= Lat, color = Salinity),
+             size= 4)+
+  scale_color_viridis_c()
+```
+
+
+```{r}
+ggmap(map1)+
+  geom_point(data = chemdata,
+             aes(x= Long, y= Lat, color = Salinity),
+             size= 4)+
+  scale_color_viridis_c() +
+  annotation_scale( bar_cols = c("red", "white"),
+                    location = "bl")+ # puts scale bar on the bottom left (bl)
+                                      # change colors to red and white
+  annotation_north_arrow(location = "tl")+ # add a north arrow, top left (tl)
+                              # many more editing options 
+  coord_sf(crs = 4326) # specify the coordinate system to adjust the scale bar
+                       # crs specifies the system: GPS (WGS84)
+
+```
+
+
+## Geocoding 
+when you don't know the exact lat and long
+
+```{r}
+geocode("the White House")
+geocode("University of Hawaii at Manoa")
+```
+
+
+
+
+
+
+
