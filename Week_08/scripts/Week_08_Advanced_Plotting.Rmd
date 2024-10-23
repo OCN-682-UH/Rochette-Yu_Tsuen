@@ -1,0 +1,250 @@
+---
+author: 'Keanu Rochette '
+date: '`r format(Sys.Date())`'
+title: Week 8 - Advanced Plotting
+output: html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE,
+                      warning = FALSE)
+```
+
+
+## Load the Libraries
+```{r}
+library(tidyverse)
+library(here)
+library(patchwork)
+library(ggrepel)
+library(gganimate)
+library(magick)
+library(palmerpenguins)
+
+```
+
+## Patchwork
+Brings plots together: combine and arrange plots.
+
+### Example: 
+```{r}
+# plot 1
+p1<-penguins %>%
+  ggplot(aes(x = body_mass_g, 
+             y = bill_length_mm, 
+             color = species))+
+  geom_point()
+p1
+```
+
+```{r}
+# plot 2
+p2<-penguins %>%
+  ggplot(aes(x = sex, 
+             y = body_mass_g, 
+             color = species))+
+  geom_jitter(width = 0.2)
+p2
+```
+To use patchwork, you just math signs to combine plots. Extremely easy. 
+```{r}
+#Simple plot combination 
+p1+p2 # Plots side by side
+p1/p2 # plots on top of each other
+```
+ #### Combining legends
+```{r}
+# combining legends together since they are the same
+p1+p2 +
+  plot_layout(guides = "collect") # guides = legends, basically
+```
+
+#### Add annotation to the graphs
+```{r}
+p1+p2 +
+  plot_layout(guides = "collect") +
+  plot_annotation(tag_levels = "A") # labels plots A-Z
+```
+
+Another way 
+```{r}
+p1/p2 +
+  plot_layout(guides = "collect") +
+  plot_annotation(tag_levels = "1") # labels plots A-Z
+```
+
+
+## ggrepel
+Using mtcars package to show the functionalities of ggrepel 
+
+```{r}
+view(mtcars)
+```
+
+Example: Simple Plot
+```{r}
+ggplot(mtcars, aes(x = wt, 
+                   y = mpg, 
+                   #extracts the labels from rows
+                   label = rownames(mtcars))) + 
+  geom_text() + # creates a text label
+  geom_point(color = 'red', size = 2)
+```
+
+Repeling the labels so it's more visible 
+```{r}
+ggplot(mtcars, aes(x = wt, 
+                   y = mpg, 
+                   label = rownames(mtcars))) + 
+  geom_text_repel() + # creates a text label that don't overlap
+  geom_point(color = 'red', size = 2)
+```
+
+Other way to make labels
+```{r}
+ggplot(mtcars, aes(x = wt, 
+                   y = mpg, 
+                   label = rownames(mtcars))) + 
+  geom_label_repel() + # creates a label stickers that don't overlap
+  geom_point(color = 'red', size = 2)
+```
+
+## gganimate
+Make animated figures 
+
+Example: Static Plot
+```{r}
+penguins %>%
+ggplot(aes(x = body_mass_g, 
+            y = bill_depth_mm, 
+            color = species)) +
+  geom_point()
+```
+
+ ### Adding transition for movement
+```{r}
+penguins %>%
+ggplot(aes(x = body_mass_g, 
+            y = bill_depth_mm, 
+            color = species)) +
+  geom_point() +
+  transition_states(
+     year, # what are we animating by
+     transition_length = 2, #The relative length of the transition.
+     state_length = 3 # The length of the pause between transitions
+   )
+```
+
+### Adding aesthetics to transitions 
+```{r}
+penguins %>%
+ggplot(aes(x = body_mass_g, 
+            y = bill_depth_mm, 
+            color = species)) +
+  geom_point() +
+  transition_states(
+     year, 
+     transition_length = 2, 
+     state_length = 1 
+   ) +
+  ease_aes("circular-in-out") #specifies the style of transition
+```
+
+### Add labels to the transitioned plots
+```{r}
+penguins %>%
+ggplot(aes(x = body_mass_g, 
+            y = bill_depth_mm, 
+            color = species)) +
+  geom_point() +
+  transition_states(
+     year, 
+     transition_length = 2, 
+     state_length = 1 
+   ) +
+  ease_aes("circular-in-out") + #specifies the style of transition
+  labs(title = "Year: {closest_state}") 
+```
+
+##### changing the plot and messing around
+```{r}
+penguins %>%
+ggplot(aes(x = body_mass_g, 
+            y = bill_depth_mm, 
+            color = species)) +
+  geom_point() +
+  transition_states(
+     sex, 
+     transition_length = 2, 
+     state_length = 1 
+   ) +
+  ease_aes("circular-in-out") + 
+  labs(title = "Sex: {closest_state}")
+```
+
+### Saving the animated plot as a gif
+```{r}
+penguins %>%
+ggplot(aes(x = body_mass_g, 
+            y = bill_depth_mm, 
+            color = species)) +
+  geom_point() +
+  transition_states(
+     year, # what are we animating by
+     transition_length = 2, #The relative length of the transition.
+     state_length = 1 # The length of the pause between transitions
+   )+
+  ease_aes("sine-in-out") +
+  labs(title = 'Year: {closest_state}') +
+  anim_save(here("Week_08","outputs","mypengiungif.gif"))
+
+```
+
+
+## Magick
+Advanced image processing
+
+Adding a penguin to the plot
+```{r}
+penguin<-image_read("https://pngimg.com/uploads/penguin/pinguin_PNG9.png")
+penguin
+```
+
+1. Need to create a plot and save in the outputs folder
+```{r}
+penguins %>%
+ggplot(aes(x = body_mass_g, 
+            y = bill_depth_mm, 
+            color = species)) +
+  geom_point()
+
+ggsave(here("Week_08","outputs","penguinplot.png"))
+```
+
+2. Read the plot png back in R, then add the image
+```{r}
+#read the files in layers: 1st file is background, last file is foreground
+penplot<-image_read(here("Week_08","outputs","penguinplot.png"))
+out <- image_composite(penplot, penguin, offset = "+20+70") # offset: where the penguin should be 
+out
+```
+
+
+3. can also add gifs on the plot 
+```{r}
+# Read in a penguin gif
+pengif<-image_read("https://media3.giphy.com/media/H4uE6w9G1uK4M/giphy.gif")
+outgif <- image_composite(penplot, pengif, gravity = "center") 
+      # gravity = where does it pull 
+animation <- image_animate(outgif, fps = 10, optimize = TRUE)
+      # fps= specify the quality of the animated gif. fps 10 for low quality
+      # less space
+animation
+```
+
+
+
+
+
+

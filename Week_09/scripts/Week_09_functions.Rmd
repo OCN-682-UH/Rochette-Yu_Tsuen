@@ -1,0 +1,288 @@
+---
+author: 'Keanu Rochette '
+date: '`r format(Sys.Date())`'
+title: Week 9 - Functional Programming
+output: html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE,
+                      warning = FALSE)
+```
+
+## Load Libraries
+```{r}
+library(tidyverse)
+library(here)
+library(palmerpenguins)
+library(PNWColors)
+```
+
+## Why are function useful?
+
+### Example: rescaling a dataframe
+```{r}
+df <- tibble(
+  a= rnorm(10), #10 random values that are normally distributed
+  b= rnorm(10),
+  c= rnorm(10),
+  d= rnorm(10),
+)
+head(df)
+```
+
+
+```{r}
+df %>%
+  mutate(a = (a-min(a, na.rm = TRUE))/(max(a, na.rm = TRUE)-min(a, na.rm = TRUE)))
+# (a-min(a)) / (max(a)-min(a))
+```
+
+
+```{r}
+df %>%
+  mutate(a = (a-min(a, na.rm = TRUE))/(max(a, na.rm = TRUE)-min(a, na.rm = TRUE)),
+         b = (b-min(b, na.rm = TRUE))/(max(b, na.rm = TRUE)-min(b, na.rm = TRUE)),
+         c = (c-min(c, na.rm = TRUE))/(max(c, na.rm = TRUE)-min(c, na.rm = TRUE)),
+         d = (d-min(d, na.rm = TRUE))/(max(d, na.rm = TRUE)-min(d, na.rm = TRUE)))
+
+```
+It's easy to make a mistake in copying the code.  
+Fuctions can help to automate the process.
+
+### Writing it in a function
+```{r}
+rescale01 <- function(x) {
+  value <- (x-min(x, na.rm = TRUE))/(max(x, na.rm = TRUE)-min(x, na.rm = TRUE))
+  return(value)
+}
+```
+
+```{r}
+df %>%
+  mutate(a = rescale01(a),
+         b = rescale01(b),
+         c = rescale01(c),
+         d = rescale01(d))
+```
+
+### Example: Farenheit to Celsius
+
+Transforming the following in a function
+```{}
+temp_C <- (temp_F - 32)*5/9
+```
+Step 1: Name the function
+
+```{r}
+f_to_c <- function() {
+  
+}
+
+```
+Step 2: Put in the equation
+```{r}
+f_to_c <- function() {
+  temp_C <- (temp_F - 32)*5/9
+}
+
+```
+Step 3: decide of the arguments
+```{r}
+f_to_c <- function(temp_F) {
+  temp_C <- (temp_F - 32)*5/9
+  return(temp_C)
+}
+
+```
+Step 4: Test it out
+
+```{r}
+f_to_c(350)
+```
+
+### Practice: C to K
+```{r}
+c_to_k <- function(temp_C) {
+  temp_K <- (temp_C +273.15)
+  return(temp_K)
+}
+```
+
+```{r}
+c_to_k(180)
+```
+
+## Making plots into a function
+
+Color scales in a graph
+```{r}
+pal <- pnw_palette("Lake", 3, type = "discrete")
+#choose the palette "Lake", only 3 of the colors, discrete colors
+
+```
+
+Basic graph
+```{r}
+ggplot(penguins, aes(x = body_mass_g, y = bill_length_mm, color = island))+
+  geom_point()+
+  geom_smooth(method = "lm")+ # add a linear model
+  scale_color_manual("Island", values=pal)+   # use pretty colors and another example of how to manually change the legend title for colors
+  theme_bw()
+```
+
+### Making plots into functions
+
+The skeleton of the function: what arguments should be included
+``` {}
+myplot<-function(){
+pal<-pnw_palette("Lake",3, type = "discrete") # my color palette 
+ggplot(penguins, aes(x = body_mass_g, y = bill_length_mm, color = island))+
+  geom_point()+
+  geom_smooth(method = "lm")+ 
+  scale_color_manual("Island", values=pal)+   # use pretty colors and change the legend title
+  theme_bw()
+```
+
+Swap the defined values to arguments in function
+```{r}
+myplot<-function(data, x, y){
+pal<-pnw_palette("Lake",3, type = "discrete") 
+#specify the df, x and y values for future plotting
+ggplot(data, aes(x = x, y =y , color = island))+
+  geom_point()+
+  geom_smooth(method = "lm")+ 
+  scale_color_manual("Island", values=pal)+   
+  theme_bw()
+}
+```
+
+Because x and y are arguments from within the dataset. We need the specify that to R.  
+We do that by using x = {{x}}, y ={{y}}.
+```{r}
+myplot<-function(data, x, y){
+pal<-pnw_palette("Lake",3, type = "discrete") 
+#specify the df, x and y values for future plotting
+ggplot(data, aes(x = {{x}}, y ={{y}} , color = island))+
+  geom_point()+
+  geom_smooth(method = "lm")+ 
+  scale_color_manual("Island", values=pal)+   
+  theme_bw()
+}
+```
+Note: No need to specify "return" because ggplot object not assign to a
+variable
+
+```{r}
+myplot(data = penguins, x = body_mass_g, y = bill_length_mm)
+#easy plotting with no need to type the same code all the time
+```
+
+### Adding default parameters in the function
+The default df is the penguins
+```{r}
+myplot<-function(data = penguins, x, y){
+pal<-pnw_palette("Lake",3, type = "discrete") # my color palette 
+ggplot(data, aes(x = {{x}}, y = {{y}} , color = island))+
+  geom_point()+
+  geom_smooth(method = "lm")+ # add a linear model
+  scale_color_manual("Island", values=pal)+   # use pretty colors and change the legend title
+  theme_bw()
+}
+```
+
+```{r}
+myplot(x = body_mass_g, y = bill_length_mm)
+```
+### Can layer the plot as normal because output is a ggplot object 
+
+```{r}
+myplot(x = body_mass_g, y = flipper_length_mm)+
+  labs(x = "Body mass (g)",
+       y = "Flipper length (mm)")
+
+#and can add more layers 
+```
+
+## Flexibility in the function: ifelse 
+```{r}
+a <- 4
+b <- 5
+```
+
+```{r}
+if (a>b) {
+  f <-20
+} else {
+      f <- 10
+}
+
+f # f is equal to 10. 
+
+# example of conditional statements
+# can be used in functions
+```
+
+## Conditional functions
+Whether or not to add a linear regression
+
+### Backbone:
+```{}
+myplot<-function(data = penguins, x, y ,lines=TRUE ){ # add new argument for lines
+pal<-pnw_palette("Lake",3, type = "discrete") 
+ggplot(data, aes(x = {{x}}, y = {{y}} , color = island))+
+  geom_point()+
+  geom_smooth(method = "lm")+ 
+  scale_color_manual("Island", values=pal)+ 
+  theme_bw()
+}
+```
+
+
+```{r}
+myplot<-function(data = penguins, x, y, lines=TRUE ){ # add new argument for lines
+pal<-pnw_palette("Lake",3, type = "discrete")  
+
+#Add the conditions: 
+if(lines==TRUE){
+ggplot(data, aes(x = {{x}}, y = {{y}} , color = island))+
+  geom_point()+
+  geom_smooth(method = "lm")+ # add a linear model IF lines = TRUE
+  scale_color_manual("Island", values=pal)+   
+  theme_bw()
+}
+
+# Add alternative if contidition is false:
+else{
+ggplot(data, aes(x = {{x}}, y = {{y}} , color = island))+
+  geom_point()+
+  scale_color_manual("Island", values=pal)+ 
+  theme_bw()
+}
+}
+```
+
+Test
+
+```{r}
+#Lines = TRUE
+myplot(x = body_mass_g, y = flipper_length_mm)
+```
+
+```{r}
+#Lines = FALSE
+myplot(x = body_mass_g, y = flipper_length_mm, lines = FALSE)
+```
+
+
+
+
+
+
+
+
+
+
+
+
