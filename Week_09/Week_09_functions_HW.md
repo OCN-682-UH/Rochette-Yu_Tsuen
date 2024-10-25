@@ -286,6 +286,6 @@ movie_idea(runtime = 200 , rating = 1)
 ```
 
     ## # A tibble: 1 × 9
-    ##   `Movie Title` `Movie Year` Runtime Genre    Rating Director Votes Gross ID_num
-    ##   <chr>                <dbl>   <dbl> <chr>     <dbl> <chr>    <dbl> <chr>  <dbl>
-    ## 1 Species               1995     108 Action,…    5.8 Roger D… 82499 $60.…    556
+    ##   `Movie Title`   `Movie Year` Runtime Genre  Rating Director Votes Gross ID_num
+    ##   <chr>                  <dbl>   <dbl> <chr>   <dbl> <chr>    <dbl> <chr>  <dbl>
+    ## 1 Hostel: Part II         2007      94 Horror    5.5 Eli Roth 92969 $17.…    650
