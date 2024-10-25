@@ -48,7 +48,7 @@ ggplot(penguins, aes(x= flipper_length_mm, y=bill_depth_mm, color = sex))+
         panel.background = element_rect(fill = "azure1"))
 ```
 
-![](./outputs/reference_plot-1.png)<!-- -->
+![](../outputs/reference_plot-1.png)<!-- -->
 
 ### Creating the function
 
@@ -104,7 +104,7 @@ testplot(x= bill_length_mm, y= body_mass_g, color = species, geom_func = geom_po
         panel.background = element_rect(fill = "azure1"))
 ```
 
-![](./outputs/scatter_plot-1.png)<!-- -->
+![](../outputs/scatter_plot-1.png)<!-- -->
 
 #### Plotting a box plot
 
@@ -125,7 +125,7 @@ testplot(x= species, y= body_mass_g, color = species, geom_func = geom_boxplot) 
         panel.background = element_rect(fill = "azure1"))
 ```
 
-![](./outputs/boxplot-1.png)<!-- -->
+![](../outputs/boxplot-1.png)<!-- -->
 
 #### Plotting a bar plot
 
@@ -146,7 +146,7 @@ testplot(x= island, y= bill_depth_mm, color = species, geom_func = geom_bar)+
         panel.background = element_rect(fill = "azure1"))
 ```
 
-![](./outputs/barplot-1.png)<!-- -->
+![](../outputs/barplot-1.png)<!-- -->
 
 ## Summary statistic using a function
 
@@ -286,6 +286,6 @@ movie_idea(runtime = 200 , rating = 1)
 ```
 
     ## # A tibble: 1 × 9
-    ##   `Movie Title`   `Movie Year` Runtime Genre  Rating Director Votes Gross ID_num
-    ##   <chr>                  <dbl>   <dbl> <chr>   <dbl> <chr>    <dbl> <chr>  <dbl>
-    ## 1 Hostel: Part II         2007      94 Horror    5.5 Eli Roth 92969 $17.…    650
+    ##   `Movie Title`   `Movie Year` Runtime Genre Rating Director  Votes Gross ID_num
+    ##   <chr>                  <dbl>   <dbl> <chr>  <dbl> <chr>     <dbl> <chr>  <dbl>
+    ## 1 A Nightmare on…         2010      95 Crim…    5.2 Samuel … 103828 $63.…    722

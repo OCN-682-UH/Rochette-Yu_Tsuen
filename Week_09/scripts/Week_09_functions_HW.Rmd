@@ -11,7 +11,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE,
                       message = FALSE,
                       warning = FALSE, 
-                       fig.path="./outputs/")
+                       fig.path="../outputs/")
 ```
 
 ## Load the libraries 
