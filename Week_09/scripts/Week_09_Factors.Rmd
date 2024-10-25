@@ -1,0 +1,260 @@
+---
+author: 'Keanu Rochette '
+date: '`r format(Sys.Date())`'
+title: Week 9 - Functional Programming
+output: html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE,
+                      warning = FALSE)
+```
+
+## Load Libraries
+```{r}
+library(tidyverse)
+library(here)
+library(palmerpenguins)
+library(PNWColors)
+```
+
+
+## Load the data
+```{r}
+income_mean <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-02-09/income_mean.csv')
+```
+
+
+## Definition
+Factor: special character, used for categorical data. Usually alphabetical order but can be reordered. We need to change its "levels".  
+Factors are stored as integers by R.
+
+```{r}
+fruits<-factor(c("Apple", "Grape", "Banana"))
+fruits
+```
+### Booby-traps of Factors
+**Normally:** if there is a typo in a column of numbers, R will read everything in as characters. When converting them back to a number, the rows with real characters will covert to NAs.  
+
+**With factor:** It will display numbers associated with the levels of the factors and not show an NA when it's supposed to be.  
+
+```{r}
+test<-c("A", "1", "2")
+as.numeric(test)
+```
+
+```{r}
+test<-factor(test) # covert to factor
+as.numeric(test)
+# A converts to a 3. Not good!
+```
+
+## Forcats: family of function. _fct_XXX()_
+We'll use starwars dataset.
+```{r}
+starwars
+```
+
+```{r}
+starwars %>% 
+  filter(!is.na(species)) %>% 
+  count(species, sort = TRUE)
+
+# 38 different species so we want to narrow it down to the most commonly occuring ones
+```
+
+```{r}
+star_count <- starwars %>% 
+  filter(!is.na(species)) %>% 
+  mutate(species = fct_lump(species, n=3)) %>% 
+   #converts spp to a factor and lumps spp with les than 3 indiv in an "other" category. 
+  count(species) # without sort, it's alphabetical order.
+star_count 
+```
+## Factors in plotting
+
+Plotting as is:
+```{r}
+star_count %>% 
+  ggplot(aes(x= species, y= n))+
+  geom_col()
+
+#what if we want to sort from high to low? 
+```
+
+Plotting in order of the n:
+```{r}
+star_count %>% 
+  ggplot(aes(x= fct_reorder(species, n), y= n)) +
+  geom_col()
+
+#fct_reorder(X, Y), X: category to reorder, Y: reorder by variable Y
+```
+Making it descending order. Yay!
+```{r}
+star_count %>% 
+  ggplot(aes(x= fct_reorder(species, n, .desc=T), y= n)) +
+  geom_col()
+```
+
+
+## Better plotting with factors
+Using the income_mean data
+```{r}
+glimpse(income_mean)
+```
+Tidying the data first
+```{r}
+total_income<-income_mean %>%
+  group_by(year, income_quintile)%>%
+  summarise(income_dollars_sum = sum(income_dollars))%>%
+  mutate(income_quintile = factor(income_quintile)) # make it a factor
+total_income
+```
+
+### Basic Plot
+```{r}
+total_income%>%
+ggplot(aes(x = year, y = income_dollars_sum, color = income_quintile))+
+  geom_line()
+
+# the order of the income quintile is not in good order to read, we can rearrange it better
+```
+
+```{r}
+total_income%>%
+  ggplot(aes(x = year, y = income_dollars_sum, 
+             color = fct_reorder2(income_quintile,year, income_dollars_sum)))+
+   # fct_reorder2() reorders data based on 2 other variables
+  geom_line()+
+  labs(color = "income quantile")
+
+# reorder the quintile by year first, then income sum
+
+
+```
+
+## Reordering factors in a dataset
+
+```{r}
+x1 <- factor(c("Jan", "Mar", "Apr", "Dec"))
+x1
+
+# Levels: Apr Dec Jan Mar | alphabetical order
+```
+But can be reordered:
+```{r}
+x1 <- factor(c("Jan", "Mar", "Apr", "Dec"), levels = c("Jan", "Mar", "Apr", "Dec"))
+x1
+
+#Levels: Jan Mar Apr Dec
+```
+
+
+## Subsetting data with factors
+
+Grouping our species that have < 3 counts into "Other" we just filter them out.
+```{r}
+starwars_clean<-starwars %>% 
+  filter(!is.na(species)) %>% # remove the NAs
+  count(species, sort = TRUE) %>%
+  mutate(species = factor(species)) %>% # make species a factor
+  filter(n>3) # only keep species that have more than 3
+starwars_clean
+```
+**BUT!** Levels of the factors are kept and display all categories
+```{r}
+levels(starwars_clean$species)
+```
+
+We need droplevels()
+
+```{r}
+starwars_clean<-starwars %>% 
+  filter(!is.na(species)) %>% # remove the NAs
+  count(species, sort = TRUE) %>%
+  mutate(species = factor(species)) %>% # make species a factor
+  filter(n>3) %>%  # only keep species that have more than 3
+  droplevels() # can also use fct_drop()
+starwars_clean
+levels(starwars_clean$species)
+```
+
+## Recoding the levels
+Relabiling the levels
+```{r}
+starwars_clean<-starwars %>% 
+  filter(!is.na(species)) %>% # remove the NAs
+  count(species, sort = TRUE) %>%
+  mutate(species = factor(species)) %>% # make species a factor 
+  filter(n>3)  %>% # only keep species that have more than 3 
+  droplevels() %>% # drop extra levels 
+  mutate(species = fct_recode(species, "Humanoid" = "Human"))
+                               # Human is changed to Humanoid 
+starwars_clean
+```
+
+
+## Awesome package of the day : gm to generate music
+
+```{r}
+library(gm)
+```
+
+```{r}
+
+pitchesV<- list(c("E3","E4"), "B3", c("G3","E4"), "B3", 
+                c("E3","E4"), "B3", c("G3","E4"), "B3",
+                c("D3","D4"), "B3", c("G3","D4"), "B3",
+                c("D3","D4"), "B3", c("G3","D4"), "B3",
+                c("D3","D4"), "B3", c("F#3","D4"), "B3",
+                c("D3","D4"), "B3", c("F#3","D4"), "B3",
+                c("D3","D4"), "A3", c("F#3","D4"), "A3",
+                c("D3","D4"), "A3", c("F#3","D4"), "A3")
+
+line<- Line(pitchesV,
+  durations = c("eighth", "eighth", "eighth", "eighth",
+                "eighth", "eighth", "eighth", "eighth",
+                "eighth", "eighth", "eighth", "eighth",
+                "eighth", "eighth", "eighth", "eighth",
+                "eighth", "eighth", "eighth", "eighth",
+                "eighth", "eighth", "eighth", "eighth",
+                "eighth", "eighth", "eighth", "eighth",
+                "eighth", "eighth", "eighth", "eighth")) 
+  
+
+music <- 
+  Music() +
+  Meter(4, 4) +
+  line +
+  Tempo(100) +
+  Clef("F") +
+  Key(1, to = 1) +
+  Pedal(1,4)+
+  Pedal(5,8)+
+  Pedal(9,12)+
+  Pedal(13,16)+
+  Pedal(17,20)+
+  Pedal(21,24)+
+  Pedal(25,28)+
+  Pedal(29,32)
+  
+
+show(music)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

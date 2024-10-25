@@ -1,0 +1,837 @@
+Movie Title,Movie Year,Runtime,Genre,Rating,Director,Votes,Gross
+Alien,1979,117,"Horror, Sci-Fi",8.5,Ridley Scott,"9,05,275",$78.90M
+Psycho,1960,109,"Horror, Mystery, Thriller",8.5,Alfred Hitchcock,"6,89,068",$32.00M
+The Shining,1980,146,"Drama, Horror",8.4,Stanley Kubrick,"10,51,582",$44.02M
+The Thing,1982,109,"Horror, Mystery, Sci-Fi",8.2,John Carpenter,"4,39,793",$13.78M
+Tumbbad,2018,104,"Drama, Fantasy, Horror",8.2,Rahi Anil Barve,"53,297",
+The Exorcist,1973,122,Horror,8.1,William Friedkin,"4,22,330",$232.91M
+Diabolique,1955,117,"Crime, Drama, Horror",8.1,Henri-Georges Clouzot,"67,456",$1.09M
+Rosemary's Baby,1968,137,"Drama, Horror",8,Roman Polanski,"2,23,968",
+What Ever Happened to Baby Jane?,1962,134,"Drama, Horror, Thriller",8,Robert Aldrich,"58,904",$4.05M
+The Cabinet of Dr. Caligari,1920,67,"Horror, Mystery, Thriller",8,Robert Wiene,"66,749",
+The Blue Elephant,2014,170,"Drama, Horror, Mystery",8,Marwan Hamed,"29,151",
+Shaun of the Dead,2004,99,"Comedy, Horror",7.9,Edgar Wright,"5,72,237",$13.54M
+Nosferatu,1922,94,"Fantasy, Horror",7.9,F.W. Murnau,"1,00,942",
+Let the Right One In,2008,114,"Drama, Fantasy, Horror",7.9,Tomas Alfredson,"2,21,604",$2.12M
+King Kong,1933,100,"Adventure, Horror, Sci-Fi",7.9,Merian C. Cooper,"88,019",$10.00M
+Get Out I,2017,104,"Horror, Mystery, Thriller",7.8,Jordan Peele,"6,42,604",$176.04M
+Predator,1987,107,"Action, Adventure, Horror",7.8,John McTiernan,"4,35,400",$59.74M
+I Saw the Devil,2010,144,"Action, Crime, Horror",7.8,Jee-woon Kim,"1,37,559",$0.13M
+Dawn of the Dead,1978,127,"Horror, Thriller",7.8,George A. Romero,"1,24,374",$5.10M
+Night of the Living Dead,1968,96,"Horror, Thriller",7.8,George A. Romero,"1,33,452",$0.09M
+Freaks,1932,64,"Drama, Horror",7.8,Tod Browning,"48,381",$0.63M
+Frankenstein,1931,70,"Drama, Horror, Sci-Fi",7.8,James Whale,"75,779",
+The Innocents,1961,100,Horror,7.8,Jack Clayton,"31,689",$2.62M
+The Bride of Frankenstein,1935,75,"Drama, Horror, Sci-Fi",7.8,James Whale,"50,611",$4.36M
+Evil Dead II,1987,84,"Comedy, Horror",7.7,Sam Raimi,"1,73,914",$5.92M
+Halloween,1978,91,"Horror, Thriller",7.7,John Carpenter,"2,89,224",$47.00M
+Invasion of the Body Snatchers,1956,80,"Drama, Horror, Sci-Fi",7.7,Don Siegel,"52,292",
+American Psycho,2000,102,"Crime, Drama, Horror",7.6,Mary Harron,"6,58,696",$15.07M
+Saw,2004,103,"Horror, Mystery, Thriller",7.6,James Wan,"4,36,144",$56.00M
+Train to Busan,2016,118,"Action, Horror, Thriller",7.6,Sang-ho Yeon,"2,35,577",$2.13M
+The Fly,1986,96,"Drama, Horror, Sci-Fi",7.6,David Cronenberg,"1,91,571",$40.46M
+Zombieland,2009,88,"Action, Comedy, Horror",7.6,Ruben Fleischer,"5,96,433",$75.59M
+The Birds,1963,119,"Drama, Horror, Mystery",7.6,Alfred Hitchcock,"1,96,469",$11.40M
+The Skin I Live In,2011,120,"Drama, Horror, Mystery",7.6,Pedro Almodóvar,"1,58,708",$3.19M
+The Others,2001,104,"Horror, Mystery, Thriller",7.6,Alejandro Amenábar,"3,77,287",$96.52M
+What We Do in the Shadows,2014,86,"Comedy, Horror",7.6,Jemaine Clement,"1,90,548",$3.33M
+Eyes Without a Face,1960,90,"Drama, Horror",7.6,Georges Franju,"33,321",$0.05M
+Vampire Hunter D: Bloodlust,2000,103,"Animation, Action, Drama",7.6,Jack Fletcher,"33,553",$0.15M
+Repulsion,1965,105,"Drama, Horror, Thriller",7.6,Roman Polanski,"55,043",
+One Cut of the Dead,2017,96,"Comedy, Drama, Horror",7.6,Shin'ichirô Ueda,"27,004",
+The Invisible Man,1933,71,"Horror, Sci-Fi",7.6,James Whale,"37,549",
+Peeping Tom,1960,101,"Drama, Horror, Thriller",7.6,Michael Powell,"37,256",$0.08M
+The Conjuring,2013,112,"Horror, Mystery, Thriller",7.5,James Wan,"5,26,164",$137.40M
+A Quiet Place,2018,90,"Drama, Horror, Sci-Fi",7.5,John Krasinski,"5,51,233",$188.02M
+28 Days Later,2002,113,"Drama, Horror, Sci-Fi",7.5,Danny Boyle,"4,25,705",$45.06M
+Interview with the Vampire: The Vampire Chronicles,1994,123,"Drama, Fantasy, Horror",7.5,Neil Jordan,"3,33,084",$105.26M
+The Crow,1994,102,"Action, Crime, Drama",7.5,Alex Proyas,"1,90,666",$50.69M
+An American Werewolf in London,1981,97,"Comedy, Horror",7.5,John Landis,"1,13,179",$30.57M
+Tucker and Dale vs Evil,2010,89,"Comedy, Horror",7.5,Eli Craig,"1,86,643",$0.22M
+The Wicker Man,1973,88,"Horror, Mystery, Thriller",7.5,Robin Hardy,"85,380",$0.06M
+The Omen,1976,111,"Horror, Mystery",7.5,Richard Donner,"1,24,612",$4.27M
+Grindhouse,2007,191,"Action, Horror, Thriller",7.5,Robert Rodriguez,"1,87,623",$25.04M
+Braindead,1992,104,"Comedy, Fantasy, Horror",7.5,Peter Jackson,"1,00,216",$0.24M
+Godzilla,1954,96,"Horror, Sci-Fi",7.5,Ishirô Honda,"35,705",$2.42M
+Deep Red,1975,127,"Horror, Mystery, Thriller",7.5,Dario Argento,"40,206",
+Stree,2018,128,"Comedy, Horror",7.5,Amar Kaushik,"36,079",
+The Evil Dead,1981,85,Horror,7.4,Sam Raimi,"2,22,282",$2.40M
+Scream,1996,111,"Horror, Mystery",7.4,Wes Craven,"3,65,136",$103.05M
+Bram Stoker's Dracula,1992,128,"Drama, Fantasy, Horror",7.4,Francis Ford Coppola,"2,26,027",$82.52M
+Army of Darkness,1992,81,"Comedy, Horror",7.4,Sam Raimi,"1,86,854",$11.50M
+The Rocky Horror Picture Show,1975,100,"Comedy, Horror, Musical",7.4,Jim Sharman,"1,58,254",$139.88M
+A Nightmare on Elm Street,1984,91,Horror,7.4,Wes Craven,"2,48,750",$25.50M
+The Texas Chain Saw Massacre,1974,83,Horror,7.4,Tobe Hooper,"1,70,855",$30.86M
+Carrie,1976,98,"Horror, Mystery",7.4,Brian De Palma,"1,95,170",$33.80M
+The Wailing,2016,156,"Drama, Horror, Mystery",7.4,Na Hong-jin,"73,981",
+Jacob's Ladder I,1990,113,"Drama, Horror, Mystery",7.4,Adrian Lyne,"1,13,045",$26.12M
+Invasion of the Body Snatchers,1978,115,"Horror, Sci-Fi",7.4,Philip Kaufman,"64,115",$24.95M
+REC,2007,78,"Horror, Mystery, Thriller",7.4,Jaume Balagueró,"1,87,741",
+The Orphanage,2007,105,"Drama, Horror, Mystery",7.4,J.A. Bayona,"1,59,601",$7.16M
+Nosferatu the Vampyre,1979,107,"Drama, Horror",7.4,Werner Herzog,"38,215",
+Dracula,1931,75,"Drama, Fantasy, Horror",7.4,Tod Browning,"55,288",
+The Devil's Backbone,2001,106,"Drama, Horror, Thriller",7.4,Guillermo del Toro,"68,728",$0.75M
+The Haunting,1963,112,Horror,7.4,Robert Wise,"40,711",$2.62M
+Thesis,1996,125,"Crime, Horror, Mystery",7.4,Alejandro Amenábar,"40,595",
+Bhool Bhulaiyaa,2007,159,"Comedy, Horror, Mystery",7.4,Priyadarshan,"30,282",$1.07M
+Hereditary,2018,127,"Drama, Horror, Mystery",7.3,Ari Aster,"3,43,335",$44.07M
+It I,2017,135,Horror,7.3,Andy Muschietti,"5,71,035",$327.48M
+Split IX,2016,117,"Horror, Thriller",7.3,M. Night Shyamalan,"5,19,308",$138.29M
+Doctor Sleep,2019,152,"Drama, Fantasy, Horror",7.3,Mike Flanagan,"2,02,482",$31.58M
+Dawn of the Dead,2004,101,"Action, Horror",7.3,Zack Snyder,"2,63,099",$59.02M
+Possession,1981,124,"Drama, Horror",7.3,Andrzej Zulawski,"36,874",$1.11M
+Poltergeist,1982,114,"Horror, Thriller",7.3,Tobe Hooper,"1,70,924",$76.61M
+Sweeney Todd: The Demon Barber of Fleet Street,2007,116,"Drama, Horror, Musical",7.3,Tim Burton,"3,76,557",$52.90M
+Gremlins,1984,106,"Comedy, Fantasy, Horror",7.3,Joe Dante,"2,34,614",$148.17M
+The Conjuring 2,2016,134,"Horror, Mystery, Thriller",7.3,James Wan,"2,82,543",$102.47M
+Sleepy Hollow,1999,105,"Fantasy, Horror, Mystery",7.3,Tim Burton,"3,70,303",$101.07M
+Take Shelter,2011,120,"Drama, Horror, Sci-Fi",7.3,Jeff Nichols,"1,03,846",$1.73M
+Eraserhead,1977,89,"Fantasy, Horror",7.3,David Lynch,"1,21,484",$7.00M
+Suspiria,1977,92,Horror,7.3,Dario Argento,"98,751",
+The Return of the Living Dead,1985,91,"Comedy, Horror, Sci-Fi",7.3,Dan O'Bannon,"64,592",$14.24M
+Twin Peaks: Fire Walk with Me,1992,134,"Drama, Horror, Mystery",7.3,David Lynch,"1,00,656",$4.16M
+House,1977,88,"Comedy, Horror",7.3,Nobuhiko Ôbayashi,"30,498",
+Pi,1998,84,"Drama, Horror, Mystery",7.3,Darren Aronofsky,"1,82,946",$3.22M
+The Hidden Face,2011,97,"Drama, Horror, Mystery",7.3,Andrés Baiz,"44,415",
+Bacurau,2019,131,"Action, Adventure, Drama",7.3,Juliano Dornelles,"29,082",
+The Menu,2022,107,"Comedy, Horror, Thriller",7.2,Mark Mylod,"3,23,131",
+From Dusk Till Dawn,1996,108,"Action, Crime, Horror",7.2,Robert Rodriguez,"3,26,069",$25.75M
+The Lost Boys,1987,97,"Comedy, Horror",7.2,Joel Schumacher,"1,50,478",$32.22M
+A Quiet Place Part II,2020,97,"Drama, Horror, Sci-Fi",7.2,John Krasinski,"2,48,967",$160.07M
+The Descent,2005,99,"Adventure, Horror, Thriller",7.2,Neil Marshall,"2,33,687",$26.02M
+They Live,1988,94,"Action, Horror, Sci-Fi",7.2,John Carpenter,"1,36,510",$13.01M
+I Am Legend,2007,101,"Action, Drama, Horror",7.2,Francis Lawrence,"7,81,259",$256.39M
+10 Cloverfield Lane,2016,103,"Drama, Horror, Mystery",7.2,Dan Trachtenberg,"3,40,537",$72.08M
+Dead Ringers,1988,116,"Drama, Horror, Thriller",7.2,David Cronenberg,"50,992",$9.13M
+Angel Heart,1987,113,"Horror, Mystery, Thriller",7.2,Alan Parker,"91,791",$17.19M
+An American Crime,2007,98,"Biography, Crime, Drama",7.2,Tommy O'Haver,"35,826",
+Videodrome,1983,87,"Horror, Sci-Fi, Thriller",7.2,David Cronenberg,"97,693",$2.12M
+Re-Animator,1985,84,"Comedy, Horror, Sci-Fi",7.2,Stuart Gordon,"68,040",$2.02M
+Only Lovers Left Alive,2013,123,"Comedy, Drama, Fantasy",7.2,Jim Jarmusch,"1,04,159",$1.88M
+The Changeling,1980,107,"Horror, Mystery",7.2,Peter Medak,"37,163",
+Ringu,1998,96,"Horror, Mystery",7.2,Hideo Nakata,"73,508",
+The Dead Zone,1983,103,"Drama, Horror, Sci-Fi",7.2,David Cronenberg,"73,727",$20.77M
+Sleep Tight,2011,102,"Crime, Drama, Horror",7.2,Jaume Balagueró,"44,718",
+Horror of Dracula,1958,82,"Drama, Horror",7.2,Terence Fisher,"26,472",
+The Wolf Man,1941,70,"Horror, Mystery, Romance",7.2,George Waggner,"28,724",
+Midsommar,2019,148,"Drama, Horror, Mystery",7.1,Ari Aster,"3,54,167",$27.33M
+The Ring,2002,115,"Horror, Mystery",7.1,Gore Verbinski,"3,60,824",$129.13M
+Prey I,2022,100,"Action, Adventure, Drama",7.1,Dan Trachtenberg,"2,07,940",
+The Mist,2007,126,"Horror, Sci-Fi, Thriller",7.1,Frank Darabont,"3,23,435",$25.59M
+Don't Breathe,2016,88,"Crime, Horror, Thriller",7.1,Fede Alvarez,"2,86,498",$89.22M
+Little Shop of Horrors,1986,94,"Comedy, Horror, Musical",7.1,Frank Oz,"80,770",$38.75M
+Blade,1998,120,"Action, Horror, Sci-Fi",7.1,Stephen Norrington,"2,85,069",$70.09M
+Bone Tomahawk,2015,132,"Drama, Horror, Western",7.1,S. Craig Zahler,"1,07,954",
+The Invisible Man I,2020,124,"Drama, Horror, Mystery",7.1,Leigh Whannell,"2,38,588",$70.41M
+Tremors,1990,96,"Comedy, Horror",7.1,Ron Underwood,"1,43,452",$16.67M
+Planet Terror,2007,105,"Action, Comedy, Horror",7.1,Robert Rodriguez,"2,17,087",
+The Call,2020,112,"Crime, Horror, Mystery",7.1,Chung-Hyun Lee,"37,886",
+Don't Look Now,1973,110,"Drama, Horror, Mystery",7.1,Nicolas Roeg,"58,877",$0.98M
+Let Me In I,2010,116,"Drama, Fantasy, Horror",7.1,Matt Reeves,"1,24,539",$12.13M
+Cube,1997,90,"Drama, Horror, Mystery",7.1,Vincenzo Natali,"2,39,015",$0.50M
+The Frighteners,1996,110,"Comedy, Fantasy, Horror",7.1,Peter Jackson,"91,980",$16.76M
+Audition,1999,115,"Drama, Horror, Mystery",7.1,Takashi Miike,"84,967",
+In the Mouth of Madness,1994,95,"Drama, Fantasy, Horror",7.1,John Carpenter,"74,185",$8.95M
+The Host,2006,120,"Drama, Horror, Sci-Fi",7.1,Bong Joon Ho,"1,27,160",$2.20M
+The Thing from Another World,1951,87,"Horror, Sci-Fi",7.1,Christian Nyby,"31,634",
+Day of the Dead,1985,101,"Horror, Thriller",7.1,George A. Romero,"71,624",$5.80M
+Timecrimes,2007,92,"Horror, Mystery, Sci-Fi",7.1,Nacho Vigalondo,"66,167",$0.04M
+Black Christmas,1974,98,"Horror, Mystery, Thriller",7.1,Bob Clark,"44,485",$4.05M
+A Tale of Two Sisters,2003,114,"Drama, Horror, Mystery",7.1,Jee-woon Kim,"65,125",
+Thirst,2009,134,"Drama, Fantasy, Horror",7.1,Park Chan-wook,"49,291",$0.30M
+The Fearless Vampire Killers,1967,91,"Comedy, Horror",7.1,Roman Polanski,"32,778",
+Pearl,2022,103,"Drama, Horror, Thriller",7,Ti West,"60,574",
+Barbarian,2022,102,"Horror, Mystery, Thriller",7,Zach Cregger,"1,50,220",
+Orphan,2009,123,"Horror, Mystery, Thriller",7,Jaume Collet-Serra,"2,40,096",$41.60M
+Last Night in Soho,2021,116,"Drama, Horror, Mystery",7,Edgar Wright,"1,51,594",
+The Platform,2019,94,"Horror, Sci-Fi, Thriller",7,Galder Gaztelu-Urrutia,"2,46,812",
+Cloverfield,2008,85,"Action, Adventure, Horror",7,Matt Reeves,"4,09,328",$80.05M
+The Cabin in the Woods,2011,95,"Horror, Mystery, Thriller",7,Drew Goddard,"4,31,746",$42.07M
+Martyrs,2008,99,Horror,7,Pascal Laugier,"1,00,077",
+The Killing of a Sacred Deer,2017,121,"Drama, Horror, Mystery",7,Yorgos Lanthimos,"1,64,977",$2.29M
+World War Z,2013,116,"Action, Adventure, Horror",7,Marc Forster,"6,88,746",$202.36M
+Constantine,2005,121,"Action, Fantasy, Horror",7,Francis Lawrence,"3,59,071",$75.98M
+Pitch Black,2000,109,"Action, Horror, Sci-Fi",7,David Twohy,"2,47,313",$39.24M
+Hotel Transylvania,2012,91,"Animation, Adventure, Comedy",7,Genndy Tartakovsky,"2,66,508",$148.31M
+Hellboy II: The Golden Army,2008,120,"Action, Adventure, Fantasy",7,Guillermo del Toro,"2,78,818",$75.75M
+Green Room,2015,95,"Crime, Drama, Horror",7,Jeremy Saulnier,"1,31,693",$3.22M
+Fright Night,1985,106,"Fantasy, Horror",7,Tom Holland,"74,547",$24.92M
+Raw,2016,99,"Drama, Horror",7,Julia Ducournau,"83,304",$0.51M
+Brotherhood of the Wolf,2001,142,"Action, Adventure, Drama",7,Christophe Gans,"68,793",$11.26M
+Shutter II,2004,97,"Horror, Mystery, Thriller",7,Banjong Pisanthanakun,"47,015",
+Thelma,2017,116,"Drama, Fantasy, Horror",7,Joachim Trier,"34,644",$0.15M
+Henry: Portrait of a Serial Killer,1986,83,"Biography, Crime, Drama",7,John McNaughton,"38,529",$0.61M
+Tenebrae,1982,101,"Drama, Horror, Mystery",7,Dario Argento,"25,691",
+Carnival of Souls,1962,78,"Horror, Mystery",7,Herk Harvey,"26,143",
+The Mummy,1932,73,"Fantasy, Horror",7,Karl Freund,"28,354",
+Doctor Strange in the Multiverse of Madness,2022,126,"Action, Adventure, Fantasy",6.9,Sam Raimi,"4,40,936",$411.33M
+The Black Phone,2021,103,"Horror, Thriller",6.9,Scott Derrickson,"1,68,369",$90.12M
+The VVitch: A New-England Folktale,2015,92,"Drama, Fantasy, Horror",6.9,Robert Eggers,"2,77,751",$25.14M
+Climax I,2018,97,"Drama, Horror, Music",6.9,Gaspar Noé,"73,695",$0.80M
+28 Weeks Later,2007,100,"Action, Adventure, Horror",6.9,Juan Carlos Fresnadillo,"2,84,000",$28.64M
+Hocus Pocus,1993,96,"Comedy, Family, Fantasy",6.9,Kenny Ortega,"1,45,947",$44.34M
+Hellraiser,1987,94,"Horror, Thriller",6.9,Clive Barker,"1,32,887",$14.56M
+Near Dark,1987,94,Horror,6.9,Kathryn Bigelow,"42,670",$3.37M
+Ravenous,1999,101,"Adventure, Drama, Horror",6.9,Antonia Bird,"41,616",$2.06M
+Altered States,1980,102,"Horror, Sci-Fi, Thriller",6.9,Ken Russell,"36,892",$19.85M
+Stir of Echoes,1999,99,"Horror, Mystery, Thriller",6.9,David Koepp,"84,251",$21.13M
+Bubba Ho-Tep,2002,92,"Comedy, Fantasy, Horror",6.9,Don Coscarelli,"50,182",$2.00M
+A Girl Walks Home Alone at Night,2014,101,"Drama, Horror, Romance",6.9,Ana Lily Amirpour,"37,115",
+The Monster Squad,1987,79,"Action, Comedy, Fantasy",6.9,Fred Dekker,"33,711",$3.77M
+Creature from the Black Lagoon,1954,79,"Horror, Sci-Fi",6.9,Jack Arnold,"32,344",$1.30M
+Troll Hunter,2010,103,"Drama, Fantasy, Horror",6.9,André Øvredal,"77,389",$0.25M
+Shadow of the Vampire,2000,92,"Drama, Horror",6.9,E. Elias Merhige,"43,072",$8.29M
+Frankenweenie,2012,87,"Animation, Comedy, Drama",6.9,Tim Burton,"1,12,066",$35.29M
+Bhoot Police,2021,129,"Comedy, Horror",6.9,Pavan Kirpalani,"26,993",
+Nope,2022,130,"Horror, Mystery, Sci-Fi",6.8,Jordan Peele,"2,32,097",$123.28M
+Bones and All,2022,131,"Drama, Horror, Romance",6.8,Luca Guadagnino,"43,064",
+Ready or Not I,2019,95,"Action, Comedy, Horror",6.8,Matt Bettinelli-Olpin,"1,64,600",$28.71M
+Insidious I,2010,103,"Horror, Mystery, Thriller",6.8,James Wan,"3,19,707",$54.01M
+It Follows,2014,100,"Horror, Mystery, Thriller",6.8,David Robert Mitchell,"2,53,503",$14.67M
+Annihilation I,2018,115,"Adventure, Drama, Horror",6.8,Alex Garland,"3,40,306",$32.73M
+Sinister,2012,110,"Horror, Mystery, Thriller",6.8,Scott Derrickson,"2,64,038",$48.09M
+Us II,2019,116,"Horror, Mystery, Thriller",6.8,Jordan Peele,"3,16,383",$175.08M
+The House That Jack Built,2018,152,"Crime, Drama, Horror",6.8,Lars von Trier,"83,053",$0.09M
+The Babadook,2014,94,"Horror, Mystery",6.8,Jennifer Kent,"2,34,393",$0.92M
+The Autopsy of Jane Doe,2016,86,"Horror, Mystery, Thriller",6.8,André Øvredal,"1,27,065",$0.01M
+Warm Bodies,2013,98,"Comedy, Horror, Romance",6.8,Jonathan Levine,"2,36,475",$66.38M
+Hellboy,2004,122,"Action, Adventure, Fantasy",6.8,Guillermo del Toro,"3,38,908",$59.62M
+Odd Thomas,2013,97,"Comedy, Fantasy, Horror",6.8,Stephen Sommers,"55,393",
+Exam,2009,101,"Crime, Horror, Mystery",6.8,Stuart Hazeldine,"1,20,312",
+1408,2007,104,"Fantasy, Horror, Mystery",6.8,Mikael Håfström,"2,82,365",$71.99M
+The Fog,1980,89,"Horror, Thriller",6.8,John Carpenter,"78,302",$21.38M
+Creepshow,1982,120,"Comedy, Fantasy, Horror",6.8,George A. Romero,"50,496",$21.03M
+Ginger Snaps,2000,108,"Drama, Fantasy, Horror",6.8,John Fawcett,"49,563",$0.00M
+The Witches,1990,91,"Adventure, Comedy, Family",6.8,Nicolas Roeg,"52,433",$10.36M
+eXistenZ,1999,97,"Horror, Mystery, Sci-Fi",6.8,David Cronenberg,"1,03,653",$2.84M
+Dog Soldiers,2002,105,"Action, Horror, Thriller",6.8,Neil Marshall,"62,964",
+Dead Calm,1989,96,"Horror, Thriller",6.8,Phillip Noyce,"42,222",$7.83M
+Shin Godzilla,2016,120,"Action, Drama, Horror",6.8,Hideaki Anno,"29,845",$1.92M
+Zombie,1979,91,Horror,6.8,Lucio Fulci,"29,370",
+The Brood,1979,92,"Horror, Sci-Fi",6.8,David Cronenberg,"32,397",
+Night of the Living Dead,1990,92,Horror,6.8,Tom Savini,"43,906",$5.84M
+House on Haunted Hill,1959,75,"Crime, Horror, Mystery",6.8,William Castle,"29,039",
+Stonehearst Asylum,2014,112,"Drama, Horror, Mystery",6.8,Brad Anderson,"58,532",
+Under the Shadow,2016,84,"Drama, Fantasy, Horror",6.8,Babak Anvari,"28,891",$0.03M
+Dead Snow 2: Red vs. Dead,2014,100,"Action, Comedy, Fantasy",6.8,Tommy Wirkola,"25,807",
+Evil Dead Rise,2023,96,Horror,6.7,Lee Cronin,"78,836",
+Suspiria I,2018,152,"Drama, Fantasy, Horror",6.7,Luca Guadagnino,"84,786",$2.47M
+Eden Lake,2008,91,"Horror, Thriller",6.7,James Watkins,"89,408",$0.01M
+Final Destination,2000,98,"Horror, Thriller",6.7,James Wong,"2,66,158",$53.33M
+Fresh,2022,114,"Horror, Thriller",6.7,Mimi Cave,"63,592",
+Zombieland: Double Tap,2019,99,"Action, Comedy, Horror",6.7,Ruben Fleischer,"1,89,496",$73.12M
+The Devil's Rejects,2005,107,"Crime, Horror, Western",6.7,Rob Zombie,"1,03,048",$17.04M
+Pandorum,2009,108,"Action, Horror, Mystery",6.7,Christian Alvart,"1,55,042",$10.33M
+Christine,1983,110,"Horror, Thriller",6.7,John Carpenter,"87,453",$21.20M
+Marrowbone,2017,110,"Adventure, Drama, Horror",6.7,Sergio G. Sánchez,"35,303",$0.00M
+The Gift,2000,111,"Drama, Fantasy, Horror",6.7,Sam Raimi,"72,059",$12.01M
+Blade II,2002,117,"Action, Horror, Sci-Fi",6.7,Guillermo del Toro,"2,25,970",$82.35M
+High Tension,2003,91,Horror,6.7,Alexandre Aja,"74,795",$3.68M
+Candyman,1992,99,"Horror, Thriller",6.7,Bernard Rose,"95,591",$25.79M
+Return to Oz,1985,113,"Adventure, Family, Fantasy",6.7,Walter Murch,"28,909",
+Saint Maud,2019,84,"Drama, Horror, Mystery",6.7,Rose Glass,"41,913",
+From Hell,2001,122,"Horror, Mystery, Thriller",6.7,Albert Hughes,"1,59,793",$31.60M
+Fear Street: Part Two - 1978,2021,109,"Drama, Horror, Mystery",6.7,Leigh Janiak,"69,358",
+Scanners,1981,103,"Horror, Sci-Fi, Thriller",6.7,David Cronenberg,"58,736",$14.23M
+The Exorcism of Emily Rose,2005,119,"Drama, Horror, Thriller",6.7,Scott Derrickson,"1,34,571",$75.07M
+Summer of 84,2018,105,"Drama, Horror, Mystery",6.7,François Simard,"43,321",$0.09M
+Inside,2007,82,Horror,6.7,Alexandre Bustillo,"42,811",
+Trick 'r Treat,2007,82,"Comedy, Horror",6.7,Michael Dougherty,"97,225",
+Phenomena,1985,116,"Crime, Horror, Mystery",6.7,Dario Argento,"28,456",
+Where the Wild Things Are,2009,101,"Adventure, Drama, Family",6.7,Spike Jonze,"1,06,812",$77.23M
+Goodnight Mommy,2014,99,"Horror, Mystery, Thriller",6.7,Severin Fiala,"57,113",$1.17M
+Spring I,2014,109,"Horror, Romance, Sci-Fi",6.7,Justin Benson,"29,941",$0.05M
+Tales from the Crypt: Demon Knight,1995,92,"Action, Fantasy, Horror",6.7,Ernest R. Dickerson,"25,144",$21.09M
+Ju-on: The Grudge,2002,92,Horror,6.7,Takashi Shimizu,"46,324",$0.33M
+Turbo Kid,2015,93,"Action, Adventure, Comedy",6.7,François Simard,"28,926",$0.05M
+Cronos,1992,94,"Drama, Fantasy, Horror",6.7,Guillermo del Toro,"31,873",$0.62M
+Housebound,2014,107,"Comedy, Horror, Mystery",6.7,Gerard Johnstone,"36,448",
+Dark Water,2002,101,"Drama, Horror, Mystery",6.7,Hideo Nakata,"33,695",
+Los ojos de Julia,2010,118,"Horror, Mystery, Thriller",6.7,Guillem Morales,"36,473",
+Fido,2006,93,"Comedy, Drama, Horror",6.7,Andrew Currie,"29,699",$0.30M
+X II,2022,105,"Horror, Mystery, Thriller",6.6,Ti West,"1,32,694",
+Scream VI,2023,122,"Horror, Mystery, Thriller",6.6,Matt Bettinelli-Olpin,"81,797",
+The Pale Blue Eye,2022,128,"Crime, Horror, Mystery",6.6,Scott Cooper,"1,07,713",
+Bird Box,2018,124,"Horror, Mystery, Sci-Fi",6.6,Susanne Bier,"3,60,116",
+Mother!,2017,121,"Drama, Horror, Mystery",6.6,Darren Aronofsky,"2,36,605",$17.80M
+Event Horizon,1997,96,"Horror, Sci-Fi, Thriller",6.6,Paul W.S. Anderson,"1,88,518",$26.67M
+Speak No Evil,2022,97,"Drama, Horror, Thriller",6.6,Christian Tafdrup,"27,616",
+Life I,2017,104,"Horror, Sci-Fi, Thriller",6.6,Daniel Espinosa,"2,40,377",$30.23M
+Resident Evil,2002,100,"Action, Horror, Sci-Fi",6.6,Paul W.S. Anderson,"2,79,094",$40.12M
+You're Next,2011,95,"Horror, Thriller",6.6,Adam Wingard,"1,04,174",$18.47M
+The Faculty,1998,104,"Horror, Mystery, Sci-Fi",6.6,Robert Rodriguez,"1,28,887",$40.06M
+Glass,2019,129,"Drama, Horror, Sci-Fi",6.6,M. Night Shyamalan,"2,54,065",$111.05M
+Drag Me to Hell,2009,99,Horror,6.6,Sam Raimi,"2,10,357",$42.10M
+30 Days of Night,2007,113,"Action, Adventure, Horror",6.6,David Slade,"1,82,693",$39.57M
+What Lies Beneath,2000,130,"Drama, Horror, Mystery",6.6,Robert Zemeckis,"1,30,856",$155.46M
+Death Becomes Her,1992,104,"Comedy, Fantasy, Horror",6.6,Robert Zemeckis,"1,24,437",$58.42M
+Child's Play,1988,87,"Horror, Thriller",6.6,Tom Holland,"1,08,877",$33.24M
+The Invitation I,2015,100,"Drama, Horror, Mystery",6.6,Karyn Kusama,"1,14,221",$0.23M
+Happy Death Day,2017,96,"Comedy, Horror, Mystery",6.6,Christopher Landon,"1,51,732",$55.68M
+Overlord,2018,110,"Action, Horror, Sci-Fi",6.6,Julius Avery,"1,02,874",$21.70M
+Hush I,2016,82,"Horror, Thriller",6.6,Mike Flanagan,"1,44,505",
+Prince of Darkness,1987,102,Horror,6.6,John Carpenter,"47,009",$14.18M
+Saw II,2005,93,"Horror, Mystery",6.6,Darren Lynn Bousman,"2,60,764",$87.04M
+From Beyond,1986,85,"Horror, Sci-Fi",6.6,Stuart Gordon,"28,213",$1.26M
+A Nightmare on Elm Street 3: Dream Warriors,1987,96,"Fantasy, Horror",6.6,Chuck Russell,"85,536",$44.79M
+Hotel Transylvania 2,2015,89,"Animation, Adventure, Comedy",6.6,Genndy Tartakovsky,"1,34,482",$169.70M
+The Hunger,1983,97,"Drama, Horror",6.6,Tony Scott,"27,761",$5.98M
+The Blob,1988,95,"Horror, Sci-Fi, Thriller",6.6,Chuck Russell,"40,349",$8.25M
+The Loved Ones,2009,84,"Crime, Horror",6.6,Sean Byrne,"42,492",
+Psycho II,1983,113,"Crime, Horror, Mystery",6.6,Richard Franklin,"28,989",$34.73M
+May,2002,93,"Comedy, Drama, Horror",6.6,Lucky McKee,"38,779",$0.15M
+Phantasm,1979,89,"Horror, Sci-Fi",6.6,Don Coscarelli,"39,050",$11.99M
+Rare Exports,2010,84,"Adventure, Fantasy, Horror",6.6,Jalmari Helander,"30,491",$0.26M
+The Girl with All the Gifts,2016,111,"Action, Adventure, Drama",6.6,Colm McCarthy,"62,316",
+Fear Street: Part Three - 1666,2021,114,"Horror, Mystery",6.6,Leigh Janiak,"57,741",
+Demons,1985,88,Horror,6.6,Lamberto Bava,"25,101",
+The Eye,2002,99,"Fantasy, Horror, Mystery",6.6,Danny Pang,"29,645",$0.51M
+Smile V,2022,115,"Horror, Mystery, Thriller",6.5,Parker Finn,"1,30,696",
+Evil Dead,2013,91,Horror,6.5,Fede Alvarez,"1,87,737",$54.24M
+It Chapter Two,2019,169,"Drama, Fantasy, Horror",6.5,Andy Muschietti,"2,81,137",$211.59M
+Gerald's Game,2017,103,"Drama, Horror, Thriller",6.5,Mike Flanagan,"1,17,039",
+The Hunt II,2020,90,"Action, Horror, Thriller",6.5,Craig Zobel,"1,20,400",$5.81M
+Silent Hill,2006,125,"Horror, Mystery",6.5,Christophe Gans,"2,36,727",$46.98M
+Antichrist,2009,108,"Drama, Horror, Thriller",6.5,Lars von Trier,"1,31,305",$0.40M
+Insidious: Chapter 2,2013,106,"Horror, Mystery, Thriller",6.5,James Wan,"1,77,423",$83.59M
+The Last House on the Left,2009,110,"Horror, Thriller",6.5,Dennis Iliadis,"96,680",$32.75M
+The Night House,2020,107,"Horror, Mystery, Thriller",6.5,David Bruckner,"60,235",
+Host II,2020,57,"Horror, Mystery",6.5,Rob Savage,"34,122",
+Mandy I,2018,121,"Action, Fantasy, Horror",6.5,Panos Cosmatos,"83,932",$1.21M
+The Girl Next Door,2007,91,"Crime, Drama, Horror",6.5,Gregory Wilson,"27,817",
+Titane,2021,108,"Drama, Horror, Sci-Fi",6.5,Julia Ducournau,"50,494",
+Slither,2006,95,"Comedy, Horror, Sci-Fi",6.5,James Gunn,"85,847",$7.77M
+The Blair Witch Project,1999,81,"Horror, Mystery",6.5,Daniel Myrick,"2,71,349",$140.54M
+The Endless I,2017,111,"Drama, Fantasy, Horror",6.5,Justin Benson,"46,030",$0.27M
+Oculus,2013,104,"Horror, Mystery, Thriller",6.5,Mike Flanagan,"1,33,932",$27.70M
+The Howling,1981,91,Horror,6.5,Joe Dante,"38,157",$17.99M
+Annabelle: Creation,2017,109,"Horror, Mystery, Thriller",6.5,David F. Sandberg,"1,41,513",$102.09M
+Possessor,2020,103,"Horror, Mystery, Sci-Fi",6.5,Brandon Cronenberg,"41,017",
+Crimson Peak,2015,119,"Drama, Horror, Mystery",6.5,Guillermo del Toro,"1,53,040",$31.09M
+Halloween I,2018,106,"Crime, Horror, Thriller",6.5,David Gordon Green,"1,60,731",$159.34M
+Pet Sematary,1989,103,"Fantasy, Horror, Thriller",6.5,Mary Lambert,"1,09,162",$57.47M
+The Final Girls,2015,91,"Comedy, Fantasy, Horror",6.5,Todd Strauss-Schulson,"48,852",
+Arachnophobia,1990,109,"Comedy, Horror, Thriller",6.5,Frank Marshall,"72,630",$53.21M
+The Crazies,2010,101,"Horror, Thriller",6.5,Breck Eisner,"1,25,273",$39.12M
+His House,2020,93,"Drama, Horror, Thriller",6.5,Remi Weekes,"45,081",
+The Skeleton Key,2005,104,"Drama, Horror, Mystery",6.5,Iain Softley,"1,18,968",$47.81M
+Better Watch Out II,2016,89,"Comedy, Horror, Thriller",6.5,Chris Peckover,"42,119",$0.02M
+The Exorcist III,1990,110,"Drama, Horror, Mystery",6.5,William Peter Blatty,"34,521",$26.10M
+The Witches of Eastwick,1987,118,"Comedy, Fantasy, Horror",6.5,George Miller,"73,547",$63.77M
+Halloween II,1981,92,Horror,6.5,Rick Rosenthal,"96,004",$25.53M
+Flatliners,1990,115,"Drama, Horror, Sci-Fi",6.5,Joel Schumacher,"90,146",$61.49M
+Dead End I,2003,85,"Adventure, Horror, Mystery",6.5,Jean-Baptiste Andrea,"30,416",
+Byzantium,2012,118,"Drama, Fantasy, Horror",6.5,Neil Jordan,"44,832",$0.08M
+Time Lapse,2014,104,"Horror, Mystery, Sci-Fi",6.5,Bradley King,"47,416",
+Bad Taste,1987,91,"Comedy, Horror, Sci-Fi",6.5,Peter Jackson,"48,108",
+Pontypool,2008,93,"Horror, Sci-Fi",6.5,Bruce McDonald,"33,734",
+[Rec]²,2009,85,"Horror, Thriller",6.5,Jaume Balagueró,"75,857",$0.03M
+Sightseers,2012,88,"Adventure, Comedy, Crime",6.5,Ben Wheatley,"29,544",$0.04M
+Renfield,2023,93,"Comedy, Fantasy, Horror",6.4,Chris McKay,"47,540",
+M3GAN,2022,102,"Horror, Sci-Fi, Thriller",6.4,Gerard Johnstone,"1,06,598",$93.88M
+Alien: Covenant,2017,122,"Horror, Sci-Fi, Thriller",6.4,Ridley Scott,"2,90,465",$74.26M
+Escape Room I,2019,99,"Action, Adventure, Horror",6.4,Adam Robitel,"1,31,872",$57.01M
+Friday the 13th,1980,95,"Horror, Mystery, Thriller",6.4,Sean S. Cunningham,"1,46,665",$39.75M
+The Craft,1996,101,"Drama, Fantasy, Horror",6.4,Andrew Fleming,"99,986",$24.88M
+The Hills Have Eyes,2006,107,"Horror, Thriller",6.4,Alexandre Aja,"1,77,032",$41.78M
+Alien³,1992,114,"Action, Horror, Sci-Fi",6.4,David Fincher,"3,08,197",$55.47M
+A Cure for Wellness,2016,146,"Drama, Fantasy, Horror",6.4,Gore Verbinski,"1,04,306",$8.11M
+The Cell,2000,107,"Crime, Horror, Sci-Fi",6.4,Tarsem Singh,"1,05,734",$61.33M
+Revenge II,2017,108,"Action, Drama, Horror",6.4,Coralie Fargeat,"45,825",$0.10M
+Fright Night,2011,106,"Comedy, Horror",6.4,Craig Gillespie,"1,09,829",$18.30M
+Twilight Zone: The Movie,1983,101,"Horror, Sci-Fi",6.4,Joe Dante,"39,519",$29.50M
+Incident in a Ghostland,2018,91,"Drama, Horror, Mystery",6.4,Pascal Laugier,"35,958",
+The Purge: Anarchy,2014,103,"Action, Horror, Sci-Fi",6.4,James DeMonaco,"1,56,986",$71.96M
+Gremlins 2: The New Batch,1990,106,"Comedy, Fantasy, Horror",6.4,Joe Dante,"1,08,188",$41.48M
+Black Death,2010,102,"Action, Drama, History",6.4,Christopher Smith,"49,744",$0.02M
+The People Under the Stairs,1991,102,"Comedy, Horror, Mystery",6.4,Wes Craven,"37,305",$24.20M
+Horns,2013,120,"Comedy, Crime, Drama",6.4,Alexandre Aja,"85,762",$0.16M
+The Serpent and the Rainbow,1988,98,"Fantasy, Horror",6.4,Wes Craven,"26,707",$19.60M
+Tale of Tales,2015,134,"Drama, Fantasy, Horror",6.4,Matteo Garrone,"29,867",$0.08M
+Daybreakers,2009,98,"Action, Horror, Sci-Fi",6.4,Michael Spierig,"1,31,778",$30.10M
+The Woman in Black,2012,95,"Drama, Fantasy, Horror",6.4,James Watkins,"1,87,998",$54.33M
+Silver Bullet,1985,95,Horror,6.4,Daniel Attias,"29,605",$5.40M
+Sputnik,2020,113,"Drama, Horror, Mystery",6.4,Egor Abramenko,"25,687",
+Kill List,2011,95,"Action, Crime, Horror",6.4,Ben Wheatley,"42,875",$0.03M
+New Nightmare,1994,112,"Fantasy, Horror, Mystery",6.4,Wes Craven,"61,174",$18.09M
+Repo! The Genetic Opera,2008,98,"Horror, Musical, Sci-Fi",6.4,Darren Lynn Bousman,"25,810",$0.14M
+The Mothman Prophecies,2002,119,"Drama, Horror, Mystery",6.4,Mark Pellington,"82,494",$35.75M
+Session 9,2001,97,"Drama, Horror, Mystery",6.4,Brad Anderson,"60,761",$0.38M
+Unsane,2018,98,"Drama, Horror, Mystery",6.4,Steven Soderbergh,"48,245",$7.73M
+Creep 2,2017,78,"Crime, Drama, Horror",6.4,Patrick Brice,"29,300",
+Hellbound: Hellraiser II,1988,97,"Horror, Thriller",6.4,Tony Randel,"53,253",$11.09M
+The Awakening I,2011,102,"Drama, Horror, Mystery",6.4,Nick Murphy,"67,806",
+Ghost Stories I,2017,98,"Drama, Horror",6.4,Jeremy Dyson,"35,682",$0.14M
+The Prophecy,1995,98,"Action, Crime, Drama",6.4,Gregory Widen,"32,198",$16.12M
+Severance,2006,96,"Comedy, Horror",6.4,Christopher Smith,"39,807",$0.14M
+Them,2006,77,"Horror, Thriller",6.4,David Moreau,"31,377",
+Stake Land,2010,98,"Drama, Horror, Sci-Fi",6.4,Jim Mickle,"43,421",$0.02M
+Night Watch,2004,114,"Action, Fantasy, Horror",6.4,Timur Bekmambetov,"54,703",$1.49M
+Resident Evil: Degeneration,2008,98,"Animation, Action, Horror",6.4,Makoto Kamiya,"32,199",
+Day Watch,2006,132,"Action, Fantasy, Horror",6.4,Timur Bekmambetov,"34,927",$0.45M
+Scream I,2022,114,"Horror, Mystery, Thriller",6.3,Matt Bettinelli-Olpin,"1,38,199",$81.64M
+Under the Skin I,2013,108,"Drama, Horror, Mystery",6.3,Jonathan Glazer,"1,49,804",$2.61M
+Watcher I,2022,96,"Drama, Horror, Thriller",6.3,Chloe Okuno,"32,756",
+Scream 2,1997,120,"Horror, Mystery",6.3,Wes Craven,"1,97,955",$101.36M
+The Babysitter I,2017,85,"Comedy, Horror",6.3,McG,"1,00,574",
+The Ritual I,2017,94,"Horror, Mystery, Thriller",6.3,David Bruckner,"1,08,985",
+Lights Out II,2016,81,"Horror, Mystery",6.3,David F. Sandberg,"1,35,897",$67.27M
+The Conjuring: The Devil Made Me Do It,2021,112,"Horror, Mystery, Thriller",6.3,Michael Chaves,"1,25,072",$65.63M
+Scouts Guide to the Zombie Apocalypse,2015,93,"Action, Comedy, Horror",6.3,Christopher Landon,"52,616",$3.64M
+Freaky,2020,102,"Comedy, Horror, Thriller",6.3,Christopher Landon,"65,509",
+Lamb,2021,106,"Drama, Fantasy, Horror",6.3,Valdimar Jóhannsson,"32,600",
+The Shallows,2016,86,"Action, Drama, Horror",6.3,Jaume Collet-Serra,"1,38,096",$55.12M
+Paranormal Activity,2007,86,"Horror, Mystery",6.3,Oren Peli,"2,47,532",$107.92M
+Creep I,2014,77,"Horror, Thriller",6.3,Patrick Brice,"60,918",
+Devil,2010,80,"Horror, Mystery, Thriller",6.3,John Erick Dowdle,"1,51,728",$33.58M
+Goosebumps,2015,103,"Adventure, Comedy, Fantasy",6.3,Rob Letterman,"91,906",$80.08M
+Cargo I,2017,105,"Drama, Horror, Sci-Fi",6.3,Ben Howling,"45,890",
+Predator 2,1990,108,"Action, Horror, Sci-Fi",6.3,Stephen Hopkins,"1,74,998",$30.67M
+The Collector I,2009,90,"Action, Horror, Thriller",6.3,Marcus Dunstan,"68,646",$7.71M
+Haunt I,2019,92,"Horror, Thriller",6.3,Scott Beck,"32,410",
+Hotel Transylvania 3: Summer Vacation,2018,97,"Animation, Adventure, Comedy",6.3,Genndy Tartakovsky,"79,162",$167.51M
+#Alive,2020,98,"Action, Drama, Horror",6.3,Il Cho,"43,683",
+Apostle,2018,130,"Drama, Fantasy, Horror",6.3,Gareth Evans,"55,806",
+The Hills Have Eyes,1977,90,"Horror, Thriller",6.3,Wes Craven,"37,196",$25.00M
+Lake Mungo,2008,87,"Drama, Horror, Mystery",6.3,Joel Anderson,"25,556",
+Dark Skies,2013,97,"Horror, Sci-Fi, Thriller",6.3,Scott Stewart,"77,749",$17.41M
+The House of the Devil,2009,95,"Horror, Mystery",6.3,Ti West,"49,019",$0.10M
+Frankenstein,1994,123,"Drama, Horror, Romance",6.3,Kenneth Branagh,"57,239",$22.01M
+The Voices,2014,103,"Comedy, Crime, Horror",6.3,Marjane Satrapi,"59,828",
+Berlin Syndrome,2017,116,"Drama, Horror, Mystery",6.3,Cate Shortland,"26,480",$0.03M
+The Uninvited,2009,87,"Drama, Fantasy, Horror",6.3,Charles Guard,"82,545",$28.57M
+Cat's Eye,1985,94,"Comedy, Horror, Thriller",6.3,Lewis Teague,"26,850",$13.09M
+Underworld: Awakening,2012,88,"Action, Fantasy, Horror",6.3,Måns Mårlind,"1,57,941",$62.32M
+The Vanishing,1993,109,"Drama, Horror, Mystery",6.3,George Sluizer,"26,987",$14.54M
+Mindhunters,2004,106,"Crime, Horror, Thriller",6.3,Renny Harlin,"62,706",$4.48M
+The Bar,2017,102,"Horror, Thriller",6.3,Álex de la Iglesia,"28,011",
+The Blob,1958,86,"Horror, Sci-Fi",6.3,Irvin S. Yeaworth Jr.,"27,852",
+Screamers,1995,108,"Horror, Sci-Fi, Thriller",6.3,Christian Duguay,"28,447",$5.78M
+Dead Snow,2009,91,"Comedy, Fantasy, Horror",6.3,Tommy Wirkola,"68,631",$0.04M
+13 Sins,2014,93,"Horror, Thriller",6.3,Daniel Stamm,"37,811",$0.01M
+Tideland,2005,120,"Drama, Fantasy, Horror",6.3,Terry Gilliam,"34,068",$0.07M
+John Dies at the End,2012,99,"Comedy, Fantasy, Horror",6.3,Don Coscarelli,"39,473",$0.14M
+Bodies Bodies Bodies,2022,94,"Comedy, Horror, Thriller",6.2,Halina Reijn,"51,654",
+Scream 4,2011,111,"Comedy, Horror, Mystery",6.2,Wes Craven,"1,62,144",$38.18M
+Malignant I,2021,111,"Crime, Horror, Mystery",6.2,James Wan,"98,740",
+The Empty Man,2020,137,"Drama, Horror, Mystery",6.2,David Prior,"33,524",
+I Spit on Your Grave,2010,108,"Horror, Thriller",6.2,Steven R. Monroe,"88,102",$0.09M
+The Visit I,2015,94,"Horror, Mystery, Thriller",6.2,M. Night Shyamalan,"1,42,097",$65.21M
+Jeepers Creepers,2001,90,"Horror, Mystery",6.2,Victor Salva,"1,35,446",$37.90M
+The Thing I,2011,103,"Horror, Mystery, Sci-Fi",6.2,Matthijs van Heijningen Jr.,"1,39,897",$16.93M
+Mama I,2013,100,"Fantasy, Horror, Thriller",6.2,Andy Muschietti,"1,86,159",$71.63M
+"As Above, So Below",2014,93,"Horror, Mystery, Thriller",6.2,John Erick Dowdle,"1,01,124",$21.20M
+Synchronic,2019,102,"Drama, Horror, Mystery",6.2,Justin Benson,"35,972",
+Wolf Creek,2005,99,"Horror, Thriller",6.2,Greg McLean,"75,604",$16.19M
+Dark Shadows,2012,113,"Comedy, Fantasy, Horror",6.2,Tim Burton,"2,73,371",$79.73M
+Alien: Resurrection,1997,109,"Action, Horror, Sci-Fi",6.2,Jean-Pierre Jeunet,"2,54,632",$47.75M
+Sleepaway Camp,1983,84,Horror,6.2,Robert Hiltzik,"35,167",$11.00M
+1922,2017,102,"Crime, Drama, Horror",6.2,Zak Hilditch,"67,579",
+Dracula Untold,2014,92,"Action, Drama, Fantasy",6.2,Gary Shore,"2,01,494",$56.28M
+Final Destination 2,2003,90,"Horror, Thriller",6.2,David R. Ellis,"1,74,051",$46.96M
+The Texas Chainsaw Massacre,2003,98,"Crime, Horror",6.2,Marcus Nispel,"1,47,172",$80.57M
+Fear Street: Part One - 1994,2021,107,"Drama, Horror, Mystery",6.2,Leigh Janiak,"86,732",
+Scary Stories to Tell in the Dark,2019,108,"Adventure, Horror, Mystery",6.2,André Øvredal,"80,434",$68.95M
+Color Out of Space,2019,111,"Horror, Mystery, Sci-Fi",6.2,Richard Stanley,"52,020",
+Deliver Us from Evil I,2014,118,"Action, Adventure, Crime",6.2,Scott Derrickson,"81,017",$30.58M
+It Comes at Night,2017,91,"Drama, Horror, Mystery",6.2,Trey Edward Shults,"98,054",$13.99M
+Verónica I,2017,105,Horror,6.2,Paco Plaza,"44,074",
+Case 39,2009,109,"Horror, Mystery, Thriller",6.2,Christian Alvart,"90,324",$13.25M
+Ouija: Origin of Evil,2016,99,"Drama, Horror, Mystery",6.2,Mike Flanagan,"68,575",$35.14M
+The Toxic Avenger,1984,82,"Action, Comedy, Horror",6.2,Michael Herz,"30,117",
+Killer Klowns from Outer Space,1988,88,"Comedy, Horror, Sci-Fi",6.2,Stephen Chiodo,"41,538",$15.63M
+Feast,2005,95,"Action, Comedy, Horror",6.2,John Gulager,"32,911",$0.05M
+Rogue,2007,99,"Action, Drama, Horror",6.2,Greg McLean,"32,128",$0.01M
+Resident Evil: Extinction,2007,94,"Action, Horror, Sci-Fi",6.2,Russell Mulcahy,"2,00,494",$50.65M
+Idle Hands,1999,92,"Comedy, Fantasy, Horror",6.2,Rodman Flender,"45,083",$4.00M
+The Perfection,2018,90,"Drama, Horror, Music",6.2,Richard Shepard,"46,777",
+Saw III,2006,108,"Horror, Mystery, Thriller",6.2,Darren Lynn Bousman,"1,99,970",$80.24M
+American Mary,2012,103,"Drama, Horror",6.2,Jen Soska,"26,866",
+Before I Wake,2016,97,"Drama, Fantasy, Horror",6.2,Mike Flanagan,"49,193",
+Vacancy,2007,85,"Horror, Thriller",6.2,Nimród Antal,"1,04,096",$19.36M
+Wolf,1994,125,"Drama, Horror, Romance",6.2,Mike Nichols,"58,267",$65.01M
+Land of the Dead,2005,93,"Horror, Sci-Fi, Thriller",6.2,George A. Romero,"98,740",$20.70M
+Frontier(s),2007,108,Horror,6.2,Xavier Gens,"27,825",
+Stigmata,1999,103,"Horror, Mystery",6.2,Rupert Wainwright,"70,383",$50.05M
+Happy Death Day 2U,2019,100,"Comedy, Horror, Mystery",6.2,Christopher Landon,"79,669",$28.15M
+Damien: Omen II,1978,107,Horror,6.2,Don Taylor,"33,729",$3.88M
+Pumpkinhead,1988,86,"Fantasy, Horror",6.2,Stan Winston,"25,833",$4.39M
+Krampus I,2015,98,"Comedy, Drama, Fantasy",6.2,Michael Dougherty,"79,013",$42.59M
+Needful Things,1993,120,"Crime, Drama, Fantasy",6.2,Fraser C. Heston,"26,291",$15.19M
+Open Grave,2013,102,"Horror, Mystery, Sci-Fi",6.2,Gonzalo López-Gallego,"30,633",
+The Pope's Exorcist,2023,103,"Horror, Thriller",6.1,Julius Avery,"39,847",
+Knock at the Cabin,2023,100,"Horror, Mystery, Thriller",6.1,M. Night Shyamalan,"79,345",
+Terrifier 2,2022,138,Horror,6.1,Damien Leone,"36,262",
+Infinity Pool,2023,117,"Crime, Horror, Mystery",6.1,Brandon Cronenberg,"31,699",
+Men,2022,100,"Drama, Fantasy, Horror",6.1,Alex Garland,"51,808",
+We Have a Ghost,2023,126,"Adventure, Comedy, Family",6.1,Christopher Landon,"26,782",
+Wrong Turn I,2003,84,"Horror, Thriller",6.1,Rob Schmidt,"1,25,830",$15.42M
+Lifeforce,1985,101,"Action, Horror, Mystery",6.1,Tobe Hooper,"27,500",$11.60M
+The Neon Demon,2016,117,"Horror, Thriller",6.1,Nicolas Winding Refn,"99,889",$1.33M
+Brightburn,2019,90,"Drama, Horror, Mystery",6.1,David Yarovesky,"1,02,749",$17.30M
+The Strangers,2008,86,"Horror, Mystery, Thriller",6.1,Bryan Bertino,"1,36,286",$52.60M
+Day Shift,2022,113,"Action, Comedy, Fantasy",6.1,J.J. Perry,"83,554",
+Insidious: Chapter 3,2015,97,"Horror, Mystery, Thriller",6.1,Leigh Whannell,"1,09,420",$52.22M
+Friday the 13th Part 2,1981,87,"Horror, Mystery, Thriller",6.1,Steve Miner,"72,452",$21.72M
+Crawl I,2019,87,"Action, Adventure, Horror",6.1,Alexandre Aja,"88,669",$39.01M
+Hansel & Gretel: Witch Hunters,2013,88,"Action, Fantasy, Horror",6.1,Tommy Wirkola,"2,11,488",$55.70M
+Blood Red Sky,2021,121,"Action, Adventure, Drama",6.1,Peter Thorwarth,"51,766",
+Resident Evil: Apocalypse,2004,94,"Action, Horror, Sci-Fi",6.1,Alexander Witt,"2,04,741",$51.20M
+Maniac,2012,89,"Horror, Thriller",6.1,Franck Khalfoun,"39,045",$0.02M
+The Oxford Murders,2008,108,"Crime, Horror, Mystery",6.1,Álex de la Iglesia,"29,932",$0.00M
+The Belko Experiment,2016,89,"Horror, Thriller",6.1,Greg McLean,"54,266",$10.16M
+Dead Silence,2007,89,"Horror, Mystery, Thriller",6.1,James Wan,"98,073",$16.81M
+Mirrors I,2008,110,"Horror, Mystery",6.1,Alexandre Aja,"1,10,546",$30.69M
+The Amityville Horror,1979,117,Horror,6.1,Stuart Rosenberg,"41,808",$86.43M
+Critters,1986,86,"Comedy, Horror, Sci-Fi",6.1,Stephen Herek,"37,388",$13.17M
+Deep Rising,1998,106,"Action, Adventure, Horror",6.1,Stephen Sommers,"39,064",$11.20M
+Grave Encounters,2011,92,"Horror, Mystery",6.1,Colin Minihan,"60,845",
+Vampires,1998,108,"Action, Horror, Thriller",6.1,John Carpenter,"61,502",$20.24M
+House,1985,93,"Comedy, Fantasy, Horror",6.1,Steve Miner,"28,520",$19.44M
+Cujo,1983,93,"Horror, Thriller",6.1,Lewis Teague,"48,166",$21.20M
+The Collection II,2012,82,"Action, Adventure, Horror",6.1,Marcus Dunstan,"51,960",$12.84M
+Red State,2011,88,"Action, Crime, Horror",6.1,Kevin Smith,"65,843",$1.10M
+Splinter I,2008,82,"Crime, Horror, Sci-Fi",6.1,Toby Wilkins,"39,450",
+Bug,2006,102,"Drama, Horror, Thriller",6.1,William Friedkin,"36,331",$7.01M
+Solomon Kane,2009,104,"Action, Adventure, Fantasy",6.1,M.J. Bassett,"74,932",
+Hobo with a Shotgun,2011,86,"Action, Comedy, Horror",6.1,Jason Eisener,"47,548",$0.70M
+Hellraiser,2022,121,"Horror, Mystery, Thriller",6,David Bruckner,"42,407",
+Don't Breathe 2,2021,98,"Action, Crime, Horror",6,Rodo Sayagues,"63,822",$32.64M
+The Woman I,2011,101,"Drama, Horror, Thriller",6,Lucky McKee,"25,113",
+Mr. Harrigan's Phone,2022,104,"Drama, Horror, Mystery",6,John Lee Hancock,"34,530",
+The Lodge,2019,108,"Drama, Horror, Mystery",6,Severin Fiala,"51,924",
+Hotel Transylvania: Transformania,2022,87,"Animation, Adventure, Comedy",6,Derek Drymon,"34,432",
+6 Souls,2010,112,"Horror, Thriller",6,Måns Mårlind,"35,364",
+House of 1000 Corpses,2003,89,Horror,6,Rob Zombie,"89,420",$12.63M
+Halloween,2007,109,Horror,6,Rob Zombie,"1,25,977",$58.27M
+The Taking of Deborah Logan,2014,90,"Horror, Mystery, Thriller",6,Adam Robitel,"35,691",
+The Boy,2016,97,"Horror, Mystery, Thriller",6,William Brent Bell,"97,224",$35.82M
+Friday the 13th: The Final Chapter,1984,91,"Horror, Thriller",6,Joseph Zito,"55,244",$32.98M
+The Midnight Meat Train,2008,100,"Horror, Mystery, Thriller",6,Ryûhei Kitamura,"67,602",$0.08M
+The Purge: Election Year,2016,108,"Action, Horror, Sci-Fi",6,James DeMonaco,"1,05,370",$79.21M
+Circle II,2015,87,"Drama, Horror, Mystery",6,Aaron Hann,"61,323",
+Unfriended: Dark Web,2018,92,"Horror, Mystery, Thriller",6,Stephen Susco,"35,242",$8.78M
+Mimic,1997,105,"Horror, Sci-Fi",6,Guillermo del Toro,"53,560",$25.48M
+Friday the 13th Part VI: Jason Lives,1986,86,"Horror, Thriller",6,Tom McLoughlin,"47,804",$19.47M
+Captive State,2019,109,"Action, Horror, Sci-Fi",6,Rupert Wyatt,"55,880",$5.96M
+Saw VI,2009,90,"Horror, Mystery, Thriller",6,Kevin Greutert,"1,16,425",$27.69M
+Creepshow 2,1987,92,"Fantasy, Horror",6,Michael Gornick,"27,039",$14.00M
+The Rite,2011,114,"Drama, Horror, Mystery",6,Mikael Håfström,"1,00,541",$33.05M
+Firestarter,1984,114,"Action, Horror, Sci-Fi",6,Mark L. Lester,"35,640",$15.10M
+V/H/S/2,2013,96,"Horror, Sci-Fi",6,Simon Barrett,"41,967",$0.02M
+Relic,2020,89,"Drama, Horror, Mystery",6,Natalie Erika James,"28,230",
+Crimes of the Future,2022,107,"Drama, Horror, Sci-Fi",5.9,David Cronenberg,"35,488",
+Orphan: First Kill,2022,99,"Crime, Drama, Horror",5.9,William Brent Bell,"40,062",
+Hostel,2005,94,Horror,5.9,Eli Roth,"1,85,172",$47.33M
+Underwater,2020,95,"Action, Horror, Sci-Fi",5.9,William Eubank,"88,253",$17.29M
+Vivarium,2019,97,"Horror, Mystery, Sci-Fi",5.9,Lorcan Finnegan,"64,794",
+Abraham Lincoln: Vampire Hunter,2012,105,"Action, Fantasy, Horror",5.9,Timur Bekmambetov,"1,58,657",$37.52M
+Candyman,2021,91,"Horror, Thriller",5.9,Nia DaCosta,"70,762",$61.19M
+The Last House on the Left,1972,84,"Crime, Horror, Thriller",5.9,Wes Craven,"38,780",$3.10M
+The Amityville Horror,2005,90,Horror,5.9,Andrew Douglas,"1,14,596",$65.23M
+Annabelle Comes Home,2019,106,"Horror, Mystery, Thriller",5.9,Gary Dauberman,"80,369",$74.15M
+Final Destination 5,2011,92,"Horror, Thriller",5.9,Steven Quale,"1,20,525",$42.59M
+The Grudge,2004,91,"Horror, Mystery, Thriller",5.9,Takashi Shimizu,"1,47,865",$110.36M
+Antlers,2021,99,"Drama, Horror, Mystery",5.9,Scott Cooper,"41,508",
+The Void I,2016,90,"Horror, Mystery, Sci-Fi",5.9,Jeremy Gillespie,"39,049",$0.15M
+King Kong,1976,134,"Adventure, Horror",5.9,John Guillermin,"34,098",$52.61M
+The Fourth Kind,2009,98,"Horror, Mystery, Sci-Fi",5.9,Olatunde Osunsanmi,"79,762",$25.46M
+The Brothers Grimm,2005,118,"Action, Adventure, Comedy",5.9,Terry Gilliam,"1,23,953",$37.92M
+Hide and Seek,2005,101,"Horror, Mystery",5.9,John Polson,"87,067",$51.10M
+The Possession I,2012,92,"Horror, Mystery, Thriller",5.9,Ole Bornedal,"61,689",$49.13M
+The Ruins,2008,90,"Adventure, Horror, Thriller",5.9,Carter Smith,"77,800",$17.43M
+Cam,2018,94,"Drama, Horror, Mystery",5.9,Daniel Goldhaber,"34,079",
+Saw IV,2007,93,"Horror, Mystery, Thriller",5.9,Darren Lynn Bousman,"1,55,334",$63.30M
+Child's Play 2,1990,84,"Horror, Thriller",5.9,John Lafia,"54,569",$28.50M
+Victor Frankenstein,2015,110,"Drama, Horror, Sci-Fi",5.9,Paul McGuigan,"58,423",$5.78M
+The X Files: I Want to Believe,2008,104,"Crime, Drama, Horror",5.9,Chris Carter,"92,694",$20.98M
+The Tall Man,2012,106,"Crime, Drama, Horror",5.9,Pascal Laugier,"42,238",
+Quarantine,2008,89,"Horror, Sci-Fi, Thriller",5.9,John Erick Dowdle,"75,253",$31.69M
+P2,2007,98,"Crime, Horror, Thriller",5.9,Franck Khalfoun,"35,242",$3.99M
+Pathology,2008,95,"Crime, Horror, Thriller",5.9,Marc Schölermann,"32,857",$0.11M
+The Prodigy,2019,92,"Fantasy, Horror, Mystery",5.9,Nicholas McCarthy,"27,470",$14.86M
+Old,2021,108,"Drama, Horror, Mystery",5.8,M. Night Shyamalan,"1,38,969",$48.28M
+End of Days,1999,122,"Action, Fantasy, Horror",5.8,Peter Hyams,"1,13,770",$66.89M
+Army of the Dead,2021,148,"Action, Crime, Drama",5.8,Zack Snyder,"1,78,772",$1.00M
+Cannibal Holocaust,1980,95,"Adventure, Horror",5.8,Ruggero Deodato,"58,322",
+I Know What You Did Last Summer,1997,101,"Horror, Mystery",5.8,Jim Gillespie,"1,52,273",$72.59M
+Species,1995,108,"Action, Horror, Sci-Fi",5.8,Roger Donaldson,"82,499",$60.07M
+Carrie,2013,100,"Drama, Horror, Thriller",5.8,Kimberly Peirce,"1,44,154",$35.27M
+Splice,2009,104,"Horror, Sci-Fi",5.8,Vincenzo Natali,"99,872",$17.00M
+Final Destination 3,2006,93,"Horror, Thriller",5.8,James Wong,"1,47,716",$54.10M
+High Life,2018,113,"Adventure, Drama, Horror",5.8,Claire Denis,"38,180",$1.23M
+The Babysitter: Killer Queen,2020,101,"Comedy, Horror",5.8,McG,"46,011",
+Hollow Man,2000,112,"Action, Horror, Sci-Fi",5.8,Paul Verhoeven,"1,34,598",$73.21M
+Jaws 2,1978,116,"Adventure, Horror, Thriller",5.8,Jeannot Szwarc,"80,981",$102.92M
+Blade: Trinity,2004,113,"Action, Horror, Sci-Fi",5.8,David S. Goyer,"1,82,834",$52.41M
+The Mortal Instruments: City of Bones,2013,130,"Action, Adventure, Fantasy",5.8,Harald Zwart,"1,36,448",$31.17M
+Pride and Prejudice and Zombies,2016,108,"Action, Comedy, Fantasy",5.8,Burr Steers,"58,473",$10.91M
+Antebellum,2020,105,"Drama, Horror, Mystery",5.8,Gerard Bush,"28,559",
+Lake Placid,1999,82,"Action, Comedy, Horror",5.8,Steve Miner,"63,404",$31.77M
+The Wolfman,2010,103,"Drama, Fantasy, Horror",5.8,Joe Johnston,"1,08,821",$61.98M
+The Texas Chainsaw Massacre: The Beginning,2006,91,"Horror, Thriller",5.8,Jonathan Liebesman,"75,052",$39.52M
+The Addams Family,2019,86,"Animation, Comedy, Family",5.8,Greg Tiernan,"42,739",$100.04M
+The Divide,2011,112,"Drama, Horror, Sci-Fi",5.8,Xavier Gens,"37,690",$0.02M
+Eli I,2019,98,"Drama, Horror, Mystery",5.8,Ciarán Foy,"38,505",
+V/H/S,2012,116,Horror,5.8,Matt Bettinelli-Olpin,"65,385",$0.10M
+Morgan,2016,92,"Action, Horror, Sci-Fi",5.8,Luke Scott,"44,898",$3.91M
+Thinner,1996,93,"Fantasy, Horror",5.8,Tom Holland,"32,352",$15.17M
+The Haunting in Connecticut,2009,92,"Drama, Horror, Mystery",5.8,Peter Cornwell,"63,528",$55.39M
+Resident Evil: Afterlife,2010,96,"Action, Horror, Sci-Fi",5.8,Paul W.S. Anderson,"1,75,349",$60.13M
+Gothika,2003,98,"Horror, Mystery, Thriller",5.8,Mathieu Kassovitz,"1,16,092",$59.69M
+The Relic,1997,110,"Horror, Mystery, Sci-Fi",5.8,Peter Hyams,"29,056",$33.96M
+Dracula: Dead and Loving It,1995,88,"Comedy, Fantasy, Horror",5.8,Mel Brooks,"43,600",$10.77M
+Open Water,2003,79,"Adventure, Drama, Horror",5.8,Chris Kentis,"55,121",$30.61M
+Halloween H20: 20 Years Later,1998,86,"Horror, Thriller",5.8,Steve Miner,"78,797",$55.04M
+Halloween 4: The Return of Michael Myers,1988,88,"Horror, Thriller",5.8,Dwight H. Little,"55,673",$17.77M
+Saw V,2008,92,"Horror, Thriller",5.8,David Hackl,"1,28,997",$56.75M
+Black Sheep,2006,87,"Comedy, Horror, Sci-Fi",5.8,Jonathan King,"41,390",$0.08M
+Paranormal Activity 3,2011,83,"Horror, Mystery",5.8,Henry Joost,"97,454",$104.01M
+Cry Wolf,2005,90,"Drama, Horror, Mystery",5.8,Jeff Wadlow,"27,993",$10.05M
+White Noise I,2022,136,"Comedy, Drama, Horror",5.7,Noah Baumbach,"39,252",
+The Purge I,2013,85,"Horror, Sci-Fi, Thriller",5.7,James DeMonaco,"2,31,096",$64.47M
+Escape Room: Tournament of Champions,2021,88,"Action, Adventure, Horror",5.7,Adam Robitel,"52,337",$25.19M
+Insidious: The Last Key,2018,103,"Horror, Mystery, Thriller",5.7,Adam Robitel,"64,055",$67.75M
+Buffy the Vampire Slayer,1992,86,"Action, Comedy, Fantasy",5.7,Fran Rubel Kuzui,"47,048",$16.62M
+Underworld: Blood Wars,2016,91,"Action, Adventure, Fantasy",5.7,Anna Foerster,"78,499",$30.35M
+The Rental,2020,88,"Drama, Horror, Mystery",5.7,Dave Franco,"35,194",
+Jigsaw I,2017,92,"Horror, Mystery, Thriller",5.7,Michael Spierig,"83,738",$38.05M
+Freddy vs. Jason,2003,97,"Action, Horror",5.7,Ronny Yu,"1,23,003",$82.62M
+Cooties,2014,88,"Action, Comedy, Horror",5.7,Jonathan Milott,"27,279",$0.06M
+I Spit on Your Grave 2,2013,106,"Horror, Thriller",5.7,Steven R. Monroe,"31,209",$0.00M
+Pet Sematary,2019,101,"Horror, Mystery, Thriller",5.7,Kevin Kölsch,"94,828",$54.72M
+Priest,2011,87,"Action, Fantasy, Horror",5.7,Scott Stewart,"1,21,940",$29.14M
+Velvet Buzzsaw,2019,113,"Horror, Mystery, Thriller",5.7,Dan Gilroy,"63,837",
+Would You Rather,2012,93,"Horror, Thriller",5.7,David Guy Levy,"43,247",
+Rubber,2010,82,"Comedy, Fantasy, Horror",5.7,Quentin Dupieux,"38,724",$0.10M
+Child's Play,2019,90,"Drama, Horror, Sci-Fi",5.7,Lars Klevberg,"54,170",$29.21M
+Devil's Pass,2013,100,"Horror, Mystery, Thriller",5.7,Renny Harlin,"26,283",
+Clown,2014,100,"Horror, Thriller",5.7,Jon Watts,"25,286",$0.06M
+Paranormal Activity 2,2010,91,"Horror, Mystery",5.7,Tod Williams,"1,07,097",$84.75M
+The Descent: Part 2,2009,94,"Adventure, Horror, Thriller",5.7,Jon Harris,"49,297",
+The Last Exorcism,2010,87,"Horror, Mystery, Thriller",5.7,Daniel Stamm,"50,953",$41.03M
+Honeymoon,2014,87,"Drama, Fantasy, Horror",5.7,Leigh Janiak,"26,685",$0.01M
+The Bay II,2012,84,"Horror, Sci-Fi, Thriller",5.7,Barry Levinson,"28,565",$0.03M
+Bhool Bhulaiyaa 2,2022,143,"Comedy, Drama, Horror",5.7,Anees Bazmee,"32,061",
+Terrifier,2016,85,"Horror, Thriller",5.6,Damien Leone,"42,712",
+The Meg,2018,113,"Action, Horror, Sci-Fi",5.6,Jon Turteltaub,"1,81,197",$143.01M
+Beast I,2022,93,"Action, Adventure, Drama",5.6,Baltasar Kormákur,"34,598",$31.85M
+Ghost Ship,2002,91,"Horror, Mystery, Thriller",5.6,Steve Beck,"1,04,944",$30.11M
+Scream 3,2000,116,"Horror, Mystery",5.6,Wes Craven,"1,55,289",$89.14M
+Urban Legend,1998,99,"Horror, Mystery, Thriller",5.6,Jamie Blanks,"68,975",$38.07M
+Thir13en Ghosts,2001,91,"Fantasy, Horror",5.6,Steve Beck,"90,122",$41.87M
+Children of the Corn,1984,92,"Horror, Thriller",5.6,Fritz Kiersch,"54,851",$14.57M
+47 Meters Down,2017,89,"Adventure, Drama, Horror",5.6,Johannes Roberts,"58,160",$44.31M
+I Spit on Your Grave,1978,101,"Horror, Thriller",5.6,Meir Zarchi,"29,806",
+Pacific Rim: Uprising,2018,111,"Action, Adventure, Fantasy",5.6,Steven S. DeKnight,"1,21,533",$59.87M
+Alien vs. Predator,2004,101,"Action, Adventure, Horror",5.6,Paul W.S. Anderson,"2,05,934",$80.28M
+Cabin Fever,2002,93,Horror,5.6,Eli Roth,"80,830",$21.16M
+Friday the 13th Part III,1982,95,"Horror, Thriller",5.6,Steve Miner,"56,597",$36.69M
+Mom and Dad,2017,86,"Comedy, Horror, Thriller",5.6,Brian Taylor,"25,496",
+Jeepers Creepers 2,2003,104,Horror,5.6,Victor Salva,"68,038",$35.67M
+Ma I,2019,99,"Horror, Mystery, Thriller",5.6,Tate Taylor,"55,805",$45.37M
+Maggie I,2015,95,"Drama, Horror, Sci-Fi",5.6,Henry Hobson,"45,541",$0.19M
+Unfriended,2014,83,"Horror, Mystery, Thriller",5.6,Levan Gabriadze,"78,487",$32.48M
+Bride of Chucky,1998,89,"Comedy, Horror, Thriller",5.6,Ronny Yu,"61,366",$32.40M
+The Texas Chainsaw Massacre 2,1986,101,"Comedy, Horror",5.6,Tobe Hooper,"35,333",$8.03M
+House on Haunted Hill,1999,93,"Horror, Mystery, Thriller",5.6,William Malone,"58,487",$40.85M
+Village of the Damned,1995,98,"Horror, Sci-Fi, Thriller",5.6,John Carpenter,"33,118",$9.42M
+Regression I,2015,106,"Adventure, Crime, Drama",5.6,Alejandro Amenábar,"41,510",$0.05M
+A Nightmare on Elm Street 4: The Dream Master,1988,93,Horror,5.6,Renny Harlin,"58,602",$49.37M
+Curse of Chucky,2013,97,"Horror, Thriller",5.6,Don Mancini,"41,474",$3.80M
+Poltergeist II: The Other Side,1986,91,Horror,5.6,Brian Gibson,"28,529",$41.00M
+Creep I,2004,85,"Horror, Mystery, Thriller",5.6,Christopher Smith,"30,858",
+Dark Water,2005,105,"Drama, Horror, Mystery",5.6,Walter Salles,"64,235",$25.47M
+Hatchet,2006,93,"Comedy, Horror, Thriller",5.6,Adam Green,"32,231",$0.16M
+Club Dread,2004,104,"Comedy, Horror, Mystery",5.6,Jay Chandrasekhar,"30,873",$4.99M
+The Reaping,2007,99,"Horror, Thriller",5.6,Stephen Hopkins,"43,940",$25.12M
+Piranha 3D,2010,88,"Comedy, Horror",5.5,Alexandre Aja,"94,107",$25.00M
+Wrong Turn,2021,109,"Horror, Thriller",5.5,Mike P. Nelson,"33,584",
+Friday the 13th,2009,97,"Horror, Mystery, Thriller",5.5,Marcus Nispel,"1,11,943",$65.00M
+Willy's Wonderland,2021,88,"Action, Comedy, Horror",5.5,Kevin Lewis,"33,195",
+Hostel: Part II,2007,94,Horror,5.5,Eli Roth,"92,969",$17.61M
+The Cloverfield Paradox,2018,102,"Action, Adventure, Horror",5.5,Julius Onah,"1,09,111",
+Halloween Kills,2021,105,"Horror, Thriller",5.5,David Gordon Green,"91,008",$92.00M
+House at the End of the Street,2012,101,"Drama, Horror, Thriller",5.5,Mark Tonderai,"78,952",$31.61M
+The Dead Don't Die,2019,104,"Comedy, Fantasy, Horror",5.5,Jim Jarmusch,"82,134",$6.56M
+Eight Legged Freaks,2002,99,"Action, Adventure, Comedy",5.5,Ellory Elkayem,"58,839",$17.32M
+Resident Evil: The Final Chapter,2016,107,"Action, Horror, Sci-Fi",5.5,Paul W.S. Anderson,"97,554",$26.83M
+Gretel & Hansel,2020,87,"Fantasy, Horror, Mystery",5.5,Oz Perkins,"32,438",$15.35M
+Saw 3D,2010,90,"Horror, Mystery",5.5,Kevin Greutert,"1,02,181",$45.71M
+Peninsula,2020,116,"Action, Horror, Thriller",5.5,Sang-ho Yeon,"35,176",$1.23M
+Dreamcatcher,2003,134,"Drama, Horror, Sci-Fi",5.5,Lawrence Kasdan,"94,534",$33.72M
+The Last Days on Mars,2013,98,"Adventure, Horror, Sci-Fi",5.5,Ruairi Robinson,"38,026",$0.02M
+The Ward,2010,89,"Horror, Mystery, Thriller",5.5,John Carpenter,"43,657",
+The Omen,2006,110,"Drama, Fantasy, Horror",5.5,John Moore,"60,750",$54.61M
+All the Boys Love Mandy Lane,2006,90,"Horror, Mystery, Thriller",5.5,Jonathan Levine,"34,017",
+Hellraiser III: Hell on Earth,1992,97,Horror,5.5,Anthony Hickox,"33,318",$12.53M
+The Innkeepers,2011,101,"Drama, Horror, Mystery",5.5,Ti West,"36,301",$0.08M
+Don't Be Afraid of the Dark,2010,99,"Fantasy, Horror, Thriller",5.5,Troy Nixey,"49,772",$24.04M
+Cube²: Hypercube,2002,94,"Horror, Mystery, Sci-Fi",5.5,Andrzej Sekula,"68,747",
+Diary of the Dead,2007,95,"Fantasy, Horror, Sci-Fi",5.5,George A. Romero,"48,380",$0.96M
+White Noise I,2005,101,"Drama, Horror, Mystery",5.5,Geoffrey Sax,"49,931",$56.39M
+Jennifer's Body,2009,102,"Comedy, Horror",5.4,Karyn Kusama,"1,41,859",$16.20M
+The Mummy,2017,110,"Action, Adventure, Fantasy",5.4,Alex Kurtzman,"1,96,693",$80.10M
+Teeth I,2007,94,"Comedy, Fantasy, Horror",5.4,Mitchell Lichtenstein,"44,984",$0.35M
+The Lawnmower Man,1992,108,"Horror, Sci-Fi",5.4,Brett Leonard,"37,519",$32.10M
+The Forever Purge,2021,103,"Action, Crime, Horror",5.4,Everardo Gout,"38,456",$44.54M
+Annabelle I,2014,99,"Horror, Mystery, Thriller",5.4,John R. Leonetti,"1,66,025",$84.27M
+The Witches,2020,106,"Adventure, Comedy, Family",5.4,Robert Zemeckis,"43,623",$0.20M
+House of Wax,2005,113,"Horror, Thriller",5.4,Jaume Collet-Serra,"1,29,174",$32.06M
+Countdown III,2019,90,"Horror, Thriller",5.4,Justin Dec,"41,867",
+In the Tall Grass,2019,101,"Horror, Mystery, Sci-Fi",5.4,Vincenzo Natali,"60,139",
+Maximum Overdrive,1986,98,"Action, Comedy, Horror",5.4,Stephen King,"34,054",$7.43M
+A Nightmare on Elm Street 2: Freddy's Revenge,1985,87,Horror,5.4,Jack Sholder,"73,312",$30.00M
+Vampire Academy,2014,104,"Action, Comedy, Drama",5.4,Mark Waters,"55,923",$7.79M
+Turistas,2006,93,"Horror, Mystery, Thriller",5.4,John Stockwell,"39,687",$7.03M
+The Ring Two,2005,110,"Horror, Mystery",5.4,Hideo Nakata,"98,602",$76.23M
+Red Riding Hood,2011,100,"Fantasy, Horror, Mystery",5.4,Catherine Hardwicke,"1,13,995",$37.66M
+Winchester,2018,99,"Drama, Fantasy, Horror",5.4,Michael Spierig,"35,434",$25.09M
+My Bloody Valentine,2009,101,"Horror, Mystery, Thriller",5.4,Patrick Lussier,"58,571",$51.55M
+Jessabelle,2014,90,"Drama, Horror, Mystery",5.4,Kevin Greutert,"25,037",
+The Eye,2008,98,"Horror, Mystery",5.4,David Moreau,"55,021",$31.42M
+Tusk I,2014,102,"Comedy, Horror",5.3,Kevin Smith,"58,591",$1.82M
+The Invitation II,2022,105,"Horror, Thriller",5.3,Jessica M. Thompson,"26,160",
+The Nun,2018,96,"Horror, Mystery, Thriller",5.3,Corin Hardy,"1,48,299",$117.45M
+The Green Inferno,2013,100,"Adventure, Horror",5.3,Eli Roth,"46,716",$7.19M
+The Predator,2018,107,"Action, Adventure, Horror",5.3,Shane Black,"1,38,182",$51.02M
+Scary Movie 2,2001,83,"Comedy, Horror",5.3,Keenen Ivory Wayans,"1,67,717",$71.31M
+Legion,2010,100,"Action, Fantasy, Horror",5.3,Scott Stewart,"1,08,043",$40.17M
+The New Mutants,2020,94,"Action, Horror, Mystery",5.3,Josh Boone,"84,381",$23.86M
+Things Heard & Seen,2021,121,"Drama, Horror, Mystery",5.3,Shari Springer Berman,"33,777",
+Sinister 2,2015,97,"Horror, Mystery, Thriller",5.3,Ciarán Foy,"57,723",$27.74M
+The Silence I,2019,90,"Drama, Horror, Sci-Fi",5.3,John R. Leonetti,"48,055",
+Resident Evil: Retribution,2012,95,"Action, Horror, Sci-Fi",5.3,Paul W.S. Anderson,"1,46,296",$42.35M
+The Stepford Wives,2004,93,"Comedy, Horror, Sci-Fi",5.3,Frank Oz,"68,040",$59.48M
+The Messengers,2007,90,"Drama, Horror, Mystery",5.3,Danny Pang,"40,604",$35.37M
+The Resident,2011,91,"Crime, Drama, Horror",5.3,Antti J. Jokinen,"28,945",
+The Colony I,2013,95,"Action, Horror, Sci-Fi",5.3,Jeff Renfroe,"46,277",
+Doom,2005,105,"Action, Horror, Sci-Fi",5.2,Andrzej Bartkowiak,"1,16,192",$28.21M
+Morbius,2022,104,"Action, Adventure, Horror",5.2,Daniel Espinosa,"1,37,749",$73.87M
+The Covenant,2006,97,"Action, Adventure, Fantasy",5.2,Renny Harlin,"50,834",$23.29M
+Resident Evil: Welcome to Raccoon City,2021,107,"Action, Horror, Sci-Fi",5.2,Johannes Roberts,"58,422",$17.00M
+Hellboy,2019,120,"Action, Adventure, Fantasy",5.2,Neil Marshall,"94,121",$21.90M
+Spiral,2021,93,"Horror, Mystery, Thriller",5.2,Darren Lynn Bousman,"58,812",
+Flatliners,2017,109,"Drama, Horror, Mystery",5.2,Niels Arden Oplev,"49,170",$16.88M
+The Mummy: Tomb of the Dragon Emperor,2008,112,"Action, Adventure, Fantasy",5.2,Rob Cohen,"1,66,078",$102.49M
+The Bad Batch,2016,118,"Action, Horror, Mystery",5.2,Ana Lily Amirpour,"33,671",$0.18M
+Spawn,1997,96,"Action, Drama, Horror",5.2,Mark A.Z. Dippé,"70,341",$54.97M
+Truth or Dare I,2018,100,"Horror, Thriller",5.2,Jeff Wadlow,"59,199",$41.41M
+The Curse of La Llorona,2019,93,"Horror, Mystery, Thriller",5.2,Michael Chaves,"53,361",$54.73M
+Queen of the Damned,2002,101,"Drama, Fantasy, Horror",5.2,Michael Rymer,"57,951",$30.34M
+Scooby-Doo 2: Monsters Unleashed,2004,93,"Adventure, Comedy, Family",5.2,Raja Gosnell,"61,313",$84.22M
+Hubie Halloween,2020,103,"Comedy, Horror, Mystery",5.2,Steven Brill,"53,916",
+A Nightmare on Elm Street,2010,95,"Crime, Drama, Horror",5.2,Samuel Bayer,"1,03,828",$63.08M
+The First Purge,2018,97,"Action, Horror, Sci-Fi",5.2,Gerard McMurray,"66,568",$69.49M
+The Strangers: Prey at Night,2018,85,Horror,5.2,Johannes Roberts,"32,686",$24.43M
+Friday the 13th Part VII: The New Blood,1988,88,"Horror, Thriller",5.2,John Carl Buechler,"39,646",$19.17M
+Shutter I,2008,85,"Horror, Mystery, Thriller",5.2,Masayuki Ochiai,"36,208",$25.93M
+Cult of Chucky,2017,91,"Horror, Thriller",5.2,Don Mancini,"27,436",
+Apollo 18,2011,86,"Horror, Mystery, Sci-Fi",5.2,Gonzalo López-Gallego,"56,777",$17.69M
+The Lazarus Effect,2015,83,"Horror, Mystery, Sci-Fi",5.2,David Gelb,"44,970",$25.80M
+The Lords of Salem,2012,101,"Horror, Thriller",5.2,Rob Zombie,"31,229",$1.16M
+Friend Request,2016,92,"Horror, Mystery, Thriller",5.2,Simon Verhoeven,"27,158",$3.76M
+The Unholy,2021,99,"Drama, Horror, Mystery",5.1,Evan Spiliotopoulos,"25,389",
+The Haunted Mansion,2003,88,"Comedy, Family, Fantasy",5.1,Rob Minkoff,"51,618",$75.85M
+The Final Destination,2009,82,"Horror, Thriller",5.1,David R. Ellis,"1,10,457",$66.48M
+Sorority Row,2009,101,"Horror, Mystery",5.1,Stewart Hendler,"31,640",$11.96M
+The Hills Have Eyes 2,2007,89,"Horror, Thriller",5.1,Martin Weisz,"65,955",$20.80M
+When a Stranger Calls,2006,87,"Horror, Thriller",5.1,Simon West,"47,247",$47.86M
+The Cave,2005,97,"Adventure, Horror, Sci-Fi",5.1,Bruce Hunt,"40,180",$15.01M
+Halloween III: Season of the Witch,1982,98,"Horror, Mystery, Sci-Fi",5.1,Tommy Lee Wallace,"57,269",$14.40M
+Exorcist: The Beginning,2004,114,"Horror, Mystery, Thriller",5.1,Renny Harlin,"37,959",$41.82M
+Child's Play 3,1991,90,"Horror, Thriller",5.1,Jack Bender,"43,765",$14.96M
+An American Werewolf in Paris,1997,98,"Comedy, Fantasy, Horror",5.1,Anthony Waller,"26,134",$26.57M
+Grave Encounters 2,2012,98,"Horror, Mystery",5.1,John Poliquin,"26,222",
+A Serbian Film,2010,104,"Horror, Mystery, Thriller",5,Srdjan Spasojevic,"67,662",
+Halloween Ends,2022,111,"Horror, Thriller",5,David Gordon Green,"62,008",
+Shadow in the Cloud,2020,83,"Action, Horror, War",5,Roseanne Liang,"28,700",
+47 Meters Down: Uncaged,2019,90,"Adventure, Drama, Horror",5,Johannes Roberts,"28,859",$22.26M
+Leatherface,2017,90,"Crime, Horror, Thriller",5,Alexandre Bustillo,"25,704",
+The Haunting,1999,113,"Fantasy, Horror, Mystery",5,Jan de Bont,"78,402",$91.41M
+A Haunted House,2013,86,"Comedy, Fantasy, Horror",5,Michael Tiddes,"48,272",$40.04M
+How It Ends,2018,113,"Action, Drama, Horror",5,David M. Rosenthal,"55,729",
+Blair Witch,2016,89,"Horror, Mystery, Thriller",5,Adam Wingard,"47,890",$20.78M
+Virus,1999,99,"Action, Horror, Sci-Fi",5,John Bruno,"29,017",$14.01M
+Stay Alive,2006,85,"Fantasy, Horror, Mystery",5,William Brent Bell,"33,235",$23.09M
+A Nightmare on Elm Street: The Dream Child,1989,89,"Fantasy, Horror",5,Stephen Hopkins,"48,222",$22.17M
+See No Evil,2006,84,"Action, Horror, Thriller",5,Gregory Dark,"28,075",$15.03M
+Chernobyl Diaries,2012,86,"Horror, Mystery, Thriller",5,Bradley Parker,"67,339",$18.12M
+Cursed,2005,97,"Comedy, Horror",5,Wes Craven,"34,024",$19.30M
+Paranormal Activity: The Marked Ones,2014,84,"Horror, Mystery",5,Christopher Landon,"44,216",$32.46M
+The Grudge 2,2006,102,"Horror, Thriller",5,Takashi Shimizu,"50,475",$39.14M
+[REC] 3: Genesis,2012,80,"Horror, Thriller",5,Paco Plaza,"36,765",$0.01M
+An American Haunting,2005,83,"Drama, Horror, Mystery",5,Courtney Solomon,"26,374",$16.30M
+Knock Knock I,2015,99,"Crime, Drama, Horror",4.9,Eli Roth,"99,384",$0.04M
+The Darkest Hour,2011,89,"Action, Adventure, Horror",4.9,Chris Gorak,"62,428",$21.43M
+Fantasy Island,2020,109,"Fantasy, Horror, Mystery",4.9,Jeff Wadlow,"55,082",$27.31M
+Dracula 2000,2000,99,"Action, Fantasy, Horror",4.9,Patrick Lussier,"35,130",$33.02M
+Silent Hill: Revelation,2012,95,"Horror, Mystery, Thriller",4.9,M.J. Bassett,"65,270",$17.53M
+Seed of Chucky,2004,87,"Comedy, Horror, Thriller",4.9,Don Mancini,"47,581",$17.08M
+Ghosts of Mars,2001,98,"Action, Horror, Sci-Fi",4.9,John Carpenter,"56,213",$8.43M
+Poltergeist,2015,93,"Horror, Thriller",4.9,Gil Kenan,"59,621",$47.43M
+Darkness Falls,2003,86,"Fantasy, Horror, Mystery",4.9,Jonathan Liebesman,"32,613",$32.55M
+Valentine,2001,96,"Horror, Mystery, Thriller",4.9,Jamie Blanks,"29,306",$20.38M
+Halloween 5: The Revenge of Michael Myers,1989,96,"Horror, Thriller",4.9,Dominique Othenin-Girard,"44,618",$11.64M
+Vanishing on 7th Street,2010,92,"Horror, Mystery, Thriller",4.9,Brad Anderson,"26,800",$0.02M
+Anaconda,1997,89,"Action, Adventure, Horror",4.8,Luis Llosa,"1,08,000",$65.89M
+Texas Chainsaw,2013,92,"Horror, Thriller",4.8,John Luessenhop,"53,682",$34.34M
+The Forest I,2016,93,"Horror, Mystery, Thriller",4.8,Jason Zada,"44,543",$26.58M
+Leprechaun,1993,92,"Comedy, Fantasy, Horror",4.8,Mark Jones,"28,663",$8.56M
+The Roommate I,2011,91,"Drama, Horror, Thriller",4.8,Christian E. Christiansen,"40,236",$37.30M
+Halloween II,2009,105,Horror,4.8,Rob Zombie,"57,387",$33.39M
+Meet the Blacks,2016,94,"Comedy, Horror",4.8,Deon Taylor,"37,146",$9.09M
+The Woman in Black 2: Angel of Death,2014,98,"Drama, Horror, Thriller",4.8,Tom Harper,"28,992",$26.50M
+Godsend,2004,102,"Action, Drama, Fantasy",4.8,Frank M. Calo,"26,088",$14.38M
+Texas Chainsaw Massacre,2022,81,"Crime, Horror, Thriller",4.7,David Blue Garcia,"56,803",
+The Unborn,2009,88,"Horror, Mystery, Thriller",4.7,David S. Goyer,"52,574",$42.67M
+Friday the 13th: A New Beginning,1985,92,"Horror, Mystery, Thriller",4.7,Danny Steinmann,"41,029",$21.93M
+I Still Know What You Did Last Summer,1998,100,"Horror, Mystery, Thriller",4.7,Danny Cannon,"76,322",$40.00M
+Anacondas: The Hunt for the Blood Orchid,2004,97,"Action, Adventure, Horror",4.7,Dwight H. Little,"32,734",$32.24M
+Halloween: The Curse of Michael Myers,1995,87,"Horror, Thriller",4.7,Joe Chappelle,"39,712",$15.12M
+Freddy's Dead: The Final Nightmare,1991,89,"Fantasy, Horror",4.7,Rachel Talalay,"48,694",$34.87M
+Pulse I,2006,90,"Horror, Sci-Fi, Thriller",4.7,Jim Sonzero,"30,021",$20.26M
+Death Note I,2017,101,"Crime, Drama, Fantasy",4.6,Adam Wingard,"87,627",
+Aliens vs. Predator: Requiem,2007,94,"Action, Adventure, Horror",4.6,Colin Strause,"1,29,458",$41.80M
+Psycho,1998,105,"Horror, Mystery, Thriller",4.6,Gus Van Sant,"49,550",$21.46M
+Paranormal Activity 4,2012,88,"Horror, Mystery",4.6,Henry Joost,"68,431",$53.92M
+The Pyramid,2014,89,"Horror, Mystery, Thriller",4.6,Grégory Levasseur,"25,483",$2.76M
+Black Christmas,2006,95,Horror,4.6,Glen Morgan,"28,952",$16.24M
+Paranormal Activity: The Ghost Dimension,2015,88,"Horror, Mystery",4.6,Gregory Plotkin,"29,413",$18.30M
+The Island of Dr. Moreau,1996,96,"Horror, Sci-Fi, Thriller",4.5,John Frankenheimer,"34,527",$27.66M
+Ouija II,2014,89,"Horror, Mystery, Thriller",4.5,Stiles White,"54,888",$50.86M
+Rings,2017,102,"Drama, Horror, Mystery",4.5,F. Javier Gutiérrez,"41,974",$27.79M
+Species II,1998,93,"Action, Horror, Sci-Fi",4.5,Peter Medak,"30,268",$19.17M
+Friday the 13th Part VIII: Jason Takes Manhattan,1989,100,"Adventure, Horror, Thriller",4.5,Rob Hedden,"40,404",$14.34M
+The Human Centipede (First Sequence),2009,92,Horror,4.4,Tom Six,"82,947",$0.18M
+Jason X,2001,92,"Action, Horror, Sci-Fi",4.4,James Isaac,"58,799",$13.12M
+Cell I,2016,98,"Action, Adventure, Horror",4.4,Tod Williams,"29,193",
+The Grudge I,2020,94,"Fantasy, Horror",4.4,Nicolas Pesce,"27,873",
+The Bye Bye Man,2017,96,"Drama, Fantasy, Horror",4.3,Stacy Title,"25,127",$22.38M
+Boogeyman,2005,89,"Drama, Horror, Mystery",4.2,Stephen Kay,"31,868",$46.75M
+The Devil Inside,2012,83,Horror,4.2,William Brent Bell,"36,661",$53.26M
+Jason Goes to Hell: The Final Friday,1993,87,"Fantasy, Horror, Thriller",4.1,Adam Marcus,"34,519",$15.94M
+Shark Night,2011,90,"Action, Adventure, Horror",4,David R. Ellis,"26,648",$18.87M
+One Missed Call,2008,87,"Horror, Mystery",4,Eric Valette,"33,249",$26.88M
+Book of Shadows: Blair Witch 2,2000,90,"Adventure, Fantasy, Horror",4,Joe Berlinger,"39,110",$26.44M
+Prom Night I,2008,88,Horror,3.9,Nelson McCormick,"36,982",$43.87M
+Halloween: Resurrection,2002,90,"Horror, Thriller",3.9,Rick Rosenthal,"46,928",$30.35M
+Plan 9 from Outer Space,1957,79,"Horror, Sci-Fi",3.9,Edward D. Wood Jr.,"39,496",
+Piranha 3DD,2012,83,"Comedy, Horror, Sci-Fi",3.8,John Gulager,"44,248",$0.38M
+The Human Centipede 2 (Full Sequence),2011,91,Horror,3.8,Tom Six,"40,950",$0.12M
+The Wicker Man,2006,102,"Horror, Mystery, Thriller",3.8,Neil LaBute,"69,700",$23.64M
+Exorcist II: The Heretic,1977,117,Horror,3.8,John Boorman,"25,949",$30.75M
+Jaws 3-D,1983,99,"Adventure, Horror, Thriller",3.7,Joe Alves,"46,082",$45.52M
+The Fog,2005,100,"Horror, Mystery",3.7,Rupert Wainwright,"38,246",$29.51M
+I Know Who Killed Me,2007,105,"Horror, Mystery, Thriller",3.6,Chris Sivertson,"30,446",$7.50M
+Scary Movie V,2013,86,"Comedy, Horror",3.5,Malcolm D. Lee,"74,534",$32.02M
+Vampires Suck,2010,82,"Comedy, Horror",3.4,Jason Friedberg,"50,206",$36.66M
+The Open House,2018,94,"Horror, Thriller",3.3,Matt Angel,"35,819",
+Slender Man I,2018,93,"Horror, Mystery, Thriller",3.2,Sylvain White,"36,238",$30.57M
+Jaws: The Revenge,1987,89,"Adventure, Horror, Thriller",3,Joseph Sargent,"47,708",$20.76M
+BloodRayne,2005,95,"Action, Fantasy, Horror",3,Uwe Boll,"36,527",$2.41M
+Troll 2,1990,95,"Comedy, Fantasy, Horror",2.9,Claudio Fragasso,"33,908",
+Laxmii,2020,141,"Action, Comedy, Horror",2.5,Raghava Lawrence,"58,053",
+Alone in the Dark,2005,96,"Action, Horror, Sci-Fi",2.4,Uwe Boll,"46,403",$5.18M
+House of the Dead,2003,90,"Action, Adventure, Horror",2.1,Uwe Boll,"38,041",$10.25M
+Manos: The Hands of Fate,1966,70,Horror,1.6,Harold P. Warren,"37,060",
