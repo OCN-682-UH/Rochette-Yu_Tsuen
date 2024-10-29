@@ -105,7 +105,7 @@ tidal_data %>%
 
 ## Practice Plot
 Just to try it out, I wanted to make an animated plot
-```{r animate_plot, fig.height= 10, fig.width= 12 }
+```{r animate_plot, fig.height= 10, fig.width= 12}
 tidal_data %>% 
   mutate(Region = fct_reorder(Region, Latitude)) %>% 
   ggplot() + 

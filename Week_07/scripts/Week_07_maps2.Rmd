@@ -39,7 +39,7 @@ GGmaps Git hub : https://github.com/dkahle/ggmap
 
 ## Load the data
 ```{r}
-chemdata <- read_csv(here("Week_07", "data", "chemicaldata_maunalua.csv"))
+chemdata <- read_csv(here("Badplot_Goodplot", "data", "chemicaldata_maunalua.csv"))
 
 ```
 
