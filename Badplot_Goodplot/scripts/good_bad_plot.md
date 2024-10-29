@@ -119,7 +119,7 @@ ggplot(aes(x= Zone, y = dist_mean, label= Parameters)) +
 fall_bplot
 ```
 
-![](good_bad_plot_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](../outputs/fall_plot-1.png)<!-- -->
 
 ### Spring Plot
 
@@ -155,7 +155,7 @@ ggplot(aes(x= Zone, y = dist_mean, label= Parameters)) +
 spring_bplot
 ```
 
-![](good_bad_plot_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](../outputs/spring_plot-1.png)<!-- -->
 
 ## Adding images to the plots
 

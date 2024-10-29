@@ -10,7 +10,8 @@ output:
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = TRUE, 
                       message = FALSE, 
-                      warning= FALSE)
+                      warning= FALSE,
+                       fig.path="../outputs/")
 ```
 
 # Load the Libraries
@@ -72,7 +73,7 @@ do separate graphs, add the images individually and then, merge them with
 _Patchwork_. 
 
 ### Fall plot
-```{r}
+```{r fall_plot}
 
 fall_bplot <- chem_summary %>% 
   filter(Season == "FALL") %>% # only keeping the fall data
@@ -110,7 +111,7 @@ fall_bplot
 ### Spring Plot
 
 This plot is essentially the same as the previous one by for spring data
-```{r}
+```{r spring_plot}
 spring_bplot <- chem_summary %>% 
   filter(Season == "SPRING") %>% 
 ggplot(aes(x= Zone, y = dist_mean, label= Parameters)) + 
@@ -159,7 +160,7 @@ gdaisy <- rasterGrob(daisy, width = unit(1, "npc"), height = unit(1, "npc"))
 We are using Magick and Patchwork here. 
 - Magick is used to add the raster images to the individual plots.
 - Patchwork allows to merge the fall and spring plots in one figure with their images on it.
-```{r bad_plot, fig.width= 12, fig.height=6, fig.path="../outputs/"}
+```{r bad_plot, fig.width= 12, fig.height=6}
 
 (fall_bplot +
   annotation_custom(gleaf, xmin = 1, xmax = 2, ymin = 250, ymax = 350)) +
@@ -207,7 +208,7 @@ chem %>% select(Zone, Lat, Long) %>%
 
 
 ## Plotting the nice plot
-```{r good_plot, fig.height= 6, fig.width = 10, fig.path="../outputs/"}
+```{r good_plot, fig.height= 6, fig.width = 10}
 chem %>% 
   #pivoting longer so the biogeochem measurements are in one column
   pivot_longer(cols = c(Temp_in:percent_sgd), 
