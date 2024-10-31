@@ -3,7 +3,7 @@ author: 'Keanu Rochette '
 date: '`r format(Sys.Date())`'
 title: Good Plot, Bad Plot
 output: 
-  github_document:
+  html_document:
     toc: true
 ---
 
