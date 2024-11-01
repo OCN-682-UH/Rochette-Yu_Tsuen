@@ -21,6 +21,7 @@ library(vegan)
 library(RColorBrewer)
 library(multcompView)
 library(ghibli)
+library(rstatix)
 ```
 
 # Load the data
@@ -63,11 +64,14 @@ anova_monster <- monster_movies %>%
 head(anova_monster, 7)
 ```
 
+
+
 ```{r}
 # running the anova test on the subset of data
 anova <- aov(average_rating~decade, data = anova_monster)
 summary.aov(anova)
 ```
+
 
 ```{r}
 # Running the Tukey's test to compare the difference between groups
@@ -91,12 +95,9 @@ Tk<- anova_monster %>%
   arrange(desc(avg))
 ```
 
-```{r}
-cld <- as.data.frame.list(cld$decade)
-Tk$cld <- cld$Letters
 
-print(Tk)
-```
+
+
 
 ## Plotting 
 ```{r}
@@ -124,9 +125,89 @@ anova_monster %>%
   scale_fill_ghibli_d("MarnieMedium1", direction =-1)
 ```
 
+# Creating a function to generate the ANOVA and Tukey's test 
+
+```{r}
+
+anova_nunu <- function(data, indep_var = {{indep_var}}, dep_var = {{dep_var}}) {
+
+  if (is.factor(data %>%  pull({{indep_var}})) ) {
+    print("indep var is a factor")
+  } else {
+    stop("indep var is not a factor")
+  }
+  
+  
+  if (is.numeric(data %>% pull({{dep_var}}))) {
+    print("dep var is numeric")
+  } else {
+    stop("dep var is not numeric")
+  }
+
+  formula <- as.formula(paste(deparse(substitute(dep_var)), "~", deparse(substitute(indep_var))))
+  
+  anova <- aov(formula, data = data)
+
+    
+  tukey <- TukeyHSD(anova)
+
+  cld <- multcompLetters4(anova,tukey)
+
+  Tk<- data %>% 
+    group_by({{indep_var}}) %>% 
+    summarize(avg = mean({{dep_var}}, na.rm = T),
+            quant = quantile({{dep_var}}, probs = 0.75, na.rm = T)) %>% 
+    arrange(desc(avg))
+  
+  cld_df <- as.data.frame.list(cld[[1]])
+  Tk$cld <- cld_df$Letters
+  Tk <<- Tk # saves Tk in the RStudio  environment 
+  print("Tk saved in environment" )
+  return(Tk)
+
+}
+
+```
+
+
+```{r}
+monster_movies<- monster_movies %>% 
+  mutate(decade = factor(decade)) %>% 
+  drop_na()
+anova_nunu(data = monster_movies, indep_var = decade, dep_var = year)
+```
+
+
+
+## Plotting 
+```{r}
+monster_movies %>% 
+  ggplot(aes(decade, year))+
+  geom_boxplot(aes(fill = decade))+
+  geom_text(data =Tk, aes(x= decade, y = quant, label = cld),
+            size = 4, vjust = -1, hjust =-1)+
+  labs(title = "Title",
+       subtitle = "Subtitle",
+       x = "Decade",
+       y = "Average Rating",
+       fill = "Decade") +
+  theme_bw() + 
+  theme(plot.title = element_text(size=14, face = "bold"), 
+        plot.subtitle = element_text(size=12),
+        axis.title = element_text(size = 12, face = "bold"),
+        axis.text = element_text(size = 12),
+        strip.text.x = element_text(size = 12, face = "bold"),
+        legend.title=element_text(size=12, face = "bold"),
+        legend.text=element_text(size=12),
+        axis.text.x = element_text(angle= 45, hjust= 1),
+        panel.background = element_rect(fill = "azure1"))+
+  #custom the colors 
+  scale_fill_ghibli_d("MarnieMedium1", direction =-1)
+```
+
+
 
 # "Population" Composition Plot
-
 
 ```{r}
 movies_div <- monster_movies %>%  

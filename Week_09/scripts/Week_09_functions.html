@@ -11,7 +11,7 @@
 
 <meta name="author" content="Keanu Rochette" />
 
-<meta name="date" content="2024-10-22" />
+<meta name="date" content="2024-10-31" />
 
 <title>Week 9 - Functional Programming</title>
 
@@ -352,7 +352,7 @@ display: none;
 
 <h1 class="title toc-ignore">Week 9 - Functional Programming</h1>
 <h4 class="author">Keanu Rochette</h4>
-<h4 class="date">2024-10-22</h4>
+<h4 class="date">2024-10-31</h4>
 
 </div>
 
@@ -376,29 +376,29 @@ library(PNWColors)</code></pre>
 )
 head(df)</code></pre>
 <pre><code>## # A tibble: 6 × 4
-##         a      b      c       d
-##     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;
-## 1  0.508  -0.170 -2.05  -0.506 
-## 2  1.17   -0.291 -0.122 -1.57  
-## 3  1.60    0.594 -0.180 -0.0824
-## 4  1.23    0.749  1.18   0.310 
-## 5 -2.12    0.478  1.39  -1.01  
-## 6  0.0174  0.287  0.487  0.655</code></pre>
+##        a      b      c      d
+##    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+## 1 -1.05   0.526  0.532 -0.521
+## 2  0.180 -2.13  -0.715  1.62 
+## 3  0.285 -1.33   0.395  1.08 
+## 4 -0.135 -0.324 -1.39  -1.11 
+## 5 -0.512 -1.16   0.105 -0.250
+## 6  0.123  2.07   0.167 -0.813</code></pre>
 <pre class="r"><code>df %&gt;%
   mutate(a = (a-min(a, na.rm = TRUE))/(max(a, na.rm = TRUE)-min(a, na.rm = TRUE)))</code></pre>
 <pre><code>## # A tibble: 10 × 4
-##        a      b      c       d
-##    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;
-##  1 0.706 -0.170 -2.05  -0.506 
-##  2 0.884 -0.291 -0.122 -1.57  
-##  3 1      0.594 -0.180 -0.0824
-##  4 0.899  0.749  1.18   0.310 
-##  5 0      0.478  1.39  -1.01  
-##  6 0.574  0.287  0.487  0.655 
-##  7 0.342  0.373  0.801  0.0804
-##  8 0.423  0.195 -0.355 -0.739 
-##  9 0.382  0.784 -1.43  -0.805 
-## 10 0.157  0.439  0.624 -0.725</code></pre>
+##         a      b       c       d
+##     &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+##  1 0       0.526  0.532  -0.521 
+##  2 0.540  -2.13  -0.715   1.62  
+##  3 0.587  -1.33   0.395   1.08  
+##  4 0.402  -0.324 -1.39   -1.11  
+##  5 0.237  -1.16   0.105  -0.250 
+##  6 0.516   2.07   0.167  -0.813 
+##  7 0.124  -0.158 -0.0135  0.346 
+##  8 0.0922 -0.858 -0.186   0.596 
+##  9 0.330  -0.113  0.738   0.119 
+## 10 1       0.659  0.995  -0.0337</code></pre>
 <pre class="r"><code># (a-min(a)) / (max(a)-min(a))</code></pre>
 <pre class="r"><code>df %&gt;%
   mutate(a = (a-min(a, na.rm = TRUE))/(max(a, na.rm = TRUE)-min(a, na.rm = TRUE)),
@@ -406,18 +406,18 @@ head(df)</code></pre>
          c = (c-min(c, na.rm = TRUE))/(max(c, na.rm = TRUE)-min(c, na.rm = TRUE)),
          d = (d-min(d, na.rm = TRUE))/(max(d, na.rm = TRUE)-min(d, na.rm = TRUE)))</code></pre>
 <pre><code>## # A tibble: 10 × 4
-##        a     b     c     d
-##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-##  1 0.706 0.112 0     0.478
-##  2 0.884 0     0.560 0    
-##  3 1     0.823 0.543 0.668
-##  4 0.899 0.967 0.938 0.845
-##  5 0     0.715 1     0.250
-##  6 0.574 0.537 0.737 1    
-##  7 0.342 0.618 0.829 0.741
-##  8 0.423 0.452 0.493 0.373
-##  9 0.382 1     0.180 0.343
-## 10 0.157 0.679 0.777 0.379</code></pre>
+##         a     b     c     d
+##     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1 0      0.633 0.806 0.215
+##  2 0.540  0     0.282 1    
+##  3 0.587  0.191 0.748 0.799
+##  4 0.402  0.430 0     0    
+##  5 0.237  0.233 0.626 0.314
+##  6 0.516  1     0.653 0.108
+##  7 0.124  0.470 0.577 0.532
+##  8 0.0922 0.304 0.504 0.624
+##  9 0.330  0.481 0.892 0.449
+## 10 1      0.664 1     0.393</code></pre>
 <p>It’s easy to make a mistake in copying the code.<br />
 Fuctions can help to automate the process.</p>
 </div>
@@ -433,18 +433,18 @@ Fuctions can help to automate the process.</p>
          c = rescale01(c),
          d = rescale01(d))</code></pre>
 <pre><code>## # A tibble: 10 × 4
-##        a     b     c     d
-##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-##  1 0.706 0.112 0     0.478
-##  2 0.884 0     0.560 0    
-##  3 1     0.823 0.543 0.668
-##  4 0.899 0.967 0.938 0.845
-##  5 0     0.715 1     0.250
-##  6 0.574 0.537 0.737 1    
-##  7 0.342 0.618 0.829 0.741
-##  8 0.423 0.452 0.493 0.373
-##  9 0.382 1     0.180 0.343
-## 10 0.157 0.679 0.777 0.379</code></pre>
+##         a     b     c     d
+##     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1 0      0.633 0.806 0.215
+##  2 0.540  0     0.282 1    
+##  3 0.587  0.191 0.748 0.799
+##  4 0.402  0.430 0     0    
+##  5 0.237  0.233 0.626 0.314
+##  6 0.516  1     0.653 0.108
+##  7 0.124  0.470 0.577 0.532
+##  8 0.0922 0.304 0.504 0.624
+##  9 0.330  0.481 0.892 0.449
+## 10 1      0.664 1     0.393</code></pre>
 </div>
 <div id="example-farenheit-to-celsius" class="section level3">
 <h3>Example: Farenheit to Celsius</h3>
