@@ -21,6 +21,7 @@ knitr::opts_chunk$set(echo = TRUE,
 library(tidyverse)
 library(maps)
 library(gt)
+library(here)
 ```
 
 # Load the data
@@ -40,7 +41,7 @@ Though we had a lecture on tables before, I wanted to practice making custom sum
 
 For this table, we'll focus on data related to French Presidents and make a table summary of it.
 ```{r}
-democracy %>% 
+pres_table <- democracy %>% 
   filter(country_name == "France") %>%  
   arrange(desc(year)) %>% # we want an ordered table by year
   group_by(president_name) %>% 
@@ -106,6 +107,14 @@ democracy %>%
     source_notes.background.color = "#CFD8DC")
 ```
 
+## Saving the output table as an image 
+When I upload the file to github, the table does not render and only the metadata text is printed. 
+
+```{}
+gtsave(pres_table, "pres_summary_table.png", path = here("Tidy_Tuesday", "tidy_tuesday_2", "outputs"))
+```
+
+![French President Table Summary](../outputs/pres_summary_table.png)
 
 # Playing with maps
 I also wanted to play with making maps
