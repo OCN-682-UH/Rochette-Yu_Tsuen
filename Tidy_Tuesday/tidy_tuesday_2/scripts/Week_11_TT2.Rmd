@@ -39,7 +39,7 @@ world <- map_data("world")
 Though we had a lecture on tables before, I wanted to practice making custom summary tables using {gt} tables.  
 
 For this table, we'll focus on data related to French Presidents and make a table summary of it.
-```{r french_pres}
+```{r}
 democracy %>% 
   filter(country_name == "France") %>%  
   arrange(desc(year)) %>% # we want an ordered table by year

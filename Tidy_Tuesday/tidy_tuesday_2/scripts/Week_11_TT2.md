@@ -107,20 +107,20 @@ democracy %>%
     source_notes.background.color = "#CFD8DC")
 ```
 
-<div id="rpgpdevhkk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#rpgpdevhkk table {
+<div id="qgqnfcrjpm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qgqnfcrjpm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-&#10;#rpgpdevhkk thead, #rpgpdevhkk tbody, #rpgpdevhkk tfoot, #rpgpdevhkk tr, #rpgpdevhkk td, #rpgpdevhkk th {
+&#10;#qgqnfcrjpm thead, #qgqnfcrjpm tbody, #qgqnfcrjpm tfoot, #qgqnfcrjpm tr, #qgqnfcrjpm td, #qgqnfcrjpm th {
   border-style: none;
 }
-&#10;#rpgpdevhkk p {
+&#10;#qgqnfcrjpm p {
   margin: 0;
   padding: 0;
 }
-&#10;#rpgpdevhkk .gt_table {
+&#10;#qgqnfcrjpm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -145,11 +145,11 @@ democracy %>%
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
-&#10;#rpgpdevhkk .gt_caption {
+&#10;#qgqnfcrjpm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-&#10;#rpgpdevhkk .gt_title {
+&#10;#qgqnfcrjpm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: bolder;
@@ -160,7 +160,7 @@ democracy %>%
   border-bottom-color: #F0FFFF;
   border-bottom-width: 0;
 }
-&#10;#rpgpdevhkk .gt_subtitle {
+&#10;#qgqnfcrjpm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: bolder;
@@ -171,7 +171,7 @@ democracy %>%
   border-top-color: #F0FFFF;
   border-top-width: 0;
 }
-&#10;#rpgpdevhkk .gt_heading {
+&#10;#qgqnfcrjpm .gt_heading {
   background-color: #FFECB3;
   text-align: center;
   border-bottom-color: #F0FFFF;
@@ -182,12 +182,12 @@ democracy %>%
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#rpgpdevhkk .gt_bottom_border {
+&#10;#qgqnfcrjpm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #2E7D32;
 }
-&#10;#rpgpdevhkk .gt_col_headings {
+&#10;#qgqnfcrjpm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -201,7 +201,7 @@ democracy %>%
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#rpgpdevhkk .gt_col_heading {
+&#10;#qgqnfcrjpm .gt_col_heading {
   color: #333333;
   background-color: #DCEDC8;
   font-size: 100%;
@@ -220,7 +220,7 @@ democracy %>%
   padding-right: 5px;
   overflow-x: hidden;
 }
-&#10;#rpgpdevhkk .gt_column_spanner_outer {
+&#10;#qgqnfcrjpm .gt_column_spanner_outer {
   color: #333333;
   background-color: #DCEDC8;
   font-size: 100%;
@@ -231,13 +231,13 @@ democracy %>%
   padding-left: 4px;
   padding-right: 4px;
 }
-&#10;#rpgpdevhkk .gt_column_spanner_outer:first-child {
+&#10;#qgqnfcrjpm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
-&#10;#rpgpdevhkk .gt_column_spanner_outer:last-child {
+&#10;#qgqnfcrjpm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
-&#10;#rpgpdevhkk .gt_column_spanner {
+&#10;#qgqnfcrjpm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #2E7D32;
@@ -248,10 +248,10 @@ democracy %>%
   display: inline-block;
   width: 100%;
 }
-&#10;#rpgpdevhkk .gt_spanner_row {
+&#10;#qgqnfcrjpm .gt_spanner_row {
   border-bottom-style: hidden;
 }
-&#10;#rpgpdevhkk .gt_group_heading {
+&#10;#qgqnfcrjpm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -276,7 +276,7 @@ democracy %>%
   vertical-align: middle;
   text-align: left;
 }
-&#10;#rpgpdevhkk .gt_empty_group_heading {
+&#10;#qgqnfcrjpm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #F0FFFF;
@@ -290,13 +290,13 @@ democracy %>%
   border-bottom-color: #D3D3D3;
   vertical-align: middle;
 }
-&#10;#rpgpdevhkk .gt_from_md > :first-child {
+&#10;#qgqnfcrjpm .gt_from_md > :first-child {
   margin-top: 0;
 }
-&#10;#rpgpdevhkk .gt_from_md > :last-child {
+&#10;#qgqnfcrjpm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
-&#10;#rpgpdevhkk .gt_row {
+&#10;#qgqnfcrjpm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -314,7 +314,7 @@ democracy %>%
   vertical-align: middle;
   overflow-x: hidden;
 }
-&#10;#rpgpdevhkk .gt_stub {
+&#10;#qgqnfcrjpm .gt_stub {
   color: #333333;
   background-color: #BBDEFB;
   font-size: 100%;
@@ -326,7 +326,7 @@ democracy %>%
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#rpgpdevhkk .gt_stub_row_group {
+&#10;#qgqnfcrjpm .gt_stub_row_group {
   color: #333333;
   background-color: #F0FFFF;
   font-size: 100%;
@@ -339,13 +339,13 @@ democracy %>%
   padding-right: 5px;
   vertical-align: top;
 }
-&#10;#rpgpdevhkk .gt_row_group_first td {
+&#10;#qgqnfcrjpm .gt_row_group_first td {
   border-top-width: 2px;
 }
-&#10;#rpgpdevhkk .gt_row_group_first th {
+&#10;#qgqnfcrjpm .gt_row_group_first th {
   border-top-width: 2px;
 }
-&#10;#rpgpdevhkk .gt_summary_row {
+&#10;#qgqnfcrjpm .gt_summary_row {
   color: #333333;
   background-color: #F0FFFF;
   text-transform: inherit;
@@ -354,14 +354,14 @@ democracy %>%
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#rpgpdevhkk .gt_first_summary_row {
+&#10;#qgqnfcrjpm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
-&#10;#rpgpdevhkk .gt_first_summary_row.thick {
+&#10;#qgqnfcrjpm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
-&#10;#rpgpdevhkk .gt_last_summary_row {
+&#10;#qgqnfcrjpm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -370,7 +370,7 @@ democracy %>%
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#rpgpdevhkk .gt_grand_summary_row {
+&#10;#qgqnfcrjpm .gt_grand_summary_row {
   color: #333333;
   background-color: #F0FFFF;
   text-transform: inherit;
@@ -379,7 +379,7 @@ democracy %>%
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#rpgpdevhkk .gt_first_grand_summary_row {
+&#10;#qgqnfcrjpm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -388,7 +388,7 @@ democracy %>%
   border-top-width: 6px;
   border-top-color: #D3D3D3;
 }
-&#10;#rpgpdevhkk .gt_last_grand_summary_row_top {
+&#10;#qgqnfcrjpm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -397,10 +397,10 @@ democracy %>%
   border-bottom-width: 6px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#rpgpdevhkk .gt_striped {
+&#10;#qgqnfcrjpm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
-&#10;#rpgpdevhkk .gt_table_body {
+&#10;#qgqnfcrjpm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -408,7 +408,7 @@ democracy %>%
   border-bottom-width: 2px;
   border-bottom-color: #BF360C;
 }
-&#10;#rpgpdevhkk .gt_footnotes {
+&#10;#qgqnfcrjpm .gt_footnotes {
   color: #333333;
   background-color: #F0FFFF;
   border-bottom-style: none;
@@ -421,7 +421,7 @@ democracy %>%
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#rpgpdevhkk .gt_footnote {
+&#10;#qgqnfcrjpm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -429,7 +429,7 @@ democracy %>%
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#rpgpdevhkk .gt_sourcenotes {
+&#10;#qgqnfcrjpm .gt_sourcenotes {
   color: #333333;
   background-color: #CFD8DC;
   border-bottom-style: none;
@@ -442,64 +442,64 @@ democracy %>%
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#rpgpdevhkk .gt_sourcenote {
+&#10;#qgqnfcrjpm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#rpgpdevhkk .gt_left {
+&#10;#qgqnfcrjpm .gt_left {
   text-align: left;
 }
-&#10;#rpgpdevhkk .gt_center {
+&#10;#qgqnfcrjpm .gt_center {
   text-align: center;
 }
-&#10;#rpgpdevhkk .gt_right {
+&#10;#qgqnfcrjpm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-&#10;#rpgpdevhkk .gt_font_normal {
+&#10;#qgqnfcrjpm .gt_font_normal {
   font-weight: normal;
 }
-&#10;#rpgpdevhkk .gt_font_bold {
+&#10;#qgqnfcrjpm .gt_font_bold {
   font-weight: bold;
 }
-&#10;#rpgpdevhkk .gt_font_italic {
+&#10;#qgqnfcrjpm .gt_font_italic {
   font-style: italic;
 }
-&#10;#rpgpdevhkk .gt_super {
+&#10;#qgqnfcrjpm .gt_super {
   font-size: 65%;
 }
-&#10;#rpgpdevhkk .gt_footnote_marks {
+&#10;#qgqnfcrjpm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
-&#10;#rpgpdevhkk .gt_asterisk {
+&#10;#qgqnfcrjpm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
-&#10;#rpgpdevhkk .gt_indent_1 {
+&#10;#qgqnfcrjpm .gt_indent_1 {
   text-indent: 5px;
 }
-&#10;#rpgpdevhkk .gt_indent_2 {
+&#10;#qgqnfcrjpm .gt_indent_2 {
   text-indent: 10px;
 }
-&#10;#rpgpdevhkk .gt_indent_3 {
+&#10;#qgqnfcrjpm .gt_indent_3 {
   text-indent: 15px;
 }
-&#10;#rpgpdevhkk .gt_indent_4 {
+&#10;#qgqnfcrjpm .gt_indent_4 {
   text-indent: 20px;
 }
-&#10;#rpgpdevhkk .gt_indent_5 {
+&#10;#qgqnfcrjpm .gt_indent_5 {
   text-indent: 25px;
 }
-&#10;#rpgpdevhkk .katex-display {
+&#10;#qgqnfcrjpm .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
-&#10;#rpgpdevhkk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+&#10;#qgqnfcrjpm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -636,20 +636,20 @@ mismatch %>% select(country_name) %>% distinct() %>%
   tab_options(column_labels.font.weight = "bolder")
 ```
 
-<div id="kyxntksauw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#kyxntksauw table {
+<div id="nqvqyzeuch" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nqvqyzeuch table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-&#10;#kyxntksauw thead, #kyxntksauw tbody, #kyxntksauw tfoot, #kyxntksauw tr, #kyxntksauw td, #kyxntksauw th {
+&#10;#nqvqyzeuch thead, #nqvqyzeuch tbody, #nqvqyzeuch tfoot, #nqvqyzeuch tr, #nqvqyzeuch td, #nqvqyzeuch th {
   border-style: none;
 }
-&#10;#kyxntksauw p {
+&#10;#nqvqyzeuch p {
   margin: 0;
   padding: 0;
 }
-&#10;#kyxntksauw .gt_table {
+&#10;#nqvqyzeuch .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -674,11 +674,11 @@ mismatch %>% select(country_name) %>% distinct() %>%
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
-&#10;#kyxntksauw .gt_caption {
+&#10;#nqvqyzeuch .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-&#10;#kyxntksauw .gt_title {
+&#10;#nqvqyzeuch .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -689,7 +689,7 @@ mismatch %>% select(country_name) %>% distinct() %>%
   border-bottom-color: #FFFFFF;
   border-bottom-width: 0;
 }
-&#10;#kyxntksauw .gt_subtitle {
+&#10;#nqvqyzeuch .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -700,7 +700,7 @@ mismatch %>% select(country_name) %>% distinct() %>%
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
-&#10;#kyxntksauw .gt_heading {
+&#10;#nqvqyzeuch .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -711,12 +711,12 @@ mismatch %>% select(country_name) %>% distinct() %>%
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#kyxntksauw .gt_bottom_border {
+&#10;#nqvqyzeuch .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#kyxntksauw .gt_col_headings {
+&#10;#nqvqyzeuch .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -730,7 +730,7 @@ mismatch %>% select(country_name) %>% distinct() %>%
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#kyxntksauw .gt_col_heading {
+&#10;#nqvqyzeuch .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -749,7 +749,7 @@ mismatch %>% select(country_name) %>% distinct() %>%
   padding-right: 5px;
   overflow-x: hidden;
 }
-&#10;#kyxntksauw .gt_column_spanner_outer {
+&#10;#nqvqyzeuch .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -760,13 +760,13 @@ mismatch %>% select(country_name) %>% distinct() %>%
   padding-left: 4px;
   padding-right: 4px;
 }
-&#10;#kyxntksauw .gt_column_spanner_outer:first-child {
+&#10;#nqvqyzeuch .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
-&#10;#kyxntksauw .gt_column_spanner_outer:last-child {
+&#10;#nqvqyzeuch .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
-&#10;#kyxntksauw .gt_column_spanner {
+&#10;#nqvqyzeuch .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -777,10 +777,10 @@ mismatch %>% select(country_name) %>% distinct() %>%
   display: inline-block;
   width: 100%;
 }
-&#10;#kyxntksauw .gt_spanner_row {
+&#10;#nqvqyzeuch .gt_spanner_row {
   border-bottom-style: hidden;
 }
-&#10;#kyxntksauw .gt_group_heading {
+&#10;#nqvqyzeuch .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -805,7 +805,7 @@ mismatch %>% select(country_name) %>% distinct() %>%
   vertical-align: middle;
   text-align: left;
 }
-&#10;#kyxntksauw .gt_empty_group_heading {
+&#10;#nqvqyzeuch .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -819,13 +819,13 @@ mismatch %>% select(country_name) %>% distinct() %>%
   border-bottom-color: #D3D3D3;
   vertical-align: middle;
 }
-&#10;#kyxntksauw .gt_from_md > :first-child {
+&#10;#nqvqyzeuch .gt_from_md > :first-child {
   margin-top: 0;
 }
-&#10;#kyxntksauw .gt_from_md > :last-child {
+&#10;#nqvqyzeuch .gt_from_md > :last-child {
   margin-bottom: 0;
 }
-&#10;#kyxntksauw .gt_row {
+&#10;#nqvqyzeuch .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -843,7 +843,7 @@ mismatch %>% select(country_name) %>% distinct() %>%
   vertical-align: middle;
   overflow-x: hidden;
 }
-&#10;#kyxntksauw .gt_stub {
+&#10;#nqvqyzeuch .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -855,7 +855,7 @@ mismatch %>% select(country_name) %>% distinct() %>%
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#kyxntksauw .gt_stub_row_group {
+&#10;#nqvqyzeuch .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -868,13 +868,13 @@ mismatch %>% select(country_name) %>% distinct() %>%
   padding-right: 5px;
   vertical-align: top;
 }
-&#10;#kyxntksauw .gt_row_group_first td {
+&#10;#nqvqyzeuch .gt_row_group_first td {
   border-top-width: 2px;
 }
-&#10;#kyxntksauw .gt_row_group_first th {
+&#10;#nqvqyzeuch .gt_row_group_first th {
   border-top-width: 2px;
 }
-&#10;#kyxntksauw .gt_summary_row {
+&#10;#nqvqyzeuch .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -883,14 +883,14 @@ mismatch %>% select(country_name) %>% distinct() %>%
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#kyxntksauw .gt_first_summary_row {
+&#10;#nqvqyzeuch .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
-&#10;#kyxntksauw .gt_first_summary_row.thick {
+&#10;#nqvqyzeuch .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
-&#10;#kyxntksauw .gt_last_summary_row {
+&#10;#nqvqyzeuch .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -899,7 +899,7 @@ mismatch %>% select(country_name) %>% distinct() %>%
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#kyxntksauw .gt_grand_summary_row {
+&#10;#nqvqyzeuch .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -908,7 +908,7 @@ mismatch %>% select(country_name) %>% distinct() %>%
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#kyxntksauw .gt_first_grand_summary_row {
+&#10;#nqvqyzeuch .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -917,7 +917,7 @@ mismatch %>% select(country_name) %>% distinct() %>%
   border-top-width: 6px;
   border-top-color: #D3D3D3;
 }
-&#10;#kyxntksauw .gt_last_grand_summary_row_top {
+&#10;#nqvqyzeuch .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -926,10 +926,10 @@ mismatch %>% select(country_name) %>% distinct() %>%
   border-bottom-width: 6px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#kyxntksauw .gt_striped {
+&#10;#nqvqyzeuch .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
-&#10;#kyxntksauw .gt_table_body {
+&#10;#nqvqyzeuch .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -937,7 +937,7 @@ mismatch %>% select(country_name) %>% distinct() %>%
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#kyxntksauw .gt_footnotes {
+&#10;#nqvqyzeuch .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -950,7 +950,7 @@ mismatch %>% select(country_name) %>% distinct() %>%
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#kyxntksauw .gt_footnote {
+&#10;#nqvqyzeuch .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -958,7 +958,7 @@ mismatch %>% select(country_name) %>% distinct() %>%
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#kyxntksauw .gt_sourcenotes {
+&#10;#nqvqyzeuch .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -971,64 +971,64 @@ mismatch %>% select(country_name) %>% distinct() %>%
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#kyxntksauw .gt_sourcenote {
+&#10;#nqvqyzeuch .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#kyxntksauw .gt_left {
+&#10;#nqvqyzeuch .gt_left {
   text-align: left;
 }
-&#10;#kyxntksauw .gt_center {
+&#10;#nqvqyzeuch .gt_center {
   text-align: center;
 }
-&#10;#kyxntksauw .gt_right {
+&#10;#nqvqyzeuch .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-&#10;#kyxntksauw .gt_font_normal {
+&#10;#nqvqyzeuch .gt_font_normal {
   font-weight: normal;
 }
-&#10;#kyxntksauw .gt_font_bold {
+&#10;#nqvqyzeuch .gt_font_bold {
   font-weight: bold;
 }
-&#10;#kyxntksauw .gt_font_italic {
+&#10;#nqvqyzeuch .gt_font_italic {
   font-style: italic;
 }
-&#10;#kyxntksauw .gt_super {
+&#10;#nqvqyzeuch .gt_super {
   font-size: 65%;
 }
-&#10;#kyxntksauw .gt_footnote_marks {
+&#10;#nqvqyzeuch .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
-&#10;#kyxntksauw .gt_asterisk {
+&#10;#nqvqyzeuch .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
-&#10;#kyxntksauw .gt_indent_1 {
+&#10;#nqvqyzeuch .gt_indent_1 {
   text-indent: 5px;
 }
-&#10;#kyxntksauw .gt_indent_2 {
+&#10;#nqvqyzeuch .gt_indent_2 {
   text-indent: 10px;
 }
-&#10;#kyxntksauw .gt_indent_3 {
+&#10;#nqvqyzeuch .gt_indent_3 {
   text-indent: 15px;
 }
-&#10;#kyxntksauw .gt_indent_4 {
+&#10;#nqvqyzeuch .gt_indent_4 {
   text-indent: 20px;
 }
-&#10;#kyxntksauw .gt_indent_5 {
+&#10;#nqvqyzeuch .gt_indent_5 {
   text-indent: 25px;
 }
-&#10;#kyxntksauw .katex-display {
+&#10;#nqvqyzeuch .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
-&#10;#kyxntksauw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+&#10;#nqvqyzeuch div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
