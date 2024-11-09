@@ -1,7 +1,7 @@
 Week 10 - Tidy Tuesday 1
 ================
 Keanu Rochette
-2024-11-03
+2024-11-06
 
 - [Load the libraries](#load-the-libraries)
 - [Load the data](#load-the-data)
