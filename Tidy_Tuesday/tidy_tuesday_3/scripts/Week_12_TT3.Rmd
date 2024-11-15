@@ -1,0 +1,180 @@
+---
+author: 'Keanu Rochette '
+date: '`r format(Sys.Date())`'
+title: Week 12 - Tidy Tuesday 3
+output: 
+  github_document:
+    toc: true
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE,
+                      warning = FALSE)
+```
+
+# Disclaimer : Strings are annoying
+![Me Dealing with Strings](https://i.redd.it/72lxlzwn81k61.jpg)
+
+# Load the Libraries
+```{r}
+library(tidyverse)
+library(here)
+library(random)
+library(gt)
+```
+
+# Load the Data
+This week we have a data set about country codes. Not very inspired unfortunately... 
+```{r}
+tuesdata <- tidytuesdayR::tt_load('2024-11-12')
+
+countries <- tuesdata$countries
+countries
+#country_subdivisions <- tuesdata$country_subdivisions
+#former_countries <- tuesdata$former_countries
+```
+
+# Introduction: A New Secret Code 
+This week I wanted to use the name of the countries and convert them into a sequence of coded letters just like DNA is.  
+
+To do that, I decided to use the letters K, R, Y and T (my initials) as my "nucleotides". The nucleotides will grouped by 3s, i.e. the codons, and each codons will be assigned a letter.
+
+```{}
+#Creating 28 sequences of 3 letters with the nucleotides. 
+codon <- replicate(28, paste0(sample(c("K", "R", "Y", "T"), 3, replace = TRUE), collapse=""))
+
+# Creating a vector with the letters of the alphabet, 
+# an apostrophy and an underscore (as a space)
+alpha <- c(letters, "_", "'")
+
+# Assigning the letters a codon. 
+gen_code <- tibble(alpha, codon)
+
+# Because the codons where generated random and we want to have a consistant 
+# genetic code, I save the matched letters and codons as a csv.
+write_csv(gen_code,here("Tidy_Tuesday", "tidy_tuesday_3", "data", "gen_code.csv"))
+```
+
+
+# Load the Genetic Code
+```{r}
+gen_code <- tibble(read_csv(here("Tidy_Tuesday", "tidy_tuesday_3", "data", "gen_code.csv")))
+
+gen_code
+```
+
+
+# Creating a Function that Will Convert our Country Names to "DNA Sequences"
+```{r}
+KRYT_DNA <- function(data, name = name ){
+  data %>% tibble() %>%
+    
+    #the country names must be cleaned up before they can be encoded
+    mutate(name_trans = tolower({{name}})) %>% # transform to lower case
+    mutate(
+      #spaces are replaced by a "_"
+         name_trans = str_replace_all(name_trans, " ", "_"),
+      # because this is a simple code, we will transform
+      # any punctuation symbol as a "_" for the sake of simplicity 
+         name_trans = str_replace_all(name_trans, ",", "_"),
+         name_trans = str_replace_all(name_trans, "\\(", "_"),
+         name_trans = str_replace_all(name_trans, "\\)", "_"),
+      # we create a new column that splits the name of the countries into
+      # their letter components. This returns lists.
+         alpha = str_split(name_trans, "", simplify = FALSE)) %>%
+    # we undo the list the letters can be manipulated
+    unnest(alpha) %>% 
+    # we can match the letter to the genetic code
+    left_join(gen_code, by = "alpha") %>% 
+    # and group the letters and codons by country names so they are kept tidy
+    group_by(name_trans) %>% 
+    # in order to group the codons together, we make a list with them
+    mutate(DNA_seq = list(codon)) %>% 
+    # we use map_chr(), which is a hidden for loop that applies a function to an object.
+    #that way we can have the codon read one after the other to make a single string
+    mutate(DNA_seq = map_chr(DNA_seq, ~ str_c(.x, collapse = ""))) %>% 
+    #we only keep the relevant columns
+    select(name, name_trans, DNA_seq) %>% distinct() %>%  
+    # I had to ungroup or my later table gets messy
+    ungroup()
+}
+```
+
+
+## Examples ! 
+We can make random lists of countries from this week's data set to test the function 
+```{r}
+test_1 <- countries %>% select(name) %>% slice_sample(n= 20)
+
+
+KRYT_DNA(test_1) %>% 
+  # create the gt table with a title and subtitle
+  gt() %>% 
+  tab_header(title = md("**Converting Country Names into Secret Messages**"))  %>%
+  
+  # change the column names into prettier names
+  cols_label(
+    name = "Country Name",
+    name_trans = "Transformed Name",
+    DNA_seq = "KRYT DNA Code") %>% 
+  tab_source_note("Source: Tidy Tuesday November 12, 2024") %>%
+  
+  tab_style(
+    style = cell_text(weight = "bold"), 
+    locations = cells_column_labels(columns = everything())) %>% 
+  
+  # center text within the columns 
+  cols_align(
+    align = "left",
+    columns = everything())
+```
+
+```{r}
+test_2 <- countries %>% select(name) %>% slice_sample(n= 20)
+
+
+KRYT_DNA(test_2) %>% 
+  # create the gt table with a title and subtitle
+  gt() %>% 
+  tab_header(title = md("**Converting Country Names into Secret Messages**"))  %>%
+  
+  # change the column names into prettier names
+  cols_label(
+    name = "Country Name",
+    name_trans = "Transformed Name",
+    DNA_seq = "KRYT DNA Code") %>% 
+  tab_source_note("Source: Tidy Tuesday November 12, 2024") %>%
+  
+  tab_style(
+    style = cell_text(weight = "bold"), 
+    locations = cells_column_labels(columns = everything())) %>% 
+  
+  # center text within the columns 
+  cols_align(
+    align = "left",
+    columns = everything())
+```
+
+
+# Tidy Tuesday 3 Learnings
+This week I wanted to play more with strings and getting to manipulate them.
+It was pretty difficult to read a string letter by letter especially if those are part of a data set.  
+There was a lot of googling and inquiries with chatgpt to understand the underlining priciples behind manipulating strings.  
+One caveat of the function is that the new genetic code does not encompass every type of characters. If a country name has special characters such as "é", "ê" or "-", the DNA sequence cannot be generated. 
+
+
+## **Conclusion:** I wish my research never involves having to deal with strings. (One can only dream!)
+
+
+
+
+
+
+
+
+
+
+
+
+
