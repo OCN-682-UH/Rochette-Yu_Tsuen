@@ -153,6 +153,7 @@ server <- function(input,output){
                             "% of the Consuming Countries"),
            x = "Countries",
            y= "Total Consumption (kg/pers/yr)")+
+      ylim(0, max(data2()$consumption)*(1+0.10))+
       theme_bw() + 
       theme(plot.title = element_text(size=16, face = "bold"), 
             plot.subtitle = element_text(size=15), 
@@ -173,6 +174,7 @@ server <- function(input,output){
                             "% of the Consuming Countries"),
            x = "Countries",
            y= "Total Emissions (kgCO2/pers/yr)")+
+      ylim(0, max(data2()$co2_emmission)*(1+0.10))+
       theme_bw() + 
       theme(plot.title = element_text(size=16, face = "bold"), 
             plot.subtitle = element_text(size=15), 

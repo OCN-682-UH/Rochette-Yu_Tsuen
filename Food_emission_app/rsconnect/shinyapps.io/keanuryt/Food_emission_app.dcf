@@ -5,7 +5,7 @@ account: keanuryt
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 13362033
-bundleId: 9374839
+bundleId: 9376847
 url: https://keanuryt.shinyapps.io/Food_emission_app/
 version: 1
 asMultiple: FALSE
