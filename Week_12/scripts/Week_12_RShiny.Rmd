@@ -1,0 +1,146 @@
+---
+author: 'Keanu Rochette '
+date: '`r format(Sys.Date())`'
+title: Week 12 - R Shiny
+output: html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE,
+                      warning = FALSE)
+```
+
+
+# Libraries
+```{r}
+library(shiny)
+library(tidyverse)
+library(patchwork)
+```
+
+#Code
+```{r}
+tuesdata <- tidytuesdayR::tt_load('2020-02-18')
+food <- tuesdata$food_consumption
+
+```
+
+# Shiny App graphs
+
+All graphs that will be added to the Shiny have been drafted here
+
+
+```{r}
+conso_graph <- food %>% 
+  group_by(country) %>% 
+  mutate(conso_tot = sum(consumption, na.rm = T),
+         emission_tot = sum(co2_emmission, na.rm = T)) %>% ungroup() %>% 
+  filter(country == "USA") %>% 
+  group_by(food_category) %>% 
+  summarize(conso_proportion = consumption/conso_tot) %>% 
+  mutate(food_category = fct_reorder(food_category,conso_proportion)) %>% 
+  ggplot(aes(x = food_category , y= conso_proportion)) +
+  geom_bar(stat= "identity", aes(fill = food_category))+
+  ylim(0,1)+ coord_flip()+ 
+  labs(title = "Food consumption in X Country X",
+       x = "Food Categories",
+       y= "Consumption Proportion (%)")+
+  theme_bw() + 
+  theme(plot.title = element_text(size=14, face = "bold"), 
+        axis.title = element_text(size = 12, face = "bold"),
+        axis.text = element_text(size = 12),
+        strip.text.x = element_text(size = 12, face = "bold"),
+        legend.title=element_text(size=12, face = "bold"),
+        legend.text=element_text(size=12),
+        #axis.text.x = element_text(angle= 45, hjust= 1),
+        legend.position = "none",
+        panel.background = element_rect(fill = "azure1")) 
+
+
+#emission_graph<- 
+food %>% 
+  group_by(country) %>% 
+  mutate(conso_tot = sum(consumption, na.rm = T),
+         emission_tot = sum(co2_emmission, na.rm = T)) %>% ungroup() %>% 
+  filter(country == "USA") %>% 
+  group_by(food_category) %>% 
+  summarize(emission_proportion = co2_emmission/emission_tot) %>% 
+  mutate(food_category = fct_reorder(food_category,emission_proportion)) %>% 
+  ggplot(aes(x = food_category , y= emission_proportion)) +
+  geom_bar(stat= "identity", aes(fill = food_category))+
+  geom_text(aes(label= round(conso_proportion*100)))+
+  ylim(0,1)+ coord_flip()+ 
+  labs(title = "CO2 Emissions Fraction in X Country X",
+       x = "Food Categories",
+       y= " Proportion of CO2 Emission (%)")+
+  theme_bw() + 
+  theme(plot.title = element_text(size=14, face = "bold"), 
+        axis.title = element_text(size = 12, face = "bold"),
+        axis.text = element_text(size = 12),
+        strip.text.x = element_text(size = 12, face = "bold"),
+        legend.title=element_text(size=12, face = "bold"),
+        legend.text=element_text(size=12),
+        #axis.text.x = element_text(angle= 45, hjust= 1),
+        legend.position = "none",
+        panel.background = element_rect(fill = "azure1"))
+
+conso_graph + emission_graph + plot_layout(axes = "collect")
+```
+
+```{r}
+country_conso <- food %>% 
+  group_by(food_category) %>% 
+  filter(food_category == "Beef",
+         consumption >= quantile(consumption, 0.75, na.rm = T)) %>% 
+ 
+  mutate(country = fct_reorder(country,consumption)) %>% 
+  ggplot(aes(x = country , y= consumption)) +
+  geom_bar(stat= "identity", aes(fill = food_category))+
+  #ylim(0,1)+ 
+  coord_flip()+ 
+  labs(title = "Total XFoodX Consumption ",
+       x = "Countries",
+       y= "Total Consumption (kg/pers/yr)")+
+  theme_bw() + 
+  theme(plot.title = element_text(size=14, face = "bold"), 
+        axis.title = element_text(size = 12, face = "bold"),
+        axis.text = element_text(size = 12),
+        strip.text.x = element_text(size = 12, face = "bold"),
+        legend.title=element_text(size=12, face = "bold"),
+        legend.text=element_text(size=12),
+        #axis.text.x = element_text(angle= 45, hjust= 1),
+        legend.position = "none",
+        panel.background = element_rect(fill = "azure1"))
+
+
+
+country_emission <- food %>% 
+  group_by(food_category) %>% 
+  #mutate(conso_tot = sum(consumption, na.rm = T),
+   #      emission_tot = sum(co2_emmission, na.rm = T)) %>% ungroup() %>% 
+  filter(food_category == "Beef",
+         co2_emmission >= quantile(co2_emmission, 0.75, na.rm = T)) %>% 
+  #summarize(conso_proportion = consumption/conso_tot) %>% 
+  mutate(country = fct_reorder(country,co2_emmission)) %>% 
+  ggplot(aes(x = country , y= co2_emmission)) +
+  geom_bar(stat= "identity", aes(fill = food_category))+
+  #ylim(0,1)+ 
+  coord_flip()+ 
+  labs(title = "CO2 Emissions from XFoodX",
+       x = "Countries",
+       y= "Total Emissions (kgCO2/pers/yr)")+
+  theme_bw() + 
+  theme(plot.title = element_text(size=14, face = "bold"), 
+        axis.title = element_text(size = 12, face = "bold"),
+        axis.text = element_text(size = 12),
+        strip.text.x = element_text(size = 12, face = "bold"),
+        legend.title=element_text(size=12, face = "bold"),
+        legend.text=element_text(size=12),
+        #axis.text.x = element_text(angle= 45, hjust= 1),
+        legend.position = "none",
+        panel.background = element_rect(fill = "azure1"))
+
+country_conso+country_emission + plot_layout(axes = "collect")
+```
+
