@@ -1,0 +1,67 @@
+---
+author: 'Keanu Rochette '
+date: '`r format(Sys.Date())`'
+title: Week 12 - R Shiny
+output: html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE,
+                      warning = FALSE)
+```
+
+# Load Libraries
+```{r}
+library(tidyverse)
+library(reprex) # reproducible example
+library(datapasta) # copy and paste
+library(styler) # needs to be load WITH datapasta
+library(here)
+```
+
+# Reprex:
+
+Allows to format R session it in a way that's easily shared on help website
+
+Copy the snippet of code that causes issues -> Addins -> Render reprex -> "on the clipboard" -> "Github or Stackoverflow" -> "Append Session info"
+```{r}
+mpg %>% 
+  ggplot(aes(x = displ, y = hwy))%>%
+  geom_point(aes(color = class))
+```
+
+
+# Datapasta
+Can copy and paste a piece of data frame and transform it in a tibble
+
+Copy the head of your **CSV file** and paste it as a tribble with data paster
+```{r}
+
+data <- tibble::tribble(
+    ~lat,    ~long, ~star_no,
+  33.548, -117.805,      10L,
+  35.534, -121.083,       1L,
+  39.503, -123.743,      25L,
+  32.863,  -117.24,      22L,
+   33.46, -117.671,       8L,
+  33.548, -117.805,       3L
+  )
+
+```
+
+
+```{r}
+iris %>% 
+  ggplot(aes(x= Speal.Length, y = Petal.Width))
+  geom_point(aes(color= species))
+```
+
+```{r}
+ggplot() +
+  geom_point(data = penguins, aes(x = bill_length_mm, y = species)) +
+  labs(title = "PENGUINS",
+       subtitle = "HOW LONG ARE THEIR BILLS")
+```
+
+
