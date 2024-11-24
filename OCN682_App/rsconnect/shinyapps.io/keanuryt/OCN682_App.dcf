@@ -1,0 +1,12 @@
+name: OCN682_App
+title: OCN682_App
+username: keanuryt
+account: keanuryt
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 13319905
+bundleId: 9354050
+url: https://keanuryt.shinyapps.io/OCN682_App/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
