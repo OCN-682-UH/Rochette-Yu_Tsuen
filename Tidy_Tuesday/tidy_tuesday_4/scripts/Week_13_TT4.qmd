@@ -10,8 +10,8 @@ format:
     nav-buttons:
       icon: github
       href: https://github.com/keanuryt
-logo: images/silbiger-logo.jpg
-logo-alt: Silbiger Lab Logo
+logo: images/KRYT_logo.jpg
+logo-alt: Nunu's Logo
 knitr:
   opts_chunk:
     fig.path: "outputs/"
