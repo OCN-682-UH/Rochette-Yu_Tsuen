@@ -22,7 +22,7 @@ knitr:
 # Load the libraries
 library(tidyverse)
 library(here)
-library(multcompView) #required for ANOVA visualisation
+library(multcompView) #required for ANOVA vizualisation
 library(viridis)
 library(gt)
 ```
