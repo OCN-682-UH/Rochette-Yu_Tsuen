@@ -1,0 +1,289 @@
+---
+author: 'Keanu Rochette '
+date: '`r format(Sys.Date())`'
+title: Final Project
+output: html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      message = FALSE, 
+                      warning= FALSE)
+```
+
+# Load Libraries
+```{r}
+library(tidyverse)
+library(here)
+library(janitor)
+library(openxlsx) 
+
+```
+
+
+################# Data Clean-Up for CTD Data ####################
+
+# Create a function that converts .asc files to .csv
+```{}
+asc_to_csv <- function(filename){
+  
+# Specify the file paths
+asc_file <- here("Final_project", "data", "ctd_data", filename)  
+#csv_file <- here("Final_project", "data", "ctd_data") 
+
+# Read the .asc file
+data <- read.table(asc_file, sep = ",")  
+colnames(data) <- data[1,]
+data <- data[-1,]
+data <- clean_names(data)
+
+
+filename <- str_replace_all(filename, "\\.|[a-z]{3}", "")
+filename <- str_trim(filename)
+
+# Write to a .csv file
+write.csv(data, file = here("Final_project", "data", "ctd_data", 
+                            paste(filename, ".csv")))
+
+}
+
+```
+
+## Converting the files from .asc to .csv
+```{}
+asc_to_csv(filename = "km2315_A_1_200m.asc.csv")
+asc_to_csv(filename = "km2315_05_500m.asc.csv")
+asc_to_csv(filename = "km2315_A_2_200m.asc.csv")
+asc_to_csv(filename = "km2315_B_1_250m.asc.csv")
+asc_to_csv(filename = "km2315_B_2_250m.asc.csv")
+asc_to_csv(filename = "km2315_C_1_250m.asc.csv")
+asc_to_csv(filename = "km2315_C_2_250m.asc.csv")
+asc_to_csv(filename = "km2315_D_1500m.asc.csv")
+
+#Note: Somehow the file names have a space before the ".csv" and I don't know how 
+# to fix that. So I manually removed the spaces
+```
+
+
+#Load Data
+```{r}
+CTD_A1 <- read_csv(here("Final_project", "data", "ctd_data", "km2315_A_1_200m.csv"))
+CTD_A2 <- read_csv(here("Final_project", "data", "ctd_data", "km2315_A_2_200m.csv"))
+CTD_B1 <- read_csv(here("Final_project", "data", "ctd_data", "km2315_B_1_250m.csv"))
+CTD_B2 <- read_csv(here("Final_project", "data", "ctd_data", "km2315_B_2_250m.csv"))
+CTD_C1 <- read_csv(here("Final_project", "data", "ctd_data", "km2315_C_1_250m.csv"))
+CTD_C2 <- read_csv(here("Final_project", "data", "ctd_data", "km2315_C_2_250m.csv"))
+CTD_D <- read_csv(here("Final_project", "data", "ctd_data", "km2315_D_1500m.csv"))
+#CTD_wut <- read_csv(here("Final_project", "data", "ctd_data", "km2315_05_500m.csv"))
+
+
+```
+
+# Create a function to automate the clean up the CTD data
+```{r}
+
+CTD_data_cleaner <- function(dataset){
+
+  station_ID <- 
+  df <- dataset %>% 
+    mutate(temp = (t090c+t190c)/2,
+         density = (density00+density11)/2,
+         date = as.Date(time_j, origin= as.Date("2023-01-01")),
+         oxygen_conc = (sbox0mm_kg+sbox1mm_kg)/2,
+         perc_ox_sat = (sbeox0ps+sbeox1ps)/2) %>% 
+    rename(pressure = pr_dm, depth = dep_sm,
+         descent_rate= dz_dt_m, 
+         PAR = par,
+         fluorescence = fl_sp) %>% 
+    select(time_s, date, pressure, descent_rate, PAR, 
+         temp, density, oxygen_conc, perc_ox_sat, fluorescence)  
+  
+    breaks <- seq(from = 0, to = max(df$pressure), by = 0.5)
+    
+    df <- df %>%  tibble() %>% 
+      mutate(depth_cat = cut(df$pressure, 
+        breaks= breaks,
+        labels=paste(head(breaks, -1)),
+        right = F)) %>% 
+      relocate(depth_cat, .before = time_s) %>% 
+    group_by(depth_cat) %>% 
+    summarise_all(mean) %>% ungroup()
+    
+    return(df)
+  
+}
+```
+
+# Apply the function to the numerous files and clean up the data 
+```{r}
+CTD_A1 <- CTD_data_cleaner(CTD_A1)
+CTD_A1 <- CTD_A1 %>% mutate(station = "A")
+
+CTD_A2 <- CTD_data_cleaner(CTD_A2)
+CTD_A2<-CTD_A2 %>% mutate(station = "A")
+
+CTD_B1 <- CTD_data_cleaner(CTD_B1)
+CTD_B1 <-CTD_B1 %>% mutate(station = "B")
+
+CTD_B2 <- CTD_data_cleaner(CTD_B2)
+CTD_B2<-CTD_B2 %>% mutate(station = "B")
+
+CTD_C1 <- CTD_data_cleaner(CTD_C1)
+CTD_C1 <-CTD_C1 %>% mutate(station = "C")
+
+CTD_C2 <- CTD_data_cleaner(CTD_C2)
+CTD_C2<- CTD_C2 %>% mutate(station = "C")
+
+CTD_D <- CTD_data_cleaner(CTD_D)
+CTD_D <- CTD_D %>% mutate(station = "Deep")
+
+```
+
+# Combining all the CTD data into one file 
+```{r}
+CTD <- rbind(CTD_A1 ,CTD_A2, CTD_B1,CTD_B2, CTD_C1, CTD_C2, CTD_D)
+```
+
+
+# Final Data clean up and saving the file as a new .csv
+```{r}
+CTD <- CTD %>% group_by(depth_cat, station) %>% 
+  summarise_all(mean) %>% ungroup() 
+  
+write_csv(CTD, here("Final_project", "data", "CTD.csv"))
+  
+```
+
+
+################# Data Clean-Up for CTD Data ####################
+
+# Load the Data
+```{r}
+fcm <- read_csv(here("Final_project", "data", "km2315_fcm_data.csv"), locale=locale(encoding="latin1"), skip = 2)
+
+site_depth <- read_csv(here("Final_project", "data", "wells_dataframe.csv"))
+
+#only keep the 1/4L(V)
+# realevents = (include - hoechst junk - chlorophyll junk)
+```
+
+# Clean the column names of the files
+
+```{r}
+fcm <- fcm %>% clean_names() 
+site_depth<- site_depth %>% rename(tube_name = well_num)
+```
+
+# Renames the columns and only keeping the columns of interest
+```{r}
+fcm <- fcm %>% 
+  mutate(real_event = include_events_i1_4l_v- hoechst_junk_events_i1_4l_v- chlorophyll_junk_events_i1_4l_v) %>% 
+  select(1,c(166:181), -h1_ur_events_i1_4l_v, -h1_ul_events_i1_4l_v,
+         -h2_ll_events_i1_4l_v, -h2_lr_events_i1_4l_v,
+         -hoechst_junk_events_i1_4l_v, -chlorophyll_junk_events_i1_4l_v
+         ) %>% 
+  rename(all_events = all_events_events_i1_4l_v,
+         include_events = include_events_i1_4l_v,
+         low_chl_events = low_chlorophyll_events_i1_4l_v,
+         autotr= autotrophic_hi_chl_events_i1_4l_v,
+         small_autotr_cyano = small_autotrophs_cyanobacteria_events_i1_4l_v,
+         large_autotr_pico_euks = large_autotrophs_pico_euks_events_i1_4l_v,
+         heterobact = heterotrophic_bacteria_events_i1_4l_v,
+         low_pe_cyano = low_pe_cyanos_events_i1_4l_v,
+         hi_pe_cyano = high_pe_cyanos_events_i1_4l_v,
+         true_autotr = true_autotrophs_events_i1_4l_v)
+```
+
+#Merging the data sets by sample ID so we have a comprehensive dataframe
+
+```{r}
+fcm <- left_join(fcm, site_depth, by= "tube_name")
+fcm <- fcm %>%  relocate(site_depth, .after = tube_name)
+```
+
+# Separating the site name and cast number for later analysis
+```{r}
+fcm <- fcm %>% separate(site_depth, c("site", "depth")) %>% 
+  separate(site, 
+           into = c("site", "cast"), 
+           sep = "(?<=[A-Za-z])(?=[0-9])") %>% 
+  filter(site != "stain", site != "blank")
+```
+
+# Calculating the relative abundance of microbes 
+based on site and depth
+```{r}
+fcm <- fcm  %>% 
+  group_by(site,depth) %>% 
+  summarize(hbac_rel_abun = heterobact/include_events,
+            pico_euk_rel_abun = large_autotr_pico_euks/include_events,
+            syn_rel_abun = hi_pe_cyano/include_events,
+            pro_rel_abun = low_pe_cyano/include_events)
+
+```
+
+# Create a new .csv file with clean data
+```{r}
+write_csv(fcm, here("Final_project", "data", "fcm.csv"))
+```
+
+################# Data Clean-Up for CTD and FCM Data ####################
+
+
+# Load the data
+```{r}
+CTD <- read_csv(here("Final_project", "data", "CTD.csv"))
+fcm <- read_csv(here("Final_project", "data", "fcm.csv"))
+```
+
+# Pivoting the dataframe and giving prettier names to the microbes
+```{r}
+fcm <- fcm %>% 
+  pivot_longer(cols = c(hbac_rel_abun:pro_rel_abun),
+               names_to = "microbe", 
+               values_to = "rel_abun") %>% 
+  mutate(microbe = ifelse(microbe == "hbac_rel_abun", "Heterotrophic Bacteria",
+                          ifelse(microbe == "pico_euk_rel_abun", "Pico Eukaryote", ifelse(microbe == "syn_rel_abun", "Synechococcus", "Prochlorococcus"))))
+
+         
+```
+
+# Only selecting the variable of interest in CTD and pivoting the dataframe
+```{r}
+CTD <- CTD %>% select(-time_s, -date, -descent_rate, - density) %>% 
+   rename(depth = depth_cat, 
+            Pressure = pressure,
+            `Temperature (°C)` = temp,
+            `Oxygen (umol/kg)`= oxygen_conc,
+            `Oxygen (% saturation)`=perc_ox_sat,
+            Fluorescence = fluorescence
+             ) %>% 
+  pivot_longer(cols= c(Pressure:Fluorescence),
+               names_to = "parameter",
+               values_to = "values")
+```
+
+
+# Last clean up for FCM data and merging FCM an CTD data
+```{r}
+fcm <- fcm %>% 
+  group_by(site, depth) %>% 
+  mutate_all(mean) %>% distinct() %>% 
+  mutate(site = ifelse(site == "DEEP", "Deep", site)) %>% 
+  rename(station = site) %>% ungroup() %>% 
+  pivot_longer(cols= c(hbac_rel_abun:pro_rel_abun),
+               names_to = "microbe",
+               values_to = "rel_abun") %>% 
+  mutate(depth = as.numeric(depth))
+
+CTD_FCM<- left_join(fcm, CTD, by = c("depth", "station"))
+```
+
+# Write new CSV with the combined data 
+```{r}
+write.csv(CTD_FCM, here("Final_project", "data", "CTD_FCM.csv"))
+```
+
+
+
+
