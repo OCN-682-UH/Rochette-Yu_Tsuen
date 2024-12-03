@@ -18,7 +18,7 @@ CTD_FCM <- read_csv(here("data", "CTD_FCM.csv"))
 # Define UI 
 ui <- fluidPage(
   
-  theme = shinytheme("sandstone"),
+  theme = shinytheme("cerulean"),
   
   titlePanel("🌊 Oceanographic Data: a Story of the Ocean 🌊"),
   

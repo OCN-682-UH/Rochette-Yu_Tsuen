@@ -1,6 +1,7 @@
 ## Rochette-Yu_Tsuen
 
-_This repository is for learning purposes._
+_This repository is for learning purposes._  
+
 ![Moorea Viewpoint](Photos/moorea_view.jpeg)
 
 Hi, my name is **Keanu**! 
@@ -11,7 +12,7 @@ First Shiny App!
 [Food Consumption and Carbon Emission](https://keanuryt.shinyapps.io/Food_emission_app/)
 
 ### Final Project 
-[Oceanographic Data](https://keanuryt.shinyapps.io/Oceanographic_data/)
+[Oceanographic Data](https://keanuryt.github.io/blog/)
 
 
 

@@ -1,0 +1,300 @@
+---
+title: "Week 14 - Tidy Tuesday 5"
+author: Keanu Rochette-Yu Tsuen
+date: 2024/12/01
+knitr: 
+  opts_chunk:
+    fig.path: "../outputs/"
+format: 
+  revealjs:
+    footer: "OCN 682: Tidy Tuesday 5"
+    logo: images/KRYT_logo_round.png
+    theme: serif
+    transition: fade
+---
+
+## Overview
+
+This week, I decided to learn how to make a **Quarto Presentation**.\
+In this presentation, we will learn about:
+
+-    incorporating *figures* in slides
+-    showing the *code* along the figures
+-    adding code chunks to *highlight elements*
+-    changing the *layout* of the slides
+-    *miscellaneous features* of Quarto Presentations
+
+## Setting Up the Script
+Load the libraries
+```{r}
+#| label: setup
+#| echo: true
+library(tidyverse)
+library(gt)
+library(gtable)
+```
+
+Load the Tidy Tuesday Data
+```{r}
+#| echo: true
+tuesdata <- tidytuesdayR::tt_load('2024-11-26')
+
+cbp_resp <- tuesdata$cbp_resp
+cbp_state <- tuesdata$cbp_state
+```
+
+## Making a graph in Quarto
+We can display figures in a Quarto slide by directly coding in a chunk of code. The result is displayed below.  
+
+```{r}
+df_short <- cbp_resp %>% 
+  select(land_border_region,aor_abbv, demographic, citizenship,
+         encounter_type, encounter_count) %>% 
+  mutate(citizenship = str_to_title(citizenship)) %>% 
+  group_by(citizenship, encounter_type) %>% 
+  summarize(encounter_count = sum(encounter_count, na.rm = T)) %>% 
+  ungroup() %>% 
+  group_by(encounter_type) %>% 
+  mutate(total_encounter = sum(encounter_count, na.rm = T)) %>% 
+  mutate(encounter_frac = encounter_count/total_encounter) %>% 
+  mutate(citizenship = fct_reorder(as.factor(citizenship), encounter_frac )) %>% 
+  ungroup() 
+```
+
+```{r}
+df_short %>% 
+  ggplot(aes(x= citizenship, y = encounter_frac, fill = citizenship))+
+  geom_bar(stat = "identity") +
+  facet_wrap(.~encounter_type) +
+  coord_flip() +
+  labs(title = "US Border Immigration Data on non-US Citizens",
+           x = "Citizenhip",
+           y= "Proportion of Immigration Outcome (%)")+
+      scale_y_continuous(labels = scales::percent, limits=c(0,1))+
+      theme_bw() + 
+      theme(plot.title = element_text(size=16, face = "bold"), 
+            plot.subtitle = element_text(size=15), 
+            axis.title = element_text(size = 14, face = "bold"),
+            axis.text = element_text(size = 14),
+            legend.position = "none",
+            panel.background = element_rect(fill = "azure1"))
+```
+However, the actual code chunk is hidden from the viewer and we have to remember to add {echo: true} for the code to be displayed.
+
+## Now let's see it with the code chunk
+
+```{r}
+
+fig_ex <- cbp_resp %>% 
+  select(land_border_region,aor_abbv, demographic, citizenship,
+         encounter_type, encounter_count) %>% 
+  mutate(citizenship = str_to_title(citizenship)) %>% 
+  group_by(citizenship, encounter_type) %>% 
+  summarize(encounter_count = sum(encounter_count, na.rm = T)) %>% 
+  ungroup() %>% 
+  group_by(encounter_type) %>% 
+  mutate(total_encounter = sum(encounter_count, na.rm = T)) %>% 
+  mutate(encounter_frac = encounter_count/total_encounter) %>% 
+  mutate(citizenship = fct_reorder(as.factor(citizenship), encounter_frac )) %>% 
+  ungroup() %>% 
+  ggplot(aes(x= citizenship, y = encounter_frac, fill = citizenship))+
+  geom_bar(stat = "identity") +
+  facet_wrap(.~encounter_type) +
+  coord_flip() +
+  labs(title = "US Border Immigration Data on non-US Citizens",
+           x = "Citizenhip",
+           y= "Proportion of Immigration Outcome (%)")+
+      scale_y_continuous(labels = scales::percent, limits=c(0,1))
+
+```
+
+
+```{r}
+#| echo: true
+#| fig-align: center
+#| fig-height: 5
+# In a stacked layout 
+
+fig_ex + theme_bw() + 
+      theme(plot.title = element_text(size=16, face = "bold"), 
+            plot.subtitle = element_text(size=15), 
+            axis.title = element_text(size = 14, face = "bold"),
+            axis.text = element_text(size = 14),
+            legend.position = "none",
+            panel.background = element_rect(fill = "azure1"))
+```
+
+## next to each other
+```{r}
+#| echo: true
+#| fig-align: center
+#| fig-height: 10
+#| output-location: column
+
+df_short %>% 
+  ggplot(aes(x= citizenship, y = encounter_frac, fill = citizenship))+
+  geom_bar(stat = "identity") +
+  facet_wrap(.~encounter_type) +
+  coord_flip() +
+  labs(title = "US Border Immigration Data on non-US Citizens",
+           x = "Citizenhip",
+           y= "Proportion of Immigration Outcome (%)")+
+      scale_y_continuous(labels = scales::percent, limits=c(0,1))+
+      theme_bw() + 
+      theme(plot.title = element_text(size=16, face = "bold"), 
+            plot.subtitle = element_text(size=15), 
+            axis.title = element_text(size = 14, face = "bold"),
+            axis.text = element_text(size = 14),
+            legend.position = "none",
+            panel.background = element_rect(fill = "azure1")) 
+```
+
+## On different slides
+```{r}
+#| echo: true
+#| fig-align: center
+#| output-location: slide
+
+df_short %>% 
+  ggplot(aes(x= citizenship, y = encounter_frac, fill = citizenship))+
+  geom_bar(stat = "identity") +
+  facet_wrap(.~encounter_type) +
+  coord_flip() +
+  labs(title = "US Border Immigration Data on non-US Citizens",
+           x = "Citizenhip",
+           y= "Proportion of Immigration Outcome (%)")+
+      scale_y_continuous(labels = scales::percent, limits=c(0,1))+
+      theme_bw() + 
+      theme(plot.title = element_text(size=16, face = "bold"), 
+            plot.subtitle = element_text(size=15), 
+            axis.title = element_text(size = 14, face = "bold"),
+            axis.text = element_text(size = 14),
+            legend.position = "none",
+            panel.background = element_rect(fill = "azure1")) 
+```
+
+## Highlighting elements in the code
+You can highlight parts of the code by adding a yaml instruction:  
+{code-line-numbers: "LINES OF CODE TO HIGHLIGHT"}   
+Vertical lines can be used to highlight groups of code
+
+```{r}
+#| echo: true
+#| code-line-numbers: "|3-5|7-10|5,6,13"
+#| output-location: slide
+# Here I am highlightiing lines 3-5, then 7-10 and then lines 5,6,13. 
+# and the figure is set to another slide
+
+df_short %>% 
+  ggplot(aes(x= citizenship, y = encounter_frac, fill = citizenship))+
+  geom_bar(stat = "identity") +
+  facet_wrap(.~encounter_type) +
+  coord_flip() +
+  labs(title = "US Border Immigration Data on non-US Citizens",
+           x = "Citizenhip",
+           y= "Proportion of Immigration Outcome (%)")+
+      scale_y_continuous(labels = scales::percent, limits=c(0,1))+
+      theme_bw() + 
+      theme(plot.title = element_text(size=16, face = "bold"), 
+            plot.subtitle = element_text(size=15), 
+            axis.title = element_text(size = 14, face = "bold"),
+            axis.text = element_text(size = 14),
+            legend.position = "none",
+            panel.background = element_rect(fill = "azure1")) 
+```
+
+## Adding multiple elements to a slide
+We can add 2 figures side by side using a fence:   
+{::: {.column}   
+:::
+}
+
+::::: columns
+::: {.column width="40%"}
+```{r}
+df_short %>% 
+  filter(citizenship == "Brazil" | citizenship == "Mexico"| citizenship == "Colombia") %>% 
+  select(citizenship, encounter_type, encounter_count, encounter_frac) %>% 
+  mutate(encounter_frac= round(encounter_frac*100, 2)) %>% 
+  gt(rowname_col = "citizenship") %>% 
+  cols_label(citizenship = "Citizenship",
+             encounter_type= "Encounter Type",
+             encounter_count = "Total Encounter",
+             encounter_frac= "Encounter Fraction (%)")
+    
+```
+:::
+
+::: {.column width="60%"}
+```{r}
+#| fig-height: 6
+
+fig_ex + theme_bw() + 
+      theme(plot.title = element_text(size=16, face = "bold"), 
+            plot.subtitle = element_text(size=15), 
+            axis.title = element_text(size = 14, face = "bold"),
+            axis.text = element_text(size = 14),
+            legend.position = "none",
+            panel.background = element_rect(fill = "azure1"))
+```
+:::
+:::::
+
+## Miscellaneous features
+
+- Adding a background
+- Call out boxes
+- Pauses
+
+## Adding a background {background-image="images/background_MOZ.jpeg"}
+This can be achieved by using :  
+{background-image="PATH to IMAGE"}.
+
+## Call out boxes
+
+::: {.callout-tip title="Fun Fact!"}
+The title of the box can be changed with "title= 'XXX'". 
+:::
+
+::: callout-caution
+This can be useful to draw attention to something.
+:::
+
+::: callout-warning
+Use this to warn others.
+:::
+
+::: callout-important
+This one can emphasize something very important.
+:::
+
+
+## Pauses
+
+Pauses can be achieved using **{. . . }** to separate the content that you want to separate.\
+Here, we have this text element...
+
+. . .
+
+...separated from this picture.
+
+![](images/KRYT_logo_round.png){width="30%"}
+
+
+## Thank you for listening! 
+
+Quarto Presentations are pretty cool!
+```{r}
+#| fig-align: center
+library(memer)
+meme_get("ExpandingBrain") %>% 
+  meme_text_brain("Making presentations in Google Slides", 
+                  "Making presentations in PowerPoint", 
+                  "Making presentations with Xaringan", 
+                  "Quarto Presentation", 
+                  size = 12)
+```
+
+
+
+
