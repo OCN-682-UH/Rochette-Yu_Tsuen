@@ -1,0 +1,218 @@
+---
+author: 'Keanu Rochette '
+date: '`r format(Sys.Date())`'
+title: Week 15 - Iterative coding
+output: html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE,
+                      warning = FALSE)
+```
+
+# Load libraries
+```{r}
+library(tidyverse)
+library(here)
+```
+
+# For loops
+
+Intial idea
+```{r}
+print(paste("The year is", 2000))
+```
+
+### Create a for loop
+```{r}
+years<- c(2015:2021)
+```
+
+```{r}
+for (i in years) {
+  print(paste("The year is", i))
+
+}
+```
+
+
+### adding the outputs to a dataframe
+```{r}
+#Pre-allocate space for the df received in the output
+
+year_data <- tibble(year= rep(NA, length(years)),
+                    year_name= rep(NA, length(years)))
+```
+
+
+```{r}
+for (i in 1:length(years)){
+  year_data$year_name[i] <- paste("The year is", years[i])
+  year_data$year[i] <- years[i]
+}
+```
+
+### trouble shooting 
+
+```{r}
+year_data <- tibble(year= rep(NA, length(years)),
+                    year_name= rep(NA, length(years)))
+
+#We can use i=1 to test the for loop before running the whole for loop
+i = 1
+
+year_data$year_name[i] <- paste("The year is", years[i])
+year_data$year[i] <- years[i]
+
+year_data
+```
+
+# Load Data
+```{r}
+sal1 <- read_csv(here("Week_15", "data", "cond_data", "011521_CT316_1pcal.csv"))
+#sal2 <- read_csv(here("Week_15", "data", "011621_CT316_1pcal.csv"))
+#sal3 <- read_csv(here("Week_15", "data", "011721_CT354_1pcal.csv"))
+```
+
+
+```{r}
+sal1
+```
+
+## Iterating on the csv files 
+
+### List file directory
+```{r}
+# point to the location on the computer of the folder
+CondPath<-here("Week_15", "data", "cond_data")
+# list all the files in that path with a specific pattern
+# In this case we are looking for everything that has a .csv in the filename
+# you can use regex to be more specific if you are looking for certain patterns in filenames
+files <- dir(path = CondPath, pattern = ".csv")
+files
+```
+### Pre-allocate space
+```{r}
+# make an empty data frame that has one row for each file and 3 columns
+ cond_data<-tibble(filename =  rep(NA, length(files)),  # column  for year
+                   mean_temp = rep(NA, length(files)), # column for mean temp
+                   mean_sal = rep(NA, length(files)), # column for mean salinity
+                   ) # column name for the year name
+cond_data
+```
+
+
+### For Loop
+```#{r}
+raw_data<-read_csv(paste0(CondPath,"/",files[1])) # test by reading in the first file and see if it works
+head(raw_data)
+```
+
+
+Testing that we can calculate the mean in base R
+```{r}
+mean_temp<-mean(raw_data$Temperature, na.rm = TRUE) # calculate a mean
+mean_temp
+```
+
+### Turning it into a for loop 
+
+#### Can you read the file 
+```{r}
+for (i in length(files)){
+  raw_data <- read_csv(paste0(CondPath,"/",files[i]))
+  glimpse(raw_data)
+}
+```
+
+```{r}
+for (i in length(files)){
+  raw_data <- read_csv(paste0(CondPath,"/",files[i]))
+  #glimpse(raw_data)
+  
+  cond_data$filename[i] <- files[i]
+}
+cond_data
+````
+
+```{r}
+for (i in 1:length(files)){ # loop over 1:3 the number of files 
+raw_data<-read_csv(paste0(CondPath,"/",files[i]))
+#glimpse(raw_data)
+cond_data$filename[i]<-files[i]
+cond_data$mean_temp[i]<-mean(raw_data$Temperature, na.rm =TRUE)
+cond_data$mean_sal[i]<-mean(raw_data$Salinity, na.rm =TRUE)
+} 
+cond_data
+
+```
+
+# Map functions
+## Use a canned function that already exist
+
+Create a vector 1:10
+```{r}
+1:10
+```
+
+for each time 1:10 make a vector of 15 random numbers based on a normal distribution
+```{r}
+1:10 %>% 
+  map(rnorm, n = 15)
+```
+
+Apply a canned function to the data 
+```{r}
+1:10 %>% 
+  map(rnorm, n = 15) %>% 
+  map_dbl(mean)
+```
+
+Can also use your own function
+```{r}
+1:10 %>% # list 1:10
+  map(function(x) rnorm(15, x)) %>% # make your own function
+  map_dbl(mean)
+```
+Use a formula when you want to change the arguments within the function
+```{r}
+1:10 %>%
+  map(~ rnorm(15, .x)) %>% # changes the arguments inside the function, .x is kinda like the indexing elemen ~ [i]
+  map_dbl(mean)
+```
+
+
+
+
+## Using Purrr to recreate files df that we made earlier 
+
+```{r}
+# point to the location on the computer of the folder
+CondPath<-here("Week_15", "data", "cond_data")
+files <- dir(path = CondPath,pattern = ".csv", full.names = TRUE)
+files
+```
+
+OR 
+```#{r}
+files <- dir(path = CondPath,pattern = ".csv", full.names = TRUE)
+#save the entire path name
+files
+```
+
+## Read in the files 
+```{r}
+data<-files %>%
+  set_names()%>% # set's the id of each list to the file name
+  map_df(read_csv,.id = "filename") # map everything to a dataframe and put the id in a column called filename
+data
+```
+
+
+
+
+
+
+
+
