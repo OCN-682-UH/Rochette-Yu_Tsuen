@@ -20,8 +20,6 @@ author:
        "1234 University Road: Department of Oceanography, Univeristy of Hawaii, Honolulu, HI, U.S.A."
 author-notes:
   equal-contributor: These authors contributed equally to this work.
-  deceased: Deceased
-  group: Membership list can be found in the Acknowledgments sections
 affiliations:
   - id: aff1
     name: Department of Oceanography, University of Hawai'i 
@@ -40,36 +38,58 @@ author-summary: |
   Hi, I'm Keanu and I am a first year master student at the University of Hawai'i at Mānoa. I'm currently taking the MBIO612/OCN682 class to learn how to code in R and use it for data science. 
   
 bibliography: bibliography.bib 
+csl: apa-6th-edition.csl
 ---
 
 # Introduction
 
-This week, I decided to learn how to use RStudio and Quarto files to make publishable and reproducible journal articles. I chose the template from PLOS.  
-We'll be looking at the National Highway Traffic Flow data from Tidy Tuesday.
+This week, I decided to learn how to use RStudio and Quarto files to make publishable and reproducible journal articles. I chose the template from PLOS Global Public Health.\
+We'll be looking at the **National Highway Traffic Flow** data from *Tidy Tuesday*.
 
+# Materials and methods
 
-# Materials and methods 
+### Setup
+
+First, we load the required libraries
 
 ```{r}
-#| label: Load libraries
 #| echo: true
 #| message: false
 library(tidyverse)
 library(gt)
 library(janitor)
 library(ghibli)
+
 ```
+
+Then, we download the data from the Tidy Tuesday Github.
 
 ```{r}
 #| label: Load the data
 #| echo: true
+#| message: false
 
 tuesdata <- tidytuesdayR::tt_load('2024-12-03')
 traffic <- tuesdata$A64_traffic
 ```
 
+### Data Clean-Up
+
+First, we will clean up the data setup by doing the following:
+
+-   clean up the column names with *Janitor*
+
+-   select the columns of interest
+
+-   rename the size categories to be clearer
+
+-   pivot the size categories to long format for plotting later
+
+-   pivot the speed categories longer for plotting later
+
+-   rename the speed categories (I wanted to rename columns in different ways)
+
 ```{r}
-#| label: Data Clean-Up
 #| echo: true
 traffic_clean <- traffic %>% clean_names() %>% 
   select(-site_id, -site_name, -report_date, -time_period_ending, -time_interval,
@@ -91,6 +111,9 @@ traffic_clean <- traffic %>% clean_names() %>%
          size_class_cm = as.factor(size_class_cm)) 
 ```
 
+### Graphing
+
+For the size distribution, I am plotting a boxplot graph to show which size class of cars are more represented on the highway.
 
 ```{r}
 #| label: Size Distribution 
@@ -115,10 +138,10 @@ size <- traffic_clean %>%
   scale_fill_ghibli_d("MarnieMedium1", direction =-1)
 ```
 
-
+For the speed data, I am plotting a bar graph to show distribution of the vehicle speed on the highway. It made a nice bell curve.
 
 ```{r}
-#| label: Speed Distribution 
+#| title: Speed Distribution 
 #| echo: true
 speed <- traffic_clean %>% group_by(speed_cat_mph) %>% 
   summarize(avg_by_speed = mean(num_by_speed, na.rm = T)) %>% 
@@ -139,27 +162,54 @@ speed <- traffic_clean %>% group_by(speed_cat_mph) %>%
         panel.background = element_rect(fill = "azure1"))
 ```
 
-
 # Results
 
+We can show the plots now. We can see that they are nicely labeled.
+
+In the size plot, cars from 0-520cm are most represented on the road.
+
 ```{r}
-#| label: Showing size class distribution 
-#| echo: true
+#| label: fig-size-distrib 
+#| fig-cap: Size Distribution of Vehicles
+#| message: false
+#| warning: false
+
 size
 ```
 
+As of speed, cars mostly reach speed around 41-45 mph.
+
 ```{r}
-#| label: Showing speed category distribution
+#| label: fig-speed-distrib
+#| fig-cap: Speed Distribution of Vehicles
+#| message: false
+#| warning: false
 #| echo: true
-speed 
+
+speed
 ```
 
 # Discussion
-I can reference figures here 
-I can also add citations like that. All the citations with be added to the bibliography and the reference.
+
+The cool thing about quarto document is that I can reference figures like that, @fig-size-distrib.\
+Then I can talk some more to discuss @fig-speed-distrib.
+
+I can also add citations from my Zotero library like that:
+
+-   Leptospirosis in Hawaii : [@anderson1986]
+
+-   Agniel et al. [@agniel2018] said something about environmental reservoirs of pathogens.
+
+All the citations will be added to the bibliography and the reference.
+
+Unfortunately, I was not able to change the citation style of the document. I was told to download the CSL file for APA 6th Edition and set it in the YAML header as {csl: apa-6th-edition.csl}. But it didn't change the citation format. I believe that it is because I used a template from a specific journal which might use their own citation format and it overrides my file.
 
 # Conclusion
 
+Overall, Quarto Articles are very awesome and it allows us to have our scientific writing, citations, and plots with features to both label and reference the plots already embeded in the file. Unfortutely, I was not able to change the citation format. I will have to practice some more with Quarto in order to better understand those mechanisms.
 
 # Acknowledgments
 
+Thank you to ***me*** for taking the time to learn Quarto Articles and Nyssa for teaching us how to code and create those awesome outputs !
+
+# References

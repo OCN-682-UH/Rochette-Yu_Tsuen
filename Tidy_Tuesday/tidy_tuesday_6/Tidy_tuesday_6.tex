@@ -283,8 +283,7 @@ LTER, Paopao, Moorea, French Polynesia,
 \dag Deceased
 
 % Group/Consortium Author Note
-\textpilcrow Membership list can be found in the Acknowledgments
-sections
+\textpilcrow Membership list can be found in the Acknowledgments section.
 
 % Use the asterisk to denote corresponding authorship and provide email address in note below.
 
@@ -326,11 +325,15 @@ how to code in R and use it for data science.
 
 This week, I decided to learn how to use RStudio and Quarto files to
 make publishable and reproducible journal articles. I chose the template
-from PLOS.\\
-We'll be looking at the National Highway Traffic Flow data from Tidy
-Tuesday.
+from PLOS Global Public Health.\\
+We'll be looking at the \textbf{National Highway Traffic Flow} data from
+\emph{Tidy Tuesday}.
 
 \section{Materials and methods}\label{materials-and-methods}
+
+\subsubsection{Setup}\label{setup}
+
+First, we load the required libraries
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -341,27 +344,34 @@ Tuesday.
 \end{Highlighting}
 \end{Shaded}
 
+Then, we download the data from the Tidy Tuesday Github.
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{tuesdata }\OtherTok{\textless{}{-}}\NormalTok{ tidytuesdayR}\SpecialCharTok{::}\FunctionTok{tt\_load}\NormalTok{(}\StringTok{\textquotesingle{}2024{-}12{-}03\textquotesingle{}}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
----- Compiling #TidyTuesday Information for 2024-12-03 ----
---- There is 1 file available ---
-
-
--- Downloading files -----------------------------------------------------------
-
-  1 of 1: "A64_traffic.csv"
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
 \NormalTok{traffic }\OtherTok{\textless{}{-}}\NormalTok{ tuesdata}\SpecialCharTok{$}\NormalTok{A64\_traffic}
 \end{Highlighting}
 \end{Shaded}
+
+\subsubsection{Data Clean-Up}\label{data-clean-up}
+
+First, we will clean up the data setup by doing the following:
+
+\begin{itemize}
+\item
+  clean up the column names with \emph{Janitor}
+\item
+  select the columns of interest
+\item
+  rename the size categories to be clearer
+\item
+  pivot the size categories to long format for plotting later
+\item
+  pivot the speed categories longer for plotting later
+\item
+  rename the speed categories (I wanted to rename columns in different
+  ways)
+\end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -386,6 +396,11 @@ Tuesday.
 \end{Highlighting}
 \end{Shaded}
 
+\subsubsection{Graphing}\label{graphing}
+
+For the size distribution, I am plotting a boxplot graph to show which
+size class of cars are more represented on the highway.
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{size }\OtherTok{\textless{}{-}}\NormalTok{ traffic\_clean }\SpecialCharTok{\%\textgreater{}\%} 
@@ -408,6 +423,9 @@ Tuesday.
   \FunctionTok{scale\_fill\_ghibli\_d}\NormalTok{(}\StringTok{"MarnieMedium1"}\NormalTok{, }\AttributeTok{direction =}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
+
+For the speed data, I am plotting a bar graph to show distribution of
+the vehicle speed on the highway. It made a nice bell curve.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -433,40 +451,84 @@ Tuesday.
 
 \section{Results}\label{results}
 
+We can show the plots now. We can see that they are nicely labeled.
+
+In the size plot, cars from 0-520cm are most represented on the road.
+
+\begin{figure}
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{Tidy_tuesday_6_files/figure-pdf/fig-size-distrib-1.pdf}}
+
+}
+
+\caption{\label{fig-size-distrib}Size Distribution of Vehicles}
+
+\end{figure}%
+
+As of speed, cars mostly reach speed around 41-45 mph.
+
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{size}
+\NormalTok{speed}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{verbatim}
-Warning: Removed 77336 rows containing non-finite outside the scale range
-(`stat_boxplot()`).
-\end{verbatim}
+\begin{figure}[H]
 
-\pandocbounded{\includegraphics[keepaspectratio]{Tidy_tuesday_6_files/figure-pdf/Showing size class distribution-1.pdf}}
+\centering{
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{speed }
-\end{Highlighting}
-\end{Shaded}
+\pandocbounded{\includegraphics[keepaspectratio]{Tidy_tuesday_6_files/figure-pdf/fig-speed-distrib-1.pdf}}
 
-\pandocbounded{\includegraphics[keepaspectratio]{Tidy_tuesday_6_files/figure-pdf/Showing speed category distribution-1.pdf}}
+}
+
+\caption{\label{fig-speed-distrib}Speed Distribution of Vehicles}
+
+\end{figure}%
 
 \section{Discussion}\label{discussion}
 
+The cool thing about quarto document is that I can reference figures
+like that, Fig~\ref{fig-size-distrib}.\\
+Then I can talk some more to discuss Fig~\ref{fig-speed-distrib}.
+
+I can also add citations from my Zotero library like that:
+
+\begin{itemize}
+\item
+  Leptospirosis in Hawaii : \citep{anderson1986}
+\item
+  Agniel et al. \citep{agniel2018} said something about environmental
+  reservoirs of pathogens.
+\end{itemize}
+
+All the citations will be added to the bibliography and the reference.
+
+Unfortunately, I was not able to change the citation style of the
+document. I was told to download the CSL file for APA 6th Edition and
+set it in the YAML header as \{csl: apa-6th-edition.csl\}. But it didn't
+change the citation format. I believe that it is because I used a
+template from a specific journal which might use their own citation
+format and it overrides my file.
+
 \section{Conclusion}\label{conclusion}
+
+Overall, Quarto Articles are very awesome and it allows us to have our
+scientific writing, citations, and plots with features to both label and
+reference the plots already embeded in the file. Unfortutely, I was not
+able to change the citation format. I will have to practice some more
+with Quarto in order to better understand those mechanisms.
 
 \section{Acknowledgments}\label{acknowledgments}
 
-Cras egestas velit mauris, eu mollis turpis pellentesque sit amet.
-Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam id
-pretium nisi. Sed ac quam id nisi malesuada congue. Sed interdum aliquet
-augue, at pellentesque quam rhoncus vitae.
+Thank you to \textbf{\emph{me}} for taking the time to learn Quarto
+Articles and Nyssa for teaching us how to code and create those awesome
+outputs !
 
 
 \nolinenumbers
+\renewcommand\refname{References}
   \bibliography{bibliography.bib}
 
 
