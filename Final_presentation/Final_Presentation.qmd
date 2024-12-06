@@ -1,0 +1,270 @@
+---
+title: "Final Presentation - Oceanographic Data"
+author: Keanu Rochette-Yu Tsuen
+date: 2024/12/01
+knitr: 
+  opts_chunk:
+    fig.path: "outputs/"
+format: 
+  revealjs:
+    logo: images/KRYT_logo_round.png
+    transition: fade
+    slide-number: true
+    menu:
+      width: third
+      numbers: true
+---
+```{r}
+#| message: false
+library(tidyverse)
+library(here)
+library(gt)
+```
+
+## Introduction
+<style>
+p {
+    font-size: 26px;
+}
+ul {
+    font-size: 26px; 
+}
+</style>
+
+- Undergraduate: BS. Global Environmental Science
+- Graduate: MS. Oceanography
+
+Being in the Oceanography department, it's almost a rite of passage to go on a research cruise (undergrad).  
+It's **mandatory** to have ship time as graduate student.
+
+![Kilo Moana Ship](images/KM.jpeg){layout-valign="center"}
+
+## My Research Side Quest
+#### My first Kilo Moana Cruise
+Why?:
+
+- study the Island Mass Effect
+- trophic interactions between coastal fisheries  
+and pelagic fisheries
+- changes in microbial community composition  
+with IME
+- test new instrument: Hadal Profiler
+- being on a research cruise
+have fun
+
+
+![](images/cast_oahu.png){.absolute top=150 left=600 width="700"}
+
+
+## Data Collection: Gathering Intel 
+How?:
+
+- CTD measurements
+  + Conductivity / Salinity
+  + Temperature
+  + Depth and Pressure
+  + Oxygen
+  + Fluorescence
+  
+- Water sampling
+  + Prochlorococcus
+  + Synechococcus
+  + Heterotrophic Bacteria
+  + Pico Eukaryotes
+  
+![](images/CTD.JPG){.absolute top=150 left=450 width="800"}
+
+## Data Clean Up: a Well Kept Secret
+#### CTD Data
+::::{.columns}
+
+:::{.column}
+- ASCII files, unable to be read as CSV
+- 7 files 
+- Data files: 76794 x 27 
+:::
+
+:::{.column}
+```{r}
+#| message: false
+CTD <- tibble(read_csv(here("Final_Presentation", "data", "km2315_A_1_200m.csv")))
+head(CTD, 10)
+
+```
+:::
+::::
+
+## Data Clean Up: a Well Kept Secret
+#### CTD Data
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "|1|3|5-8|11-12|14-15"
+
+asc_to_csv <- function(filename){
+
+asc_file <- here("Oceanographic_data", "data","raw_data","ctd_data", filename)  
+
+data <- read.table(asc_file, sep = ",")  
+colnames(data) <- data[1,]
+data <- data[-1,]
+data <- clean_names(data)
+
+
+filename <- str_replace_all(filename, "\\.|[a-z]{3}", "")
+filename <- str_trim(filename)
+
+write.csv(data, file = here("Oceanographic_data", "data","raw_data","ctd_data",
+                            paste(filename, ".csv")))
+}
+```
+
+## Data Clean Up: a Well Kept Secret
+#### FCM Data
+
+::::{.columns}
+
+:::{.column width="30%"}
+- FCM: Flow Cytometry.
+- Way to count and sort cells with a laser
+- Allows to differentiate different microbes
+  + Cyanobacteria
+  + Heterotrophic Bacteria
+  + Pico Eukaryotes
+- Data file: 80 x 181
+:::
+
+:::{.column width="70%"} 
+```{r}
+#| message: false
+FCM <- tibble(read_csv(here("Final_Presentation", "data", "km2315_fcm_data.csv"), locale=locale(encoding="latin1"), skip = 2))
+head(FCM, 10)
+
+
+```
+:::
+::::
+
+
+## Data Clean Up: a Well Kept Secret
+#### FCM Data
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "|2|3-6|7-16"
+
+fcm <- fcm %>% 
+  mutate(real_event = include_events_i1_4l_v- hoechst_junk_events_i1_4l_v- chlorophyll_junk_events_i1_4l_v) %>% 
+  select(1,c(166:181), -h1_ur_events_i1_4l_v, -h1_ul_events_i1_4l_v,
+         -h2_ll_events_i1_4l_v, -h2_lr_events_i1_4l_v,
+         -hoechst_junk_events_i1_4l_v, -chlorophyll_junk_events_i1_4l_v
+         ) %>% 
+  rename(all_events = all_events_events_i1_4l_v,
+         include_events = include_events_i1_4l_v,
+         low_chl_events = low_chlorophyll_events_i1_4l_v,
+         autotr= autotrophic_hi_chl_events_i1_4l_v,
+         small_autotr_cyano = small_autotrophs_cyanobacteria_events_i1_4l_v,
+         large_autotr_pico_euks = large_autotrophs_pico_euks_events_i1_4l_v,
+         heterobact = heterotrophic_bacteria_events_i1_4l_v,
+         low_pe_cyano = low_pe_cyanos_events_i1_4l_v,
+         hi_pe_cyano = high_pe_cyanos_events_i1_4l_v,
+         true_autotr = true_autotrophs_events_i1_4l_v)
+```
+
+## Data Clean Up: a Well Kept Secret
+#### FCM Data
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "|1|2-4|5"
+fcm <- fcm %>% separate(site_depth, c("site", "depth")) %>% 
+  separate(site, 
+           into = c("site", "cast"), 
+           sep = "(?<=[A-Za-z])(?=[0-9])") %>% 
+  filter(site != "stain", site != "blank")
+```
+
+
+## Data Visualization: Revealing the Hidden Story 
+```{r}
+#| message: false
+CTD_fcm<- read_csv(here("Final_Presentation", "data", "CTD_FCM.csv"))
+```
+
+::::{.columns}
+
+:::{.column width="30%"}
+```{r}
+#| title: depth_profile
+#| fig-height: 15
+CTD_fcm %>% filter(station =="A", parameter == "Pressure") %>% 
+  select(depth, values) %>% distinct() %>% 
+  ggplot(aes(x= depth*-1, y=values))+
+  geom_point(size = 6)+
+  geom_line(linewidth = 1.5)+coord_flip()+
+  labs(title= "Depth Profiles", x= "Depth", y= "Pressure")+
+  theme(plot.title = element_text(size=40, face = "bold"), 
+            axis.title = element_text(size = 36, face = "bold"),
+            axis.text = element_text(size = 36),
+            legend.position = "none")
+```
+:::
+
+:::{.column width="30%"}
+```{r}
+#| title: correlation
+#| fig-height: 15
+CTD_fcm %>% filter(station =="A", parameter == "Pressure", microbe =="Prochlorococcus") %>% 
+  select(depth, values, rel_abun) %>% distinct() %>% 
+  ggplot(aes(x= values, y=rel_abun))+
+  geom_point(size = 6)+
+  geom_smooth(size=3, method = "lm")+
+  labs(title="Correlation Plots",
+         x= "Pressure", y= "Relative Abundance") +
+  theme(plot.title = element_text(size=40, face = "bold"), 
+            axis.title = element_text(size = 36, face = "bold"),
+            axis.text = element_text(size = 36),
+            legend.position = "none")
+```
+:::
+
+:::{.column width="33%"}
+```{r}
+#| title: microbe_distribution
+#| fig-height: 14
+CTD_fcm %>% filter(station =="A", microbe =="Prochlorococcus") %>% 
+  ggplot(aes(x= station, y=rel_abun))+
+  geom_violin()+
+  geom_boxplot(width= 0.2)+
+  labs(title= "Microbe Distribution", x= "Station", y= "Relative Abundance")+
+  theme(plot.title = element_text(size=40, face = "bold"), 
+            axis.title = element_text(size = 36, face = "bold"),
+            axis.text = element_text(size = 36),
+            legend.position = "none")
+```
+:::
+
+::::
+
+
+## Let's Check the App
+
+[Oceanographic Data App](https://keanuryt.shinyapps.io/Oceanographic_data/){preview-link="true"}
+
+![](images/shiny_preview.png)
+
+
+## Archiving the Memories
+### [Keanu's Website](https://keanuryt.github.io/)
+
+![](images/nunu_website.png)
+
+<!--
+
+# Thank You for Listening{background-image="images/KM_group.jpeg"}
+-->
+
+## Thank You for Listening
+![](images/KM_group.jpeg)
+
