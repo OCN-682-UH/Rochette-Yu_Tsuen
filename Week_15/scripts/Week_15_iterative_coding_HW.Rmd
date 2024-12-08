@@ -1,0 +1,134 @@
+---
+author: 'Keanu Rochette '
+date: '`r format(Sys.Date())`'
+title: Week 15 - Iterative Coding HW
+output: 
+  github_document:
+    toc: true
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE,
+                      warning = FALSE)
+```
+
+## Load Libraries
+```{r}
+library(tidyverse)
+library(here)
+library(gt)
+```
+
+## Iterative Coding in Base R 
+### Setting up the elements of the loop
+
+Set the path to the files
+```{r}
+TPpath<- here("Week_15", "data", "homework")
+```
+
+Create a vector containing the files
+```{r}
+files <- dir(path = TPpath, pattern = ".csv")
+files
+```
+Create an empty tibble with the varibles that we want to extract:
+
+- filename: which CSV is the data coming from
+- temp_mean: average temperature of the file
+- temp_sd: standard deviation of temperature of the file
+- light_mean: average light intensity of the file
+- light_sd: standard deviation of light intensity of the file
+```{r}
+TPdata <- tibble(filename = rep(NA, length(files)),
+                 temp_mean = rep(NA, length(files)),
+                 temp_sd = rep(NA, length(files)),
+                 light_mean = rep(NA, length(files)),
+                 light_sd = rep(NA, length(files))
+                 )
+```
+
+Testing if we can read a file using the paths and the directory set up above
+```{r}
+datatest<- read_csv(paste0(TPpath, "/", files[1]))
+head(datatest, 10)
+```
+
+Making sure that we can calculate the mean based on a file 
+```{r}
+mean(datatest$Temp.C, na.rm = T)
+```
+### Setup the for loop
+
+Making sure that loop works to read files
+```{r}
+for (i in 1:length(files)){
+  rawdata <- read_csv(paste0(TPpath, "/", files[i] ))
+  glimpse(rawdata)
+}
+```
+
+Setup up the full for loop
+```{r}
+for (i in 1:length(files)){ # i in 1 to 4
+  rawdata <- read_csv(paste0(TPpath, "/", files[i] )) # where to read the data
+  
+  TPdata$filename[i] <- files[i] # filename i in TP data is the file i
+  
+  TPdata$temp_mean[i] <- mean(rawdata$Temp.C, na.rm = TRUE) # calculate the quantities desired
+  TPdata$temp_sd[i] <- sd(rawdata$Temp.C, na.rm = TRUE)
+  TPdata$light_mean[i] <- mean(rawdata$Intensity.lux, na.rm = TRUE)
+  TPdata$light_sd[i] <- sd(rawdata$Intensity.lux, na.rm = TRUE)
+}
+
+TPdata #read the populated tibble
+```
+### Returning a  Table Summary
+```{r}
+TPdata %>% gt(rowname_col = "filename") %>% 
+  cols_label(temp_mean = "Avg Temperature (°C)",
+             temp_sd = "Std Dev Temperature",
+             light_mean = "Avg Light (Lux)",
+             light_sd = "Std Dev Light")
+```
+
+
+## Iterative Coding with Tidyverse
+
+### Setup to initiate the "looping"
+Set the path to files and directory to access the files
+```{r}
+TPpath <- here("Week_15", "data", "homework")
+files <- dir(path = TPpath, pattern = ".csv", full.names =  TRUE)
+```
+### Calculating the values with tidyerse
+```{r}
+files %>% 
+  set_names() %>% 
+  map_df(read_csv, .id = "filename") %>% # create a df with the first column
+  group_by(filename) %>% # group the next values based on filename
+  
+  #calculating the desired quantities with tidyverse
+  summarize(temp_mean = mean(Temp.C, na.rm = T),
+            temp_sd = sd(Temp.C, na.rm = T),
+            light_mean = mean(Intensity.lux, na.rm = T),
+            light_sd = sd(Intensity.lux, na.rm = T)
+            ) %>% 
+  
+  # change the filename to only keep the file name.csv and not the whole path directory
+  mutate(filename = str_extract(filename, "[^/]+$")) %>% 
+  
+  #return a clean table summary with the values wanted
+  gt(rowname_col = "filename") %>% 
+  cols_label(temp_mean = "Avg Temperature (°C)",
+             temp_sd = "Std Dev Temperature",
+             light_mean = "Avg Light (Lux)",
+             light_sd = "Std Dev Light")
+```
+
+
+
+
+
+

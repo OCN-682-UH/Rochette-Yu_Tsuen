@@ -137,6 +137,7 @@ cond_data
 ````
 
 ```{r}
+
 for (i in 1:length(files)){ # loop over 1:3 the number of files 
 raw_data<-read_csv(paste0(CondPath,"/",files[i]))
 #glimpse(raw_data)
@@ -190,7 +191,7 @@ Use a formula when you want to change the arguments within the function
 ```{r}
 # point to the location on the computer of the folder
 CondPath<-here("Week_15", "data", "cond_data")
-files <- dir(path = CondPath,pattern = ".csv", full.names = TRUE)
+files <- dir(path = CondPath, pattern = ".csv", full.names = TRUE)
 files
 ```
 

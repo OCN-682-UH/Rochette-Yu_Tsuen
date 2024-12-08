@@ -1,0 +1,218 @@
+---
+author: 'Keanu Rochette '
+date: '`r format(Sys.Date())`'
+title: 'Week 15 - Intro to Modeling '
+output: html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      messages = FALSE)
+```
+
+```{r}
+library(here)
+library(tidyverse)
+library(palmerpenguins)
+library(performance)
+library(modelsummary)
+library(tidymodels)
+library(broom)
+#library(flextable)
+#library(see)
+
+```
+
+## Anatomy of a model (simple)
+```{}
+mod <- lm(y~x, data = df)
+
+mod: name of the model
+y~x: y as a function x 
+
+```
+
+Multiple regressions
+```{}
+mod <- lm(y~x1 + x2, data = df)
+```
+
+Interaction term 
+```{}
+mod <- lm(y~x1*x2, data = df)
+
+* is computed as x1+x2+x1:x2 (x1 interacting with x2)
+x1:x2 : interaction of x1 and x2
+```
+
+
+## Example
+
+```{r}
+peng_mod <- lm(bill_length_mm ~ bill_depth_mm*species, data = penguins)
+```
+
+### Checking the model assumption with performance
+
+In lm, we assume that the data are meets 
+- assumption of normality, i.e. residuals of the models are normal
+- homogeneity of variance, 
+- co-linearity....
+
+```{r}
+check_model(peng_mod)
+```
+
+### ANOVA table
+- significant rel betwn  bill length and bill depth
+- significant difference btwn species
+- rel btwn bill depth and bill length change by spp
+
+```{r}
+anova(peng_mod)
+```
+
+
+### Coefficients (effect size) with error
+gives:
+- coefficients 
+- intercepts 
+- std error
+- p-values
+```{r}
+summary(peng_mod)
+```
+
+
+## Broom: view results cleanly
+Puts the results of the ANOVA and the coeff in a clean tibble
+for export into Excel/CSV or plotting 
+```{r}
+coeffs <- tidy(peng_mod) #tidy() gives the ANOVA results
+coeffs
+
+```
+
+### Glance() : R-squared, AICs... etc.
+- r-squared
+- adj. r-squared
+- p-values...etc
+```{r}
+results <- glance(peng_mod)
+results
+```
+
+### Residuals
+Used for fitted values/fitted predictions, useful for plotting, std error and more
+```{r}
+resid_fitted <- augment(peng_mod)
+resid_fitted
+```
+
+
+## Results un {modelsummary}
+
+2 families of functions:
+- modelsummary 
+    - modelsummary: Regression tables with side-by-side models.
+    - modelsummary_wide: Regression tables for categorical response models or grouped coefficients.
+    - modelplot: Coefficient plots.
+- datasummary
+    - datasummary: Powerful tool to create (multi-level) cross-tabs and data summaries.
+    - datasummary_balance: Balance tables with subgroup statistics and difference in means (aka “Table 1”).
+    - datasummary_correlation: Correlation tables.
+    - datasummary_skim: Quick overview (“skim”) of a dataset.
+    - datasummary_df: Turn dataframes into nice tables with titles, notes, etc.
+
+### Example
+Produces a Word doc with both models' results
+```{r}
+# New model
+peng_mod_noX<-lm(bill_length_mm ~ bill_depth_mm, data = penguins)
+#Make a list of models and name them
+models<-list("Model with interaction" = peng_mod,
+             "Model with no interaction" = peng_mod_noX)
+#Save the results as a .docx
+modelsummary(models, output = here("Week_15","outputs","table.docx"))
+```
+
+## Model plot
+
+```{r}
+library(wesanderson)
+```
+
+```{r}
+modelplot(models)+
+  labs(x = "Coeffs", 
+       y= "Term names")+
+  scale_color_manual(values = wes_palette('Darjeeling1'))
+
+```
+
+
+# Running models on multiple parameters
+
+Combine the purr, dplyr and broom packages. 
+Create a set of lists and each have a dataset. 
+
+for example purposes
+```{r}
+models <- penguins %>% 
+  ungroup() %>% 
+  nest(.by = species)
+
+models
+
+#turns the data in a bunch of smaller dfs by species
+```
+
+### Running a model for each of the species
+```{r}
+models <- penguins %>% 
+  ungroup() %>% 
+  nest(.by = species) %>% 
+  mutate(fit = map(data, ~lm(bill_length_mm~body_mass_g, data = .)))
+
+# here, set up a loop and run the model in the map() loop and mutate the results in a new column called "fit".
+
+models
+
+# this just computes the model but does not give the results yet
+```
+See the results of the model
+```{r}
+models$fit
+```
+
+### Calculating the results of the model
+```{r}
+results <- models %>% 
+  mutate(coeffs = map (fit, tidy), #tidy = summary table 
+         modelresults = map(fit, glance)) 
+
+# creates a coeff column and apply the function tidy() to the fit column
+# creates a modelresults column and apply glance() to fit column
+results
+
+```
+
+### To see the results, we need to un-nest the list
+```{r}
+results <- models %>% 
+  mutate(coeffs = map (fit, tidy), #tidy = summary table 
+         modelresults = map(fit, glance)) %>% 
+  select(species, coeffs,  modelresults) %>% 
+  unnest(cols=c(coeffs,  modelresults), names_sep = "_") 
+
+```
+
+## {Tidymodels}
+package that integrate tidyverse for modeling
+
+1) specify the type of model 
+```{r}
+linear-reg()
+```
+
+
