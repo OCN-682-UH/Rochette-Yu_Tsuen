@@ -1,6 +1,7 @@
 ---
 title: "Week 15 - Tidy Tuesday 6, an Introduction to Quarto Articles (not a true publication)"
 format:
+  pdf: default
   plos-pdf:
     number-sections: false
     journal:
